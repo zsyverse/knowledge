@@ -26,6 +26,14 @@ hide:
 
     [:octicons-arrow-right-24: 进入](rl/index.md)
 
+-   :material-post-outline:{ .lg .middle } **博客**
+
+    ---
+
+    长文：一篇讲透一个主题，带推导、对比和参考文献
+
+    [:octicons-arrow-right-24: 进入](blog/index.md)
+
 -   :material-file-document-multiple-outline:{ .lg .middle } **论文笔记**
 
     ---

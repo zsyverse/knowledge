@@ -30,13 +30,13 @@ hide:
 
     [:octicons-arrow-right-24: 进入](engineering/index.md)
 
--   :material-file-document-multiple-outline:{ .lg .middle } **论文精读**
+-   :material-telescope:{ .lg .middle } **前沿视野**
 
     ---
 
-    读过的优质论文：问题、方法、结果、思考
+    各领域的前沿技术：论文、开源项目、产品、博客
 
-    [:octicons-arrow-right-24: 进入](papers/index.md)
+    [:octicons-arrow-right-24: 进入](frontier/index.md)
 
 -   :material-feather:{ .lg .middle } **随笔**
 

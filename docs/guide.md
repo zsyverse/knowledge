@@ -20,7 +20,7 @@
 | 数学基础 | `docs/basics/math/` |
 | 控制理论 | `docs/basics/control/` |
 | 工程实践 | `docs/engineering/` |
-| 论文精读 | `docs/papers/` |
+| 前沿视野 | `docs/frontier/` |
 | 科研体悟 | `docs/essays/research/` |
 | 人生感悟 | `docs/essays/life/` |
 
@@ -57,27 +57,27 @@ tags:
 ## 参考
 ````
 
-## 论文笔记模板
+## 前沿视野模板
 
 ````markdown
 ---
 date: 2026-11-02
-description: 一句话说清这篇论文做了什么
-tags: [论文, 强化学习]
+description: 一句话说清它是什么
+tags: [论文, Robot]      # 来源类型 + 领域
 ---
 
-# 论文标题
+# 标题
 
-!!! info "信息"
-    **作者**：… **机构**：… **会议/年份**：… **链接**：[arXiv](https://arxiv.org/abs/xxxx)
+!!! info "来源"
+    **类型**：论文 / 开源项目 / 产品 / 博客 / 演讲　**出处**：…　**链接**：[原文](https://...)
 
-## 解决什么问题
+## 它是什么
 
-## 核心方法
+## 为什么值得关注
 
-## 关键结果
+## 核心思路
 
-## 我的思考（亮点 / 局限 / 能借鉴什么）
+## 对我的启发
 ````
 
 ## 常用语法

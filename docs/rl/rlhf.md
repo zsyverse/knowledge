@@ -1,4 +1,6 @@
 ---
+date: 2026-11-01
+description: RLHF 流程、奖励模型、DPO 与 GRPO 的公式与对比。
 tags:
   - 强化学习
   - 大模型

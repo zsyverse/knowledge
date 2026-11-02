@@ -1,4 +1,6 @@
 ---
+date: 2026-11-01
+description: MDP、回报、价值函数、优势函数与 Bellman 方程。
 tags:
   - 强化学习
 ---

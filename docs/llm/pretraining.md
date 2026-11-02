@@ -1,4 +1,6 @@
 ---
+date: 2026-11-01
+description: 下一个 token 预测目标、Scaling Law、并行策略与训练稳定性。
 tags:
   - 大模型
   - 训练

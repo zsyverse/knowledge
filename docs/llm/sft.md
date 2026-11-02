@@ -1,4 +1,6 @@
 ---
+date: 2026-11-01
+description: 只在 response 上算 loss 的监督微调，以及 LoRA 参数高效微调。
 tags:
   - 大模型
   - 训练

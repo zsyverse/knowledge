@@ -1,4 +1,6 @@
 ---
+date: 2026-11-01
+description: 自注意力公式、MHA/MQA/GQA 对比，以及现代 LLM 常见的结构改动。
 tags:
   - 大模型
   - 架构

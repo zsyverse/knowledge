@@ -1,4 +1,6 @@
 ---
+date: 2026-11-01
+description: 策略梯度定理、PPO-Clip 目标与 GAE 优势估计。
 tags:
   - 强化学习
   - 算法

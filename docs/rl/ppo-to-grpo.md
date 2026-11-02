@@ -1,12 +1,9 @@
 ---
 date: 2026-11-02
-slug: ppo-to-grpo
-authors:
-  - zsyverse
-categories:
+description: 大模型对齐的 RL 算法演进，主线是不断拿掉组件：从 PPO 的四个模型，到 DPO 去掉 RL，再到 GRPO 去掉 Critic。
+tags:
   - 强化学习
   - 大模型
-tags:
   - 对齐
   - 算法
 ---
@@ -15,8 +12,6 @@ tags:
 
 !!! abstract "TL;DR"
     大模型对齐的 RL 算法演进，主线是**不断拿掉组件**：PPO 需要 策略 + 参考模型 + 奖励模型 + Critic 四个模型；DPO 把奖励模型和在线采样都拿掉；GRPO 保留在线采样，但用组内相对奖励替代 Critic。拿掉什么、保留什么，决定了各自适用的场景。
-
-<!-- more -->
 
 ## 1. 起点：PPO-RLHF 为什么重
 
@@ -91,6 +86,6 @@ $$
       title  = {从 PPO 到 GRPO：大模型 RL 训练在简化什么},
       author = {zsyverse},
       year   = {2026},
-      url    = {https://zsyverse.github.io/knowledge/blog/2026/11/02/ppo-to-grpo/}
+      url    = {https://zsyverse.github.io/knowledge/rl/ppo-to-grpo/}
     }
     ```

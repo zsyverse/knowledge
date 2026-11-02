@@ -1,0 +1,7 @@
+# 列出的文件按此顺序排在前面，其余新文章由 "*" 自动追加
+nav:
+  - index.md
+  - transformer.md
+  - pretraining.md
+  - sft.md
+  - "*"

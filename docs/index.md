@@ -14,7 +14,7 @@ hide:
 
     ---
 
-    Transformer 架构、预训练、SFT、推理优化
+    Transformer、预训练、SFT 等笔记与长文
 
     [:octicons-arrow-right-24: 进入](llm/index.md)
 
@@ -22,17 +22,9 @@ hide:
 
     ---
 
-    MDP 与价值函数、策略梯度、PPO、RLHF / DPO / GRPO
+    MDP、策略梯度、PPO、RLHF / DPO / GRPO 等笔记与长文
 
     [:octicons-arrow-right-24: 进入](rl/index.md)
-
--   :material-post-outline:{ .lg .middle } **博客**
-
-    ---
-
-    长文：一篇讲透一个主题，带推导、对比和参考文献
-
-    [:octicons-arrow-right-24: 进入](blog/index.md)
 
 -   :material-file-document-multiple-outline:{ .lg .middle } **论文笔记**
 

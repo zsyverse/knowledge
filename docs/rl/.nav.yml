@@ -1,0 +1,6 @@
+nav:
+  - index.md
+  - basics.md
+  - ppo.md
+  - rlhf.md
+  - "*"

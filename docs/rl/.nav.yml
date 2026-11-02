@@ -3,4 +3,5 @@ nav:
   - basics.md
   - ppo.md
   - rlhf.md
-  - "*"
+  - glob: "*"
+    ignore_no_matches: true

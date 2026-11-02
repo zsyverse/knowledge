@@ -86,6 +86,6 @@ $$
       title  = {从 PPO 到 GRPO：大模型 RL 训练在简化什么},
       author = {zsyverse},
       year   = {2026},
-      url    = {https://zsyverse.github.io/knowledge/rl/ppo-to-grpo/}
+      url    = {https://zsyverse.github.io/knowledge/ai/rl/ppo-to-grpo/}
     }
     ```

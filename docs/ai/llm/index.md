@@ -1,4 +1,4 @@
-# 大模型
+# LLM / VLM
 
 ```mermaid
 graph LR

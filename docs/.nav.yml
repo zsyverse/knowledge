@@ -1,7 +1,8 @@
 nav:
   - 首页: index.md
-  - 大模型: llm
-  - 强化学习: rl
-  - 论文笔记: papers
+  - AI: ai
+  - 基础: basics
+  - 工程实践: engineering
+  - 论文精读: papers
+  - 随笔: essays
   - 标签: tags.md
-  - 写作指南: guide.md

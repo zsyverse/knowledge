@@ -14,7 +14,15 @@ hide:
 
     ---
 
-    [LLM/VLM](ai/llm/index.md) · [强化学习](ai/rl/index.md) · [Robot](ai/robot/index.md) · [AI4AI](ai/ai4ai/index.md)
+    [LLM/VLM](ai/llm/index.md) · [强化学习](ai/rl/index.md) · [Robot](ai/robot/index.md)
+
+-   :material-robot-industrial-outline:{ .lg .middle } **AI4AI**
+
+    ---
+
+    用 AI 做 AI 研究：AI Scientist、自动写代码/算子、AutoML、自动实验
+
+    [:octicons-arrow-right-24: 进入](ai4ai/index.md)
 
 -   :material-sigma:{ .lg .middle } **基础**
 

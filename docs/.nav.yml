@@ -1,6 +1,7 @@
 nav:
   - 首页: index.md
   - AI: ai
+  - AI4AI: ai4ai
   - 基础: basics
   - 工程实践: engineering
   - 前沿视野: frontier

@@ -17,7 +17,7 @@
 | LLM/VLM | `docs/ai/llm/` |
 | 强化学习 | `docs/ai/rl/` |
 | Robot | `docs/ai/robot/` |
-| AI4AI | `docs/ai/ai4ai/` |
+| AI4AI | `docs/ai4ai/` |
 | 数学基础 | `docs/basics/math/` |
 | 控制理论 | `docs/basics/control/` |
 | 工程实践 | `docs/engineering/` |

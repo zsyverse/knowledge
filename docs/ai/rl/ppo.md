@@ -22,7 +22,7 @@ $$
 L^{\text{CLIP}}(\theta) = \mathbb{E}_t\Big[\min\big(r_t(\theta)A_t,\ \mathrm{clip}(r_t(\theta), 1-\epsilon, 1+\epsilon)A_t\big)\Big]
 $$
 
-裁剪限制每次更新的步幅，是对 TRPO 信赖域约束的简单近似。
+这个比值就是[重要性采样](importance-sampling.md)的权重：数据由旧策略采集，用它修正到新策略。裁剪限制每次更新的步幅，是对 TRPO 信赖域约束的简单近似。
 
 ## GAE
 

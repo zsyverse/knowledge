@@ -14,7 +14,7 @@ hide:
 
     ---
 
-    [LLM/VLM](ai/llm/index.md) · [强化学习](ai/rl/index.md) · [Robot](ai/robot/index.md)
+    [LLM/VLM](ai/llm/index.md) · [强化学习](ai/rl/index.md) · [Robot](ai/robot/index.md) · [AI4AI](ai/ai4ai/index.md)
 
 -   :material-sigma:{ .lg .middle } **基础**
 

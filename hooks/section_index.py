@@ -59,7 +59,14 @@ def on_page_markdown(markdown, page, config, files):
         if n.endswith(".md") and n != "index.md"
     ]
     arts = [a for a in arts if a]
-    arts.sort(key=lambda a: (a["date"], a["title"]), reverse=True)
+    # 日期新的在前；同一天的按该目录 .nav.yml 中的顺序
+    order = {}
+    nav_file = os.path.join(folder, ".nav.yml")
+    if os.path.exists(nav_file):
+        names = re.findall(r"^\s*-\s*(?:[^:\n]+:\s*)?([\w./-]+\.md)\s*$", open(nav_file, encoding="utf-8").read(), re.M)
+        order = {n: i for i, n in enumerate(names)}
+    arts.sort(key=lambda a: (order.get(a["file"], len(order)), a["title"]))
+    arts.sort(key=lambda a: a["date"], reverse=True)
     if not arts:
         return markdown.replace(PLACEHOLDER, "*还没有文章。*")
     items = []

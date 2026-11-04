@@ -2,3 +2,5 @@
 .md-typeset h1 { font-weight: 700; }
 .md-typeset .grid.cards > ul > li { border-radius: .6rem; }
 .katex-display { overflow-x: auto; overflow-y: hidden; }
+.md-typeset img.circuit { display: block; margin: 1em auto; max-width: 520px; width: 100%; }
+[data-md-color-scheme="slate"] img.circuit { filter: invert(0.88) hue-rotate(180deg); }

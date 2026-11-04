@@ -28,7 +28,7 @@ hide:
 
     ---
 
-    [数学基础](basics/math/index.md) · [控制理论](basics/control/index.md)
+    [数学基础](basics/math/index.md) · [控制理论](basics/control/index.md) · [电路](basics/circuits/index.md)
 
 -   :material-hammer-wrench:{ .lg .middle } **工程实践**
 

@@ -20,6 +20,7 @@
 | AI4AI | `docs/ai4ai/` |
 | 数学基础 | `docs/basics/math/` |
 | 控制理论 | `docs/basics/control/` |
+| 电路 | `docs/basics/circuits/` |
 | 工程实践 | `docs/engineering/` |
 | 前沿视野 | `docs/frontier/` |
 | 科研体悟 | `docs/essays/research/` |

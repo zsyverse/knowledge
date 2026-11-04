@@ -131,3 +131,6 @@ tags:
 | VCR | $u=Ri$、$u=L\,\mathrm di/\mathrm dt$、$i=C\,\mathrm du/\mathrm dt$、电源、受控源 | 由元件决定 |
 
 下一篇：[等效变换](equivalent-transformation.md)。
+
+!!! tip "练习"
+    配套习题：[习题：基本概念与基尔霍夫定律](../exercises/ex-basics.md)

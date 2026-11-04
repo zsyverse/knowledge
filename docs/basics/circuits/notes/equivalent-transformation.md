@@ -161,3 +161,6 @@ $$
     含受控源时 $R_{in}$ 可能为负，表示该网络在向外**输出**功率。见 [电路定理](circuit-theorems.md) 中的例题。
 
 下一篇：[电路的一般分析方法](analysis-methods.md)。
+
+!!! tip "练习"
+    配套习题：[习题：电阻电路的等效变换](../exercises/ex-equivalent.md)

@@ -208,3 +208,6 @@ $$
       此时右支路整体呈容性（$\omega_p<\omega_s$），与 $L_1$ 的感纳相消。
 
 下一篇：[互感与理想变压器](coupled-inductors.md)。
+
+!!! tip "练习"
+    配套习题：[习题：正弦稳态功率与谐振](../exercises/ex-ac-power.md)

@@ -1,4 +1,14 @@
 nav:
   - index.md
+  - ex-basics.md
+  - ex-equivalent.md
+  - ex-analysis.md
+  - ex-theorems.md
+  - ex-phasor.md
+  - ex-ac-power.md
+  - ex-coupled.md
+  - ex-three-phase.md
+  - ex-nonsinusoidal.md
+  - ex-dynamic.md
   - glob: "*"
     ignore_no_matches: true

@@ -183,3 +183,6 @@ $$
 - $R=2\,\Omega$：$s=-1\pm j\sqrt3$，$u_C=e^{-t}\Big(\cos\sqrt3t+\dfrac{1}{\sqrt3}\sin\sqrt3t\Big)$。
 
 下一篇：[题型与解题套路](problem-patterns.md)。
+
+!!! tip "练习"
+    配套习题：[习题：动态电路的时域分析](../exercises/ex-dynamic.md)

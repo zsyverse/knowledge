@@ -182,3 +182,6 @@ flowchart TD
     截止要求 $u_D=V_a-V_x\le0$，所以 **$V_a\le-11\,\mathrm V$ 时截止**（取等号时电压、电流都为零，是临界状态）。
 
 下一篇：[电路定理](circuit-theorems.md)。
+
+!!! tip "练习"
+    配套习题：[习题：电路的一般分析方法](../exercises/ex-analysis.md)

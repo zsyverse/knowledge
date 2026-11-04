@@ -149,3 +149,6 @@ flowchart LR
         若题目只给 $U_{CD}=U_R$ 而**没有** $U_R+U_{CD}=U_S$ 这类信息，就不能断定两者同相，也就不能直接得出"两阻抗相等"——复阻抗模相等不代表复阻抗相等。
 
 下一篇：[动态电路的时域分析](dynamic-circuits.md)。
+
+!!! tip "练习"
+    配套习题：[习题：非正弦周期电路与频率响应](../exercises/ex-nonsinusoidal.md)

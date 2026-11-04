@@ -168,3 +168,6 @@ flowchart LR
 ```
 
 下一篇：[正弦稳态功率与谐振](ac-power-resonance.md)。
+
+!!! tip "练习"
+    配套习题：[习题：正弦稳态与相量法](../exercises/ex-phasor.md)

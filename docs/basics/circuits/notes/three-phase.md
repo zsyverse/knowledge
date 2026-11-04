@@ -164,3 +164,6 @@ $$
     合计 $23104\,\mathrm W=2\times38^2\times8$ ✓。负载已不对称，不能再用 $I_l=\sqrt3I_p$ 或 $Q=\sqrt3(W_2-W_1)$。
 
 下一篇：[非正弦周期电路与频率响应](nonsinusoidal.md)。
+
+!!! tip "练习"
+    配套习题：[习题：三相电路](../exercises/ex-three-phase.md)

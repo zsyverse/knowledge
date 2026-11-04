@@ -1,0 +1,12 @@
+nav:
+  - index.md
+  - opamp.md
+  - two-port.md
+  - laplace.md
+  - second-order.md
+  - matrix-state.md
+  - tellegen-duality.md
+  - nonlinear.md
+  - transmission-line.md
+  - glob: "*"
+    ignore_no_matches: true

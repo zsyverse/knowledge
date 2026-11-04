@@ -43,4 +43,12 @@ graph LR
 
     [:octicons-arrow-right-24: 进入](exercises/index.md)
 
+-   :material-puzzle-plus-outline:{ .lg .middle } **拓展补充**
+
+    ---
+
+    8 篇：运放、二端口、运算法、二阶与卷积、矩阵与状态方程等，含练习
+
+    [:octicons-arrow-right-24: 进入](extras/index.md)
+
 </div>

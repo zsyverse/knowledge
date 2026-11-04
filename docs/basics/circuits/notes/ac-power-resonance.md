@@ -65,7 +65,7 @@ $$
 $$
 
 ??? example "例：逐支路复功率"
-    ![复功率例题](images/ac-5-21.svg){ .circuit }
+    ![复功率例题](../images/ac-5-21.svg){ .circuit }
 
     求各支路吸收的复功率及电源发出的复功率。
 
@@ -106,7 +106,7 @@ $$
 $\varphi_1$、$\varphi_2$ 分别为补偿前、后的功率因数角。一般补偿到略滞后（欠补偿），所需电容最小；补偿过头（过补偿）变成容性，不经济。
 
 ??? example "例：并联电容使总电流降到 11 A"
-    ![功率因数补偿电路](images/pf-correction.svg){ .circuit }
+    ![功率因数补偿电路](../images/pf-correction.svg){ .circuit }
 
     $U_S=100\,\mathrm V$，$f=50\,\mathrm{Hz}$。感性负载 $Z_1$ 电流 $10\,\mathrm A$、功率因数 $0.5$（滞后），与 $R=20\,\Omega$ 并联。求电源的 $P$、总电流、总功率因数；再并联电容使总电流降为 $11\,\mathrm A$，求最小电容。
 
@@ -126,7 +126,7 @@ $\varphi_1$、$\varphi_2$ 分别为补偿前、后的功率因数角。一般补
 
     （若过补偿到容性，$I_C=5\sqrt3+\sqrt{21}\approx13.24\,\mathrm A$，$C\approx421.5\,\mu\mathrm F$，同样得到 $11\,\mathrm A$，但电容大得多。）
 
-    ![功率三角形](images/power-triangle.svg){ .circuit }
+    ![功率三角形](../images/power-triangle.svg){ .circuit }
 
 ## 4. 交流最大功率传输
 
@@ -155,7 +155,7 @@ $$
 
 ### 串联谐振（RLC 串联）
 
-![串联 RLC](images/series-rlc.svg){ .circuit }
+![串联 RLC](../images/series-rlc.svg){ .circuit }
 
 $$
 Z=R+j\Big(\omega L-\frac{1}{\omega C}\Big),\qquad \omega_0=\frac{1}{\sqrt{LC}},\quad f_0=\frac{1}{2\pi\sqrt{LC}}
@@ -166,7 +166,7 @@ $$
 - 品质因数 $Q=\dfrac{\omega_0L}{R}=\dfrac{1}{\omega_0CR}=\dfrac1R\sqrt{\dfrac LC}$；通频带 $\Delta\omega=\dfrac{\omega_0}{Q}=\dfrac RL$；
 - $\omega<\omega_0$ 容性，$\omega>\omega_0$ 感性。
 
-![谐振曲线](images/resonance-curve.svg){ .circuit }
+![谐振曲线](../images/resonance-curve.svg){ .circuit }
 
 ??? example "例：串联谐振的频率、电流与元件电压"
     $U=5\,\mathrm{mV}$，$R=40\,\Omega$，$L=0.5\,\mathrm H$，$C=100\,\mu\mathrm F$。
@@ -195,7 +195,7 @@ $$
     先写端口 $Z_{in}$ 或 $Y_{in}$，令其虚部为零（或令 $Z_{in}=0$ 得"串联谐振 / 端口短路"，令 $Y_{in}=0$ 得"并联谐振 / 端口开路"）。某一条子支路谐振不等于整个端口谐振。
 
 ??? example "例：同一端口的两种谐振"
-    ![多支路谐振](images/resonance-5-27.svg){ .circuit }
+    ![多支路谐振](../images/resonance-5-27.svg){ .circuit }
 
     元件无损，求端口的串联谐振与并联谐振角频率。
 

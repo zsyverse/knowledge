@@ -69,7 +69,7 @@ $$
 
 === "网孔法"
 
-    ![网孔法例题](images/mesh-example.svg){ .circuit }
+    ![网孔法例题](../images/mesh-example.svg){ .circuit }
 
     两网孔均取顺时针。网孔 2 沿顺时针向下经过 $4\,\mathrm V$ 电源，是从 $+$ 到 $-$，电压升为 $-4\,\mathrm V$。
 
@@ -94,7 +94,7 @@ $$
     $I_{R_3}=6/4=1.5\,\mathrm A$，$I_1=(10-6)/2=2\,\mathrm A$，$I_2=(6-4)/4=0.5\,\mathrm A$，与网孔法一致。
 
 ??? example "例：含 CCVS 的节点法"
-    ![含受控源的节点法](images/node-ccvs.svg){ .circuit }
+    ![含受控源的节点法](../images/node-ccvs.svg){ .circuit }
 
     $U_1$ 为 $1\,\Omega$ 电阻左端减右端的电压，受控电压源 $3U_1$ 上正下负接在节点 $B$ 与地之间。求 $I_1\sim I_4$。
 
@@ -110,7 +110,7 @@ $$
     4. **功率校验**：电阻吸收 $2^2\!\times\!1+1^2\!\times\!8+1^2\!\times\!2+2^2\!\times\!3=26\,\mathrm W$；$10\,\mathrm V$ 源发出 $10\times2=20\,\mathrm W$，受控源发出 $6\times1=6\,\mathrm W$。$20+6=26$ ✓
 
 ??? example "例：超节点"
-    ![超节点](images/supernode.svg){ .circuit }
+    ![超节点](../images/supernode.svg){ .circuit }
 
     $10\,\mathrm V$ 电压源跨在 $a$、$b$ 之间（$a$ 正），两端都不接地。把 $a$、$b$ 和电压源圈成超节点：
 
@@ -156,7 +156,7 @@ flowchart TD
 步骤：假设一种状态 → 替换成线性电路求解 → 检查条件；不满足就换另一种状态重算。理想模型**不加 0.7 V 压降**。
 
 ??? example "例：二极管导通判断与截止范围"
-    ![二极管电路](images/diode-example.svg){ .circuit }
+    ![二极管电路](../images/diode-example.svg){ .circuit }
 
     各端电位均对同一参考点。$3.5\,\mathrm{mA}$ 电流源从 $+10\,\mathrm V$ 端注入节点 $b$。（1）$V_a=-4\,\mathrm V$ 时求 $I_D$ 与 $V_b$；（2）$V_a$ 在什么范围内二极管截止？（以下电阻用 $\mathrm{k\Omega}$、电流用 $\mathrm{mA}$。）
 

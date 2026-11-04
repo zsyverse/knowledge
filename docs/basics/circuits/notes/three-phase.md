@@ -18,7 +18,7 @@ $$
 \dot U_A=U_p\angle0^\circ,\qquad \dot U_B=U_p\angle(-120^\circ),\qquad \dot U_C=U_p\angle120^\circ,\qquad \dot U_A+\dot U_B+\dot U_C=0 .
 $$
 
-![三相相量图](images/three-phase-phasors.svg){ .circuit }
+![三相相量图](../images/three-phase-phasors.svg){ .circuit }
 
 **线电压**是两条端线之间的电压。Y 形联结时：
 
@@ -42,7 +42,7 @@ $$
 
 对称 Y–Y 电路中，负载中点 $N'$ 与电源中点 $N$ 等电位（$\dot U_{N'N}=0$），中线有无、阻抗大小都不影响结果，于是可以把 $N'$、$N$ 短接，取出一相：
 
-![单相等效电路](images/single-phase-equiv.svg){ .circuit }
+![单相等效电路](../images/single-phase-equiv.svg){ .circuit }
 
 $$
 \dot I_A=\frac{\dot U_A}{Z_l+Z_Y},\qquad \dot I_B=\dot I_A\angle(-120^\circ),\qquad \dot I_C=\dot I_A\angle120^\circ

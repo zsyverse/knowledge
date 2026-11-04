@@ -20,7 +20,7 @@ $$
 
 $A_0$ 为直流分量，$k=1$ 为基波，$k\ge2$ 为高次谐波。
 
-![谐波合成](images/harmonic-synthesis.svg){ .circuit }
+![谐波合成](../images/harmonic-synthesis.svg){ .circuit }
 
 | 波形对称性 | 含有的分量 |
 | --- | --- |
@@ -123,7 +123,7 @@ flowchart LR
 **用谐振"挑"频率**：理想 LC 串联支路在 $\omega_0=1/\sqrt{LC}$ 时阻抗为零（相当于短路，可滤除该频率）；理想 LC 并联在同一频率时导纳为零（相当于开路，可阻断该频率）。
 
 ??? example "例：由三个频率的现象反推元件"
-    ![频率响应例题](images/freq-response-6-11.svg){ .circuit }
+    ![频率响应例题](../images/freq-response-6-11.svg){ .circuit }
 
     $C=0.25\,\mathrm F$，$u_S=10+20\sqrt2\sin2t+10\sqrt2\sin4t\ \mathrm V$。已知：$\omega=2\,\mathrm{rad/s}$ 时 $U_{CD}=U_R=U_S/2$（两个 $R$ 阻值相同，$U_R$ 指串联电阻上的电压）；$\omega=4\,\mathrm{rad/s}$ 时 $U_{CD}=0$；电源输入总功率 $40\,\mathrm W$。求 $L_1$、$L_2$、$R$。
 

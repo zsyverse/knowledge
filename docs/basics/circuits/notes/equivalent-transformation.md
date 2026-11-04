@@ -49,7 +49,7 @@ $$
 
 当网络既不是串联也不是并联（典型是不平衡电桥）时，把三端的星形（Y）与三角形（Δ）互换。
 
-![Y 形与 Δ 形](images/y-delta.svg){ .circuit }
+![Y 形与 Δ 形](../images/y-delta.svg){ .circuit }
 
 === "Δ → Y"
 
@@ -77,7 +77,7 @@ $$
     例如三个 $6\,\Omega$ 组成的 Δ 等效为每臂 $2\,\Omega$ 的 Y，任意两端之间都是 $4\,\Omega$。
 
 ??? example "例：开关通断时的等效电阻"
-    ![桥形电路与开关](images/bridge-switch.svg){ .circuit }
+    ![桥形电路与开关](../images/bridge-switch.svg){ .circuit }
 
     求 $S$ 闭合与断开时 $R_{ab}$。四个桥臂 $10,10,20,60\,\Omega$ 不满足 $10\times60=10\times20$，**不平衡**。
 
@@ -117,7 +117,7 @@ $$
 
 ### 实际电源模型互换
 
-![电压源串电阻与电流源并电阻互换](images/source-transform.svg){ .circuit }
+![电压源串电阻与电流源并电阻互换](../images/source-transform.svg){ .circuit }
 
 $$
 U_s \text{ 串 } R\quad\Longleftrightarrow\quad I_s=\frac{U_s}{R}\ \text{并}\ R
@@ -126,7 +126,7 @@ $$
 方向：**电流源箭头指向电压源的 $+$ 端**。两种模型的端口开路电压都是 $U_s$，短路电流都是 $U_s/R$。理想电压源（$R=0$）与理想电流源（$R=\infty$）之间**不能**互换。
 
 ??? example "例：化为最简形式"
-    ![含源二端网络](images/source-simplify.svg){ .circuit }
+    ![含源二端网络](../images/source-simplify.svg){ .circuit }
 
     1. $10\,\mathrm V$ 串 $5\,\Omega$ → $2\,\mathrm A$（指向 $a$）并 $5\,\Omega$；
     2. 与 $6\,\mathrm A$（同样指向 $a$）的电流源并联：$2+6=8\,\mathrm A$ 并 $5\,\Omega$；
@@ -143,7 +143,7 @@ R_{in}=\frac{u}{i}\qquad(\text{端口外加 } u\text{，求流入的 } i\text{�
 $$
 
 ??? example "例：含 CCVS 的输入电阻"
-    ![含 CCVS 的二端网络](images/input-resistance.svg){ .circuit }
+    ![含 CCVS 的二端网络](../images/input-resistance.svg){ .circuit }
 
     端口加电压 $u$。$6\,\Omega$ 上 $i_1=\dfrac u6$；右支路 $3\,\Omega$ 与受控源串联，向下电流
 

@@ -19,7 +19,7 @@ tags:
 
 同一元件上，**电流从电压的 $+$ 端流入**称为**关联参考方向**，否则为非关联。
 
-![关联与非关联参考方向](images/ref-direction.svg){ .circuit }
+![关联与非关联参考方向](../images/ref-direction.svg){ .circuit }
 
 | 参考方向 | 元件**吸收**的功率 | 判断 |
 | --- | --- | --- |
@@ -61,7 +61,7 @@ tags:
     电压源的电流由外电路决定，可以从 $+$ 端流入——此时它在**吸收**功率（例如给电池充电）。判断依据仍是第 1 节的表，而不是"它是电源"。
 
 ??? example "例：串联回路中两个电源的功率"
-    ![功率例题](images/power-example.svg){ .circuit }
+    ![功率例题](../images/power-example.svg){ .circuit }
 
     串联回路中电流处处相同，由电流源决定：$I=2\,\mathrm A$（顺时针）。
 
@@ -104,7 +104,7 @@ tags:
 - 短路（理想导线）两端电位相等；开路只保证电流为零，**两端电压不一定为零**。
 
 ??? example "例：开关通断时的电位"
-    ![电位例题](images/potential-example.svg){ .circuit }
+    ![电位例题](../images/potential-example.svg){ .circuit }
 
     图中 $+12\,\mathrm V$、$-12\,\mathrm V$ 是两个端点对地的电位，开关 $S$ 把节点 $C$ 接地。求 $S$ 断开和闭合时 $V_A$。
 

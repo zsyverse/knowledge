@@ -23,6 +23,24 @@ graph LR
     G & H & I & J --> K[题型与解题套路]
 ```
 
-## 全部文章
+## 目录
 
-<!-- articles -->
+<div class="grid cards" markdown>
+
+-   :material-book-open-variant:{ .lg .middle } **知识点**
+
+    ---
+
+    11 篇，从 KCL/KVL 到动态电路，含例题
+
+    [:octicons-arrow-right-24: 进入](notes/index.md)
+
+-   :material-pencil-box-multiple-outline:{ .lg .middle } **习题**
+
+    ---
+
+    按章节配套的练习题，附答案与详细解析
+
+    [:octicons-arrow-right-24: 进入](exercises/index.md)
+
+</div>

@@ -29,7 +29,7 @@ tags:
     $p=R(i'+i'')^2=Ri'^2+Ri''^2+2Ri'i''$，交叉项一般不为零。正确做法：**先叠加电流/电压，再算功率**。叠加定理也只适用于线性电路——含二极管时要先确定其工作状态。
 
 ??? example "例：叠加定理"
-    ![叠加定理例题](images/superposition.svg){ .circuit }
+    ![叠加定理例题](../images/superposition.svg){ .circuit }
 
     求 $R_2$ 中的电流 $i$。
 
@@ -71,7 +71,7 @@ tags:
 
 ## 3. 戴维南定理与诺顿定理
 
-![戴维南与诺顿等效](images/thevenin-norton.svg){ .circuit }
+![戴维南与诺顿等效](../images/thevenin-norton.svg){ .circuit }
 
 任何线性含源二端网络 $N$，对外电路可等效为：
 
@@ -118,13 +118,13 @@ $$
 P_{\max}=\frac{U_{oc}^2}{4R_{eq}}\qquad(R_{eq}>0)
 $$
 
-![最大功率曲线](images/max-power-curve.svg){ .circuit }
+![最大功率曲线](../images/max-power-curve.svg){ .circuit }
 
 !!! note "匹配不等于高效率"
     匹配时负载功率最大，但 $R_{eq}$ 上消耗同样多，**传输效率只有 50%**（这里指戴维南等效电路中的效率；原网络内部的实际损耗另算）。电力系统追求效率，不工作在匹配状态；通信电路追求信号功率，常工作在匹配状态。
 
 ??? example "例：负载功率、电流、电压分别何时最大"
-    ![戴维南例题](images/thevenin-example.svg){ .circuit }
+    ![戴维南例题](../images/thevenin-example.svg){ .circuit }
 
     $R\ge0$ 可调。分别求使 $R$ 的功率、电流、电压最大的 $R$ 及最大值。
 
@@ -149,7 +149,7 @@ $$
     | 电压最大 | $U=\dfrac{8R}{R+10}$，单调增 | $R\to\infty$（开路），$U\to8\,\mathrm V$ |
 
 ??? example "例：含受控源，等效电阻为负"
-    ![含 VCCS 的网络](images/negative-resistance.svg){ .circuit }
+    ![含 VCCS 的网络](../images/negative-resistance.svg){ .circuit }
 
     $U_2$ 为 $2\,\Omega$ 电阻上的电压（上正下负），受控电流源 $gU_2$ 由 $b$ 流向 $a$，$g=1\,\mathrm S$。求 $a$、$b$ 端的戴维南等效电路。（以 $b$ 为参考点，$x$ 点电位 $V=U_2$，端口电压 $U=U_{ab}$。）
 

@@ -112,7 +112,7 @@ $$
 - 混联从最内层并联部分的电压开始。
 
 ??? example "例：由相量几何反求参数"
-    ![相量几何例题](images/ac-5-22.svg){ .circuit }
+    ![相量几何例题](../images/ac-5-22.svg){ .circuit }
 
     已知 $R_1=R_2=R_3$，三个电流有效值相等 $I_1=I_2=I_3$，电源电压 $U=3\,\mathrm V$，电源输入有功功率 $3\,\mathrm W$。求 $R_1$、$X_2$、$X_3$。
 
@@ -122,7 +122,7 @@ $$
     2I_2\cos\theta=I_1=I_2\quad\Rightarrow\quad\theta=60^\circ .
     $$
 
-    ![相量图](images/phasor-5-22.svg){ .circuit }
+    ![相量图](../images/phasor-5-22.svg){ .circuit }
 
     **2. 功率定尺度**。$\dot I_1$ 与 $\dot U_{ab}$ 同相，$R_1$ 上电压也与之同相，所以电源电压与 $\dot I_1$ 同相，$P=UI_1$：
 
@@ -135,7 +135,7 @@ $$
     **校验**：$|Z_2|=\sqrt{1+3}=2\,\Omega$，$U_{ab}=2\times1=2\,\mathrm V$，$U=U_{R_1}+U_{ab}=1+2=3\,\mathrm V$（同相直接相加）✓
 
 ??? example "例：剥离串联部分，反求并联支路"
-    ![阻抗反求例题](images/ac-5-16.svg){ .circuit }
+    ![阻抗反求例题](../images/ac-5-16.svg){ .circuit }
 
     $f=50\,\mathrm{Hz}$，$u=100\sin\omega t\,\mathrm V$，$i=5\sqrt2\sin(\omega t+45^\circ)\,\mathrm A$（关联方向）。求 $R$ 与 $X_C$。
 

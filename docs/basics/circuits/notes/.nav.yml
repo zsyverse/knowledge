@@ -1,0 +1,15 @@
+nav:
+  - index.md
+  - basics.md
+  - equivalent-transformation.md
+  - analysis-methods.md
+  - circuit-theorems.md
+  - phasor-method.md
+  - ac-power-resonance.md
+  - coupled-inductors.md
+  - three-phase.md
+  - nonsinusoidal.md
+  - dynamic-circuits.md
+  - problem-patterns.md
+  - glob: "*"
+    ignore_no_matches: true

@@ -47,7 +47,7 @@ $$
 | 零状态响应 | 初始储能为零，靠外加激励 | $u_C=U_{oc}\big(1-e^{-t/\tau}\big)$ |
 | 全响应 | 两者都有 | 零输入 + 零状态 = 稳态分量 + 暂态分量 |
 
-![一阶响应曲线](images/first-order-curves.svg){ .circuit }
+![一阶响应曲线](../images/first-order-curves.svg){ .circuit }
 
 **时间常数**：$\tau=R_{eq}C$（RC），$\tau=\dfrac{L}{R_{eq}}$（RL），单位秒。经过 $\tau$ 暂态分量衰减到初值的 $36.8\%$；工程上认为 $3\tau\sim5\tau$ 后过渡过程结束（剩 $5\%\sim0.7\%$）。
 
@@ -68,7 +68,7 @@ flowchart TD
 三要素法适用于**直流激励下的一阶线性电路**，对电路中任何电压、电流都成立（同一电路中所有量的 $\tau$ 相同）。
 
 ??? example "例：开关闭合后的 RC 电路"
-    ![RC 例题](images/rc-example.svg){ .circuit }
+    ![RC 例题](../images/rc-example.svg){ .circuit }
 
     换路前电路已稳定，$t=0$ 时 $S$ 闭合。求 $u_C(t)$、$u(t)$。
 
@@ -82,7 +82,7 @@ flowchart TD
     $$
 
 ??? example "例：开关断开后的 RL 电路"
-    ![RL 例题](images/rl-example.svg){ .circuit }
+    ![RL 例题](../images/rl-example.svg){ .circuit }
 
     换路前已稳定，$t=0$ 时 $S$ 断开。求 $i_L(t)$、$u_L(t)$。
 
@@ -98,7 +98,7 @@ flowchart TD
     （$u_L$ 也可直接用三要素：$0+(2-0)e^{-5t}$，结果相同。注意 $R_1$ 中的电流从 $3\,\mathrm A$ 跳变为 $2\,\mathrm A$。）
 
 ??? example "例：含受控源的一阶电路"
-    ![含 CCCS 的 RC 电路](images/rc-controlled.svg){ .circuit }
+    ![含 CCCS 的 RC 电路](../images/rc-controlled.svg){ .circuit }
 
     $u_C(0_-)=0$，$t=0$ 时 $S$ 闭合，受控电流源 $0.5i_1$ 注入节点 $a$。求 $u_C(t)$。
 
@@ -139,7 +139,7 @@ flowchart TD
 | 换路后出现**只由电感（和理想电流源）组成的割集** | 两个电流不同的电感直接串联 | **磁链守恒** $\sum\Psi(0_+)=\sum\Psi(0_-)$ + KCL |
 
 ??? example "例：两个电容突然并联"
-    ![电容电压跳变](images/cap-jump.svg){ .circuit }
+    ![电容电压跳变](../images/cap-jump.svg){ .circuit }
 
     $u_1(0_-)=6\,\mathrm V$，$u_2(0_-)=0$，$t=0$ 时 $S$ 闭合。闭合后 $u_1=u_2$，若用换路定则会得到矛盾（$6\ne0$）。
 
@@ -176,7 +176,7 @@ $$
 
 下图取 $L=1\,\mathrm H$、$C=0.25\,\mathrm F$（临界电阻 $2\sqrt{L/C}=4\,\Omega$），$u_C(0)=1\,\mathrm V$、$i(0)=0$：
 
-![二阶电路三种阻尼](images/second-order-cases.svg){ .circuit }
+![二阶电路三种阻尼](../images/second-order-cases.svg){ .circuit }
 
 - $R=5\,\Omega$：$s=-1,-4$，$u_C=\tfrac43e^{-t}-\tfrac13e^{-4t}$；
 - $R=4\,\Omega$：$s=-2$（二重），$u_C=(1+2t)e^{-2t}$；

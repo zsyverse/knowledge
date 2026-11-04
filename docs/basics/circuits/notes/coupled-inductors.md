@@ -20,7 +20,7 @@ $$
 
 **同名端**（用"$\bullet$"标记）：两个线圈的电流分别从同名端流入时，它们产生的磁通相互加强。
 
-![耦合电感](images/coupled-dots.svg){ .circuit }
+![耦合电感](../images/coupled-dots.svg){ .circuit }
 
 按图中方向（$i_1$、$i_2$ 都从同名端流入，$u_1$、$u_2$ 都以同名端为 $+$，各自关联）：
 
@@ -58,7 +58,7 @@ $$
 
 ### T 形去耦（两线圈有公共端）
 
-![T 形去耦等效](images/t-decoupling.svg){ .circuit }
+![T 形去耦等效](../images/t-decoupling.svg){ .circuit }
 
 | 两线圈在公共节点处 | 端子 1 一侧的臂 | 端子 2 一侧的臂 | 通向端子 3 的臂 |
 | --- | --- | --- | --- |
@@ -83,7 +83,7 @@ $$
     （直接按耦合方程联立求解得到同样结果；若改为异名端相连，则 $Z_{in}=2-j22\,\Omega$，差别很大——同名端一错，全题皆错。）
 
 ??? example "例：两条并联支路之间的互感"
-    ![并联支路互感](images/coupled-5-35.svg){ .circuit }
+    ![并联支路互感](../images/coupled-5-35.svg){ .circuit }
 
     $u=100\sqrt2\sin1000t\,\mathrm V$，$L_1=5\,\mathrm{mH}$，$L_2=13\,\mathrm{mH}$，$M=3\,\mathrm{mH}$。$L_1$ 同名端在上、$L_2$ 同名端在下，两支路电流均向下。求两支路各自吸收的有功功率。
 
@@ -137,7 +137,7 @@ $$
 Z_{in}=n^2Z_L
 $$
 
-![理想变压器阻抗匹配](images/ideal-transformer.svg){ .circuit }
+![理想变压器阻抗匹配](../images/ideal-transformer.svg){ .circuit }
 
 ??? example "例：用变压器做阻抗匹配"
     内阻 $270\,\Omega$ 的信号源要向 $30\,\Omega$ 负载输出最大功率，求变比 $n$。
@@ -145,7 +145,7 @@ $$
     折算到一次侧的负载应等于电源内阻：$n^2\times30=270\Rightarrow n=3$，此时负载获得 $P_{\max}=\dfrac{U_S^2}{4\times270}$。
 
 !!! warning "两绕组有公共端时，不能直接套 $n^2Z_L$"
-    ![公共端接法](images/transformer-5-42.svg){ .circuit }
+    ![公共端接法](../images/transformer-5-42.svg){ .circuit }
 
     上图两绕组下端相连于 $o$，端口取在两个同名端 $a$、$b$ 之间，$R$ 接在 $a$–$o$。设 $n=N_1/N_2$：
 

@@ -50,11 +50,15 @@ tags:
     U_a'=12\times\frac{2}{6+2}=3\,\mathrm V,\qquad I'=\frac{3}{3}=1\,\mathrm A .
     $$
 
+    ![12 V 单独作用（3 A 开路）](../images/ex/sol/t-super-1.svg){ .circuit }
+
     **$3\,\mathrm A$ 单独作用**（$12\,\mathrm V$ 短路）：从 $b$ 看，$4\,\Omega$ 与"$2\,\Omega$ 串 $(6\parallel3)=2\,\Omega$"即 $4\,\Omega$ 并联，电流各半，$1.5\,\mathrm A$ 流向 $a$；再在 $6\,\Omega$、$3\,\Omega$ 间分流：
 
     $$
     I''=1.5\times\frac{6}{6+3}=1\,\mathrm A .
     $$
+
+    ![3 A 单独作用（12 V 短路）](../images/ex/sol/t-super-2.svg){ .circuit }
 
     **叠加**：$I=I'+I''=2\,\mathrm A$，$P=3\times2^2=12\,\mathrm W$。若把功率相加，$3\times1^2+3\times1^2=6\,\mathrm W$，漏掉了交叉项 $2RI'I''=6\,\mathrm W$。
 
@@ -76,11 +80,15 @@ tags:
     U'=4i'+2i'=6i',\qquad 10=2i'+6i'\ \Rightarrow\ i'=1.25\,\mathrm A,\ U'=7.5\,\mathrm V .
     $$
 
+    ![10 V 单独作用（3 A 开路，受控源保留）](../images/ex/sol/t-super-ccvs-1.svg){ .circuit }
+
     **$3\,\mathrm A$ 单独作用**（$10\,\mathrm V$ 短路）：$i''=\dfrac{0-U''}{2}$，竖支路向下的电流为 $i''+3$，
 
     $$
     U''=4(i''+3)+2i''=6i''+12,\qquad U''=-2i''\ \Rightarrow\ i''=-1.5\,\mathrm A,\ U''=3\,\mathrm V .
     $$
+
+    ![3 A 单独作用（10 V 短路，受控源保留）](../images/ex/sol/t-super-ccvs-2.svg){ .circuit }
 
     **叠加**：$U=7.5+3=10.5\,\mathrm V$，$i=1.25-1.5=-0.25\,\mathrm A$。
 
@@ -137,9 +145,15 @@ tags:
     \frac{V_c-24}{4}+\frac{V_c}{12}=2\ \Rightarrow\ V_c=24\,\mathrm V,\qquad U_{oc}=V_c+6\times2=36\,\mathrm V .
     $$
 
+    ![求开路电压：移去 R_L](../images/ex/sol/t-thevenin-uoc.svg){ .circuit }
+
     **等效电阻**：电压源短路、电流源开路，$R_{eq}=6+4\parallel12=6+3=9\,\Omega$。
 
+    ![求 R_eq：独立源置零](../images/ex/sol/t-thevenin-req.svg){ .circuit }
+
     **接负载**：$I=\dfrac{36}{9+3}=3\,\mathrm A$；最大功率 $R_L=R_{eq}=9\,\Omega$，$P_{\max}=\dfrac{36^2}{4\times9}=36\,\mathrm W$。
+
+    ![戴维南等效电路接 R_L](../images/ex/sol/t-thevenin-eq.svg){ .circuit }
 
 ### 6. 诺顿等效 :material-star::material-star::material-star-outline:
 
@@ -158,6 +172,8 @@ tags:
     $$
 
     $2\,\Omega$ 中流向 $a$ 的电流 $6/2=3\,\mathrm A$，其中 $1\,\mathrm A$ 被电流源从 $a$ 拉到 $b$，其余经短路线：$I_{sc}=3-1=2\,\mathrm A$。
+
+    ![求短路电流：a、b 短接](../images/ex/sol/t-norton-isc.svg){ .circuit }
 
     **等效电阻**：$R_{eq}=2+3\parallel6=4\,\Omega$。
 
@@ -187,7 +203,11 @@ tags:
     I_{sc}=i_1-\frac{V_c}{4}=6+3=9\,\mathrm A,\qquad R_{eq}=\frac{U_{oc}}{I_{sc}}=1\,\Omega .
     $$
 
+    ![求短路电流：a、b 短接](../images/ex/sol/t-ccvs-isc.svg){ .circuit }
+
     **校验**（外加电源法）：$12\,\mathrm V$ 短路，端口加 $u$、流入 $a$ 的电流为 $i$。$i_1=-\dfrac{V_c}{4}$，$V_c=u-2i_1=u+\dfrac{V_c}{2}\Rightarrow V_c=2u$，$i_1=-\dfrac u2$；节点 $c$：$i+i_1=\dfrac{V_c}{4}\Rightarrow i=u$，$R_{eq}=1\,\Omega$ ✓
+
+    ![外加电源法：12 V 短路，端口加 u](../images/ex/sol/t-ccvs-test.svg){ .circuit }
 
     **最大功率**：$R_L=1\,\Omega$，$P_{\max}=\dfrac{9^2}{4\times1}=20.25\,\mathrm W$。
 
@@ -215,6 +235,8 @@ tags:
         $$
         I_{sc}=8-5=3\,\mathrm A .
         $$
+
+        ![S 闭合时各电流](../images/ex/sol/t-436-closed.svg){ .circuit }
 
     3. $R_{eq}=\dfrac{U_{oc}}{I_{sc}}=\dfrac{20/3}{3}=\dfrac{20}{9}\,\Omega$。
 

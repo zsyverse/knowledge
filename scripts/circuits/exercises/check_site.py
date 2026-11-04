@@ -1,4 +1,4 @@
-"""构建后检查习题页：公式外不应残留 $，所有 <img> 的 src 都应存在。
+"""构建后检查习题页：公式外不应残留 $，所有 <img> 的 src 都应存在，列表项没有被打乱。
 
     NO_MKDOCS_2_WARNING=1 .venv/bin/mkdocs build && .venv/bin/python scripts/circuits/exercises/check_site.py [SITE_DIR]
 """
@@ -23,6 +23,9 @@ for page in sorted(SITE.glob("*/index.html")) + [SITE / "index.html"]:
             continue
         if not (page.parent / src).resolve().exists():
             print(f"[missing img] {page.parent.name}: {src}"); bad += 1
+    # Python-Markdown 的坑：列表项"文字 + 紧跟的子列表"后面再接段落/图片时，文字会被挪到子列表之后
+    for _ in re.findall(r'<li>\s*<(?:ul|ol)>', main):
+        print(f"[list reordered] {page.parent.name}"); bad += 1
     n = len(re.findall(r'<details class="success"', main))
     m = len(re.findall(r'<details class="note"', main))
     print(f"{page.parent.name:24s} answers={n} solutions={m}")

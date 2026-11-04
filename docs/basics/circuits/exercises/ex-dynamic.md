@@ -50,10 +50,14 @@ tags:
         i(0_-)=\frac{24}{1+5}=4\,\mathrm A,\qquad u_C(0_-)=5\times4=20\,\mathrm V .
         $$
 
+        ![0₋ 电路：电感短路、电容开路](../images/ex/sol/d-73-0m.svg){ .circuit }
+
     2. **换路定则**：$i(0_+)=4\,\mathrm A$，$u_C(0_+)=20\,\mathrm V$。
     3. **$0_+$ 等效电路**：电感换成 $4\,\mathrm A$ 电流源、电容换成 $20\,\mathrm V$ 电压源，开关动端经触点 2 接到下边线（电位 $0$）。
         - $u_L$ 左正右负：$u_L(0_+)=0-u_C(0_+)=-20\,\mathrm V$；
         - $R_2$ 中电流 $20/5=4\,\mathrm A$，$i_C(0_+)=i(0_+)-4=0$。
+
+    ![0₊ 等效电路：电感→4 A 电流源，电容→20 V 电压源](../images/ex/sol/d-73-0p.svg){ .circuit }
 
     !!! warning "易错"
         不能拿换路后的稳态电路算 $0_+$ 值——那只能得到 $t\to\infty$ 时的终值（这里 $i(\infty)=0$、$u_C(\infty)=0$）。$u_L$ 从 $0_-$ 的 $0$ 跳到了 $-20\,\mathrm V$，正是"电感电压可以跳变"。
@@ -71,14 +75,22 @@ tags:
 
 ??? note "解析"
     1. **初始值**：$S$ 闭合时电容开路，$R_3$ 无电流，$u_C=u_a=18\times\dfrac{3}{6+3}=6\,\mathrm V$，故 $u_C(0_+)=6\,\mathrm V$。
+
+        ![0₋ 电路：S 闭合、电容开路](../images/ex/sol/d-rc-0m.svg){ .circuit }
+
     2. **稳态值**：$S$ 断开后电路中只剩一条串联通路，电容开路时无电流，$u_C(\infty)=18\,\mathrm V$。
     3. **时间常数**：电压源短路，从电容看入 $R_{eq}=R_1+R_3=8\,\Omega$（$R_2$ 已断开），$\tau=8\times0.5=4\,\mathrm s$。
+
+        ![求 R_eq：电压源短路、S 断开](../images/ex/sol/d-rc-req.svg){ .circuit }
+
     4. 三要素：
 
         $$
         u_C(t)=18+(6-18)e^{-t/4}=18-12e^{-t/4}\ \mathrm V,\qquad
         i_C=C\frac{\mathrm du_C}{\mathrm dt}=0.5\times3e^{-t/4}=1.5e^{-t/4}\ \mathrm A .
         $$
+
+        ![u_C 的三要素波形](../images/ex/sol/d-rc-wave.svg){ .circuit }
 
     **校验**：$i_C(0_+)=\dfrac{18-6}{6+2}=1.5\,\mathrm A$ ✓（$i_C(0_-)=0$，跳变）。
 
@@ -98,15 +110,24 @@ tags:
         i_L(0_+)=i_L(0_-)=6\times\frac{3}{3+1}=4.5\,\mathrm A .
         $$
 
+        ![0₋ 电路：S 断开、电感短路](../images/ex/sol/d-rl-0m.svg){ .circuit }
+
     2. **稳态值**：$S$ 闭合后 $R_1\parallel R_3=2\,\Omega$，$i_L(\infty)=6\times\dfrac{2}{2+1}=4\,\mathrm A$。
     3. **时间常数**：电流源开路，从电感看入 $R_{eq}=R_2+R_1\parallel R_3=1+2=3\,\Omega$，$\tau=\dfrac{2}{3}\,\mathrm s$。
+
+        ![求 R_eq：电流源开路](../images/ex/sol/d-rl-req.svg){ .circuit }
+
     4. $i_L(t)=4+(4.5-4)e^{-1.5t}=4+0.5e^{-1.5t}\ \mathrm A$。
     5. $u_a$ 有两种求法：
         - 用 VCR：$u_a=R_2i_L+L\dfrac{\mathrm di_L}{\mathrm dt}=4+0.5e^{-1.5t}+2\times(-0.75)e^{-1.5t}=4-e^{-1.5t}\ \mathrm V$；
         - 用三要素：$0_+$ 时 $a$ 点 KCL $6=\dfrac{u_a}{3}+\dfrac{u_a}{6}+4.5\Rightarrow u_a(0_+)=3\,\mathrm V$，$u_a(\infty)=R_2i_L(\infty)=4\,\mathrm V$，于是 $u_a=4+(3-4)e^{-1.5t}$ ✓
 
+    ![0₊ 等效电路：电感→4.5 A 电流源](../images/ex/sol/d-rl-0p.svg){ .circuit }
+
     !!! warning "易错"
         $u_a(0_-)=3\times(6-4.5)=4.5\,\mathrm V$，而 $u_a(0_+)=3\,\mathrm V$——非储能量会跳变，必须在 $0_+$ 电路里重新求。
+
+        ![u_a 的波形：t=0 处跳变](../images/ex/sol/d-rl-ua.svg){ .circuit }
 
 ## 换路定则失效：磁链与电荷守恒
 
@@ -135,6 +156,8 @@ tags:
         i_2(t)=\frac{i+3}{3}=3-e^{-1.5t}\ \mathrm A,\qquad i_1(t)=3-2e^{-1.5t}\ \mathrm A .
         $$
 
+        ![i_1、i_2 的波形](../images/ex/sol/d-74-wave.svg){ .circuit }
+
     !!! warning "易错"
         有初始储能时，不能按"电感反比分流"直接写 $i_2(\infty)=6\times\dfrac{L_1}{L_1+L_2}=2\,\mathrm A$——那只对零初始状态成立。
 
@@ -155,6 +178,8 @@ tags:
         $$
         -C_1u_{C1}(0_+)+C_2u_{C2}(0_+)=-1\times9+2\times9=9 .
         $$
+
+        ![中点闭合面：穿过两电容介质](../images/ex/sol/d-75-charge.svg){ .circuit }
 
         与 $u_{C1}(0_+)+u_{C2}(0_+)=9$ 联立：$u_{C2}(0_+)=6\,\mathrm V$，$u_{C1}(0_+)=3\,\mathrm V$。
     4. **$t>0$**：中点电位 $u_{C2}$ 满足 KCL（上方 $R_1\parallel C_1$ 流入 = 下方 $R_2\parallel C_2$ 流出）
@@ -198,6 +223,8 @@ tags:
     !!! tip "另一种看法"
         $\tau$ 也可用外加电源法：$\beta=1.5$ 时从电容看入的等效电阻 $R_{eq}=\dfrac{2-\beta}{3-\beta}=\dfrac13\,\Omega$，$\tau=R_{eq}C=\dfrac13\,\mathrm s$。受控源"改变参数"本身也是一次换路。
 
+        ![外加电源法求 R_eq（β=1.5，I_S 开路）](../images/ex/sol/d-710-req.svg){ .circuit }
+
 ### 8. CCVS 驱动的两级 RC :material-star::material-star::material-star:
 
 （作业 7-12）$R_1=20\,\Omega$，$R_2=10\,\Omega$，$r=20\,\Omega$，$C_1=C_2=0.1\,\mathrm F$，$u_S=12\,\mathrm V$（直流）。$S$ 闭合已久，$t=0$ 时打开。求开关两端电压 $u_0(t)$ 与 $u_C(t)$。
@@ -209,6 +236,9 @@ tags:
 
 ??? note "解析"
     1. **$0_-$**：两电容开路，$C_1$ 与受控源经闭合的 $S$ 并联，$u_{C1}=ri_1$；回路 $12=R_1i_1+ri_1=40i_1$，$i_1=0.3\,\mathrm A$，$u_{C1}(0_-)=6\,\mathrm V$；$R_2$ 无电流，$u_C(0_-)=6\,\mathrm V$。
+
+        ![0₋ 电路：两电容开路、S 闭合](../images/ex/sol/d-712-0m.svg){ .circuit }
+
     2. **左侧**（$S$ 打开后是独立的 RC 电路）：$\tau_1=R_1C_1=2\,\mathrm s$，
 
         $$
@@ -231,6 +261,8 @@ tags:
 
     **校验**：$u_0(0_+)=0$——打开瞬间左端 $u_{C1}(0_+)=6\,\mathrm V$，右端 $ri_1(0_+)=20\times\dfrac{12-6}{20}=6\,\mathrm V$，两端仍等电位；$u_C(\infty)=0$，因为受控源电压随 $i_1$ 衰减到零。
 
+    ![各电压波形](../images/ex/sol/d-712-wave.svg){ .circuit }
+
     !!! note "关于教材答案"
         有资料给出的 $u_C(t)$ 系数与本题参数不符；上式满足初值 $6\,\mathrm V$ 和右侧的微分方程。
 
@@ -249,6 +281,8 @@ tags:
         $$
         i=\frac{12-u_C}{10},\qquad u_C=10(1-\beta)i=\frac{20}{3}i\ \Rightarrow\ i=0.72\,\mathrm A,\ u_C(0_-)=4.8\,\mathrm V,\ i_L(0_-)=0.48\,\mathrm A .
         $$
+
+        ![0₋ 电路：电容开路、电感短路、S 闭合](../images/ex/sol/d-728-0m.svg){ .circuit }
 
     2. **左侧**（$S$ 打开后为独立 RC，$\tau=RC=0.1\,\mathrm s$）：
 
@@ -270,6 +304,8 @@ tags:
         $$
 
     **校验**：$u_k(0_+)=12-5.4+7.8=14.4\,\mathrm V$，而 $u_k(0_-)=0$。打开瞬间右侧 $R$ 的电流被受控源强制从 $(1-\beta)i=0.48\,\mathrm A$ 变为 $-\beta i=-0.24\,\mathrm A$，开关右端电位从 $4.8\,\mathrm V$ 跳到 $-9.6\,\mathrm V$，所以开关电压跳变；$i_L(0_+)=0.78-0.3=0.48\,\mathrm A$ 保持连续 ✓
+
+    ![i_L 与 u_k 的波形](../images/ex/sol/d-728-wave.svg){ .circuit }
 
 ## 二阶电路
 
@@ -293,3 +329,5 @@ $u_C(0_-)=10\,\mathrm V$，电感无初始电流，$t=0$ 时 $S$ 闭合。判断
         $$
 
     **校验**：$i(0)=0$ ✓；$t>0$ 刚开始 $i>0$，电容经 $R$、$L$ 放电 ✓。
+
+    ![欠阻尼放电波形](../images/ex/sol/d-rlc-wave.svg){ .circuit }

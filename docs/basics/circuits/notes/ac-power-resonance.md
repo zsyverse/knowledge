@@ -31,6 +31,12 @@ $$
 | 功率因数 $\lambda$ | $\cos\varphi=P/S$ | — | 无源网络中 $\varphi=\varphi_Z$ |
 | 复功率 $\bar S$ | $\dot U\dot I^*=I^2Z=U^2Y^*$ | VA | $=P+jQ$ |
 
+<figure markdown>
+  ![啤酒与泡沫](../images/concept/pf-beer.jpg){ width="200" loading=lazy }
+  <figcaption>常见比喻：一杯啤酒，酒液是有功功率 $P$（真正被"喝掉"、做功），泡沫是无功功率 $Q$（占着杯子却喝不到），整杯是视在功率 $S$（设备容量）。泡沫越少，功率因数越高。比喻只表达"容量被无功占用"——三者的关系是 $S^2=P^2+Q^2$，不是简单相加。</figcaption>
+</figure>
+
+
 | 元件 | $P$ | $Q$ |
 | --- | --- | --- |
 | 电阻 | $I^2R$ | $0$ |
@@ -152,6 +158,12 @@ $$
 ## 6. 谐振
 
 端口电压与电流同相（$\operatorname{Im}Z_{in}=0$ 或 $\operatorname{Im}Y_{in}=0$）称为谐振。
+
+<figure markdown>
+  ![推秋千](../images/concept/resonance-swing.jpg){ width="480" loading=lazy }
+  <figcaption>直觉：推秋千时，只有按秋千自己的节奏（固有频率）去推，每一推都做正功，摆幅才会越来越大，直到推入的能量恰好补上摩擦损耗。电路中激励频率等于 $\omega_0=1/\sqrt{LC}$ 时，L、C 之间的能量交换与电源同步，电源只需补充电阻 $R$ 消耗的能量，响应达到最大——这就是谐振（摆幅的上限对应由 $R$ 决定的 $I_0=U/R$）。</figcaption>
+</figure>
+
 
 ### 串联谐振（RLC 串联）
 

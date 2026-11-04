@@ -91,6 +91,10 @@ $$
     - **直流**（电流源开路）：$U_{a0}=12\times\dfrac{4}{4+4}=6\,\mathrm V$，$R_1$ 中直流 $\dfrac{12-6}{4}=1.5\,\mathrm A$。
     - **交流**（电压源短路）：$R_1\parallel R_2=2\,\Omega$，$\dot U_{a1}=2\angle0^\circ\times2=4\angle0^\circ\,\mathrm V$；$R_1$、$R_2$ 中交流各 $1\,\mathrm A$。
 
+    ![直流单独作用（电流源开路）](../images/ex/sol/n-multisrc-dc.svg){ .circuit }
+
+    ![交流单独作用（电压源短路）](../images/ex/sol/n-multisrc-ac.svg){ .circuit }
+
     所以 $u_a=6+4\sqrt2\sin\omega t\ \mathrm V$，$U_a=\sqrt{6^2+4^2}\approx7.21\,\mathrm V$。
 
     **电阻功率**（同一电阻上各频率功率可以相加）：
@@ -148,6 +152,8 @@ $RL$ 串联电路接电压 $u=12+20\sqrt2\sin\omega t\ \mathrm V$，电流表读
 
     高频分量被衰减到原来的约 $1/10$，而截止频率处的分量只衰减到 $0.707$ 倍——低通滤波器对 $\omega\gg\omega_c$ 的分量才有明显的抑制作用。
 
+    ![RC 低通的幅频特性](../images/ex/sol/n-rc-h.svg){ .circuit }
+
 ### 6. RLC 串联的谐波响应与仪表读数 :material-star::material-star::material-star:
 
 RLC 串联电路中 $R=10\,\Omega$，基波下 $\omega L=3\,\Omega$、$\dfrac{1}{\omega C}=27\,\Omega$，外加
@@ -166,6 +172,8 @@ $$
 
 ??? note "解析"
     逐个频率求解：
+
+    ![各频率分量单独作用的电路](../images/ex/sol/n-rlc-h.svg){ .circuit }
 
     | 分量 | 阻抗 | 电流 | 电容电压有效值 |
     | --- | --- | --- | --- |
@@ -212,6 +220,8 @@ $$
         需要串联一个容抗 $12.5\,\Omega$ 的电容来抵消：$\dfrac{1}{1000\,C_2}=12.5\Rightarrow C_2=80\,\mu\mathrm F$。
 
     **校验**：基波串联阻抗 $j12.5-j12.5=0$，$\dot U_{R1}=\dot U_{S1}=100\angle0^\circ$；3 次谐波槽路开路，$\dot U_{R3}=0$ ✓
+
+    ![滤波网络在基波与 3 次谐波下的电路](../images/ex/sol/n-filter-h.svg){ .circuit }
 
     !!! tip "思路"
         LC **并联**谐振 → 该频率开路（阻断）；LC **串联**谐振 → 该频率短路（全通）。槽路的谐振频率高于基波，所以它在基波下呈感性，补偿元件必须是电容；若槽路谐振频率低于基波，就要串电感。

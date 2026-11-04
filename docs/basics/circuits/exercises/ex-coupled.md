@@ -97,6 +97,9 @@ $\dot U=50\angle0^\circ\,\mathrm V$，$\omega L_1=4\,\Omega$（$a$–$n$），$\
 ??? note "解析"
     1. **判断接法**：公共节点 $n$ 上，$L_1$ 接的是非同名端，$L_2$ 接的是同名端——**异名端相连**。
     2. **去耦**：$L_1$ 一侧臂 $j(\omega L_1+\omega M)=j6$，$L_2$ 一侧臂 $j(\omega L_2+\omega M)=j10$，通向 $n$ 的臂 $-j\omega M=-j2$。
+
+        ![T 形去耦后的等效电路](../images/ex/sol/m-tdec-eq.svg){ .circuit }
+
     3. 去耦后，从内部节点到地有两条路径：$j10$ 臂，以及"$-j2$ 臂 + $6\,\Omega$"：
 
         $$
@@ -139,6 +142,10 @@ $\dot U=50\angle0^\circ\,\mathrm V$，$\omega L_1=4\,\Omega$（$a$–$n$），$\
         \dot I_1=\frac{16}{5+j4}=\frac{80-j64}{41}\approx1.951-j1.561\,\mathrm A .
         $$
 
+        也可以先去耦：$L_1$、$L_2$ 的同名端都接在公共节点上（同名端相连），三个臂为 $j(4-2)$、$j(4-2)$ 和公共臂 $+j2$（下图），公共臂电流为 $\dot I_1-\dot I_S$，于是 $20=j2(\dot I_1-j2)+(5+j2)\dot I_1=(5+j4)\dot I_1+4$，与上式相同。
+
+        ![去耦等效：同名端相连，公共臂 +j2](../images/ex/sol/m-mesh-tdec.svg){ .circuit }
+
     3. **电压源**：从 $+$ 端流出的电流 $\dot I_U=\dot I_1+(-\dot I_S)=1.951-j3.561\,\mathrm A$，
 
         $$
@@ -180,11 +187,16 @@ $\dot U_S=100\angle0^\circ\,\mathrm V$，$R_1=10\,\Omega$，$\omega L_1=20\,\Ome
 
         （$Z_{22}$ 感性，反映到一次侧呈容性）。
     2. $Z_{in}=R_1+j\omega L_1+Z_r=15+j15\,\Omega$，$\dot I_1=\dfrac{100}{15\sqrt2\angle45^\circ}\approx4.714\angle(-45^\circ)\,\mathrm A$。
+
+        ![一次侧等效电路：反映阻抗 Z_r](../images/ex/sol/m-reflect-pri.svg){ .circuit }
+
     3. 二次回路：$\dot I_1$ 流入一次同名端，$\dot I_2$ 从二次同名端流出，$j\omega M\dot I_1=Z_{22}\dot I_2$：
 
         $$
         \dot I_2=\frac{j10\times4.714\angle(-45^\circ)}{14.14\angle45^\circ}=3.333\angle0^\circ\,\mathrm A .
         $$
+
+        ![二次侧等效电路：受控电压 jωMİ₁](../images/ex/sol/m-reflect-sec.svg){ .circuit }
 
     4. $P_L=I_2^2R_L=\tfrac{100}{9}\times10\approx111.1\,\mathrm W$；它恰好等于反映电阻吸收的功率 $5\times I_1^2=5\times\tfrac{200}{9}\approx111.1\,\mathrm W$ ✓——反映阻抗的实部就代表二次侧取走的有功。
 
@@ -205,6 +217,9 @@ $\dot U_S=100\angle0^\circ\,\mathrm V$，$R_1=10\,\Omega$，$\omega L_1=20\,\Ome
         $$
 
         此时一次电压 $U_1=12/2=6\,\mathrm V$，$U_L=U_1/n=0.6\,\mathrm V$，$0.6^2/8=0.045\,\mathrm W$ ✓
+
+        ![折算到一次侧的等效电路（n=10）](../images/ex/sol/m-match-ref.svg){ .circuit }
+
     2. $n=5$：$R_{in}=200\,\Omega$，$I_1=\dfrac{12}{1000}=12\,\mathrm{mA}$，$P=I_1^2R_{in}=0.0288\,\mathrm W$（理想变压器不耗能，一次侧吸收的就是负载功率）。
     3. 直接连接：$P=\Big(\dfrac{12}{808}\Big)^2\times8\approx1.76\,\mathrm{mW}$，只有匹配时的约 $1/25$。
 
@@ -223,6 +238,8 @@ $\dot U_S=20\angle0^\circ\,\mathrm V$，理想变压器变比 $2:1$，一次同�
         $$
         \dot I_1=\frac{20}{4+8}=\frac53\,\mathrm A,\qquad \dot U_1=8\times\frac53=\frac{40}{3}\,\mathrm V .
         $$
+
+        ![折算到一次侧的等效电路](../images/ex/sol/m-trap-ref.svg){ .circuit }
 
     2. **电压**：变比关系只对"都以同名端为 $+$"的电压成立。二次同名端在下，以下端为 $+$ 的电压是 $-\dot U_2$：
 

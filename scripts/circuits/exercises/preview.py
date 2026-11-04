@@ -2,7 +2,7 @@
 
     .venv/bin/python scripts/circuits/exercises/preview.py OUTDIR [name ...]
 
-不给 name 时渲染全部。
+不给 name 时渲染全部。解析插图用 sol/NAME（输出为 OUTDIR/sol-NAME.png）；只给 sol/ 时渲染全部解析插图。
 """
 import re
 import subprocess
@@ -25,8 +25,11 @@ def size(svg: Path):
 def main():
     out = Path(sys.argv[1]); out.mkdir(parents=True, exist_ok=True)
     names = sys.argv[2:] or [p.stem for p in sorted(SRC.glob("*.svg"))]
+    if names == ["sol/"]:
+        names = [f"sol/{p.stem}" for p in sorted((SRC / "sol").glob("*.svg"))]
     for n in names:
         svg = SRC / f"{n}.svg"
+        n = n.replace("/", "-")
         w, h = size(svg)
         dw = min(520, w * 4 / 3)
         dh = dw * h / w

@@ -90,7 +90,19 @@ tags:
 
 **KCL**（电荷守恒）：任一节点，$\sum i_{\text{流出}}=0$，即流入 = 流出。推广到任意闭合面（**广义节点**）：穿过闭合面的电流代数和为零。
 
+<figure markdown>
+  ![节点像水管三通](../images/concept/kcl-pipes.jpg){ width="480" loading=lazy }
+  <figcaption>直觉：节点像充满水的三通管，流进多少就流出多少——节点不能储存电荷，所以流入电流之和等于流出电流之和（KCL）。图中流入的粗箭头"拆分"成两股流出的细箭头。</figcaption>
+</figure>
+
+
 **KVL**（能量守恒、电位单值）：沿任一闭合回路，$\sum u=0$。常用写法是"电压升 = 电压降"，或沿绕行方向逐元件写"$+$ 进 $-$ 出记为正降"。
+
+<figure markdown>
+  ![电位像海拔](../images/concept/kvl-hills.jpg){ width="480" loading=lazy }
+  <figcaption>直觉：电位像海拔。沿一条闭合山路走一圈回到出发点，途中爬升与下降的高度代数和必为零——每点的电位唯一确定，所以沿闭合回路电压代数和为零（KVL）。</figcaption>
+</figure>
+
 
 !!! note "KCL、KVL 与元件性质无关"
     无论元件线性、非线性、时变与否，KCL、KVL 都成立；正弦稳态下对相量同样成立（$\sum\dot I=0$，$\sum\dot U=0$），但**有效值一般不满足**：$\sum I\ne0$。

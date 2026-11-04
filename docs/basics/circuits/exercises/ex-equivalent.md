@@ -46,6 +46,9 @@ tags:
 ??? note "解析"
     1. **标节点**：下边线上的 $5\,\Omega$ 两端被下方的导线连在一起，两端是同一个节点（都属于 $b$），所以 $5\,\Omega$ 被短接、无电流，可以删去。于是整条下边线都是节点 $b$。
     2. $d$、$b$ 之间有 $3\,\Omega$ 与右侧 $6\,\Omega$ 两条支路：$3\parallel6=2\,\Omega$。
+
+        ![删去被短接的 5 Ω 后：下边线全是节点 b](../images/ex/sol/e-series-s1.svg){ .circuit }
+
     3. 再串 $2\,\Omega$（$c$–$d$）：$2+2=4\,\Omega$；与 $c$–$b$ 的 $6\,\Omega$ 并联：$6\parallel4=2.4\,\Omega$。
     4. 加上 $4\,\Omega$：$R_{ab}=4+2.4=6.4\,\Omega$。
 
@@ -95,6 +98,8 @@ tags:
     \ \Rightarrow\ V_c=\frac43\times4=\frac{16}{3}\,\mathrm V,\quad V_d=\frac23\times10=\frac{20}{3}\,\mathrm V .
     $$
 
+    ![Δ→Y 后的电路及各点电位（以 b 为参考）](../images/ex/sol/e-ydelta-y.svg){ .circuit }
+
     Y–Δ 变换对外等效，$c$、$d$ 的电位与原电路相同，回到**原电路**求桥支路电流：
 
     $$
@@ -118,6 +123,9 @@ tags:
 ??? note "解析"
     1. **对称性**：结构、参数、激励（电压源在对称轴上）都关于竖直中线对称，所以 $7\,\Omega$ 两端的节点等电位，$7\,\Omega$ 中无电流，可断开。
     2. **每一侧**：$3\,\Omega$ 与 $6\,\Omega$ 都接在该侧上、下两个节点之间，并联为 $2\,\Omega$；再串上、下两个 $1\,\Omega$：$1+2+1=4\,\Omega$。
+
+        ![断开 7 Ω、合并 3∥6 后的电路](../images/ex/sol/e-sym-half.svg){ .circuit }
+
     3. 左右两侧并联 $4\parallel4=2\,\Omega$，再与电源支路的 $1\,\Omega$ 串联：总电阻 $3\,\Omega$，
 
         $$
@@ -153,6 +161,9 @@ tags:
         $$
 
     3. 以 $r$ 为参考：$V_p=10\times2=20\,\mathrm V$，$V_q=5\times3=15\,\mathrm V$，所以 $U=V_p-V_q=5\,\mathrm V$。
+
+        ![Δ→Y 后的电路：两条路径分流](../images/ex/sol/e-bridge-is-y.svg){ .circuit }
+
     4. 电桥等效电阻 $1.2+12\parallel8=1.2+4.8=6\,\Omega$，
 
         $$
@@ -177,8 +188,13 @@ tags:
 
     1. $3\,\mathrm A$ 电流源串 $4\,\Omega$ → 就是 $3\,\mathrm A$ 电流源（串联看电流，$4\,\Omega$ 删去）；
     2. $12\,\mathrm V$ 串 $6\,\Omega$ → $2\,\mathrm A$（指向 $t$）并 $6\,\Omega$；
+
+        ![第 1、2 步后：两个电流源与电阻并联](../images/ex/sol/e-source-s1.svg){ .circuit }
+
     3. 两电流源并联 $2+3=5\,\mathrm A$；$6\parallel3=2\,\Omega$；
     4. $5\,\mathrm A$ 并 $2\,\Omega$ → $10\,\mathrm V$ 串 $2\,\Omega$，再串 $2\,\Omega$：$U_{oc}=10\,\mathrm V$，$R_{eq}=4\,\Omega$。
+
+        ![第 3、4 步：合并后化为戴维南形式并接负载](../images/ex/sol/e-source-s23.svg){ .circuit }
 
     **检验**（开路时节点 $t$）：$\dfrac{U_t-12}{6}+\dfrac{U_t}{3}=3\Rightarrow U_t=10\,\mathrm V=U_{oc}$ ✓
 

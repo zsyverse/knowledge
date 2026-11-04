@@ -72,6 +72,8 @@ tags:
     4. 电流源端电压（$m$ 正、下负）：$3\,\mathrm A$ 向上流过 $4\,\Omega$，$m$ 点比上节点高 $12\,\mathrm V$，$V_m=10+3\times4=22\,\mathrm V$；电流从其 $+$ 端流出，发出 $22\times3=66\,\mathrm W$。
     5. 校验：$20+66=50+36$ ✓
 
+        ![各支路电流与 m 点电位（以下边线为参考）](../images/ex/sol/b-sources-sol.svg){ .circuit }
+
     "电流源串联任意元件对外等效为电流源本身"——所以 $4\,\Omega$ 不影响电压源和 $2\,\Omega$ 的量，但会改变电流源**自己**的电压和功率（对内不等效）。
 
 ## 元件的伏安关系
@@ -87,6 +89,8 @@ tags:
 
 ??? note "解析"
     直流稳态：电感短路、电容开路。电路化为 $12\,\mathrm V$ 串 $2\,\Omega$、$4\,\Omega$：
+
+    ![直流稳态等效电路：电感短路、电容开路](../images/ex/sol/b-lc-dc-dc.svg){ .circuit }
 
     $$
     i_L=\frac{12}{2+4}=2\,\mathrm A,\qquad u_C=u_a=4\times2=8\,\mathrm V .
@@ -121,6 +125,8 @@ tags:
 
     **校验**（节点 ②）：流入 $I_1+I_2=-3+4=1\,\mathrm A$，等于右侧支路向下流出的 $1\,\mathrm A$ ✓
 
+    ![逐节点求得的各支路电流（参考方向不变，负值表示实际方向相反）](../images/ex/sol/b-kcl-sol.svg){ .circuit }
+
     !!! note "关于教材答案"
         部分书后答案给出 $I_5=3\,\mathrm A$、$I_6=0$，与图中节点 ④、⑤ 的箭头方向不相容；按图逐节点核对，以上结果满足全部 KCL。
 
@@ -140,6 +146,8 @@ tags:
     - ③–④ 的 $3\,\mathrm V$ 左正右负：$V_3=V_4+3=11\,\mathrm V$；
     - 右侧 $8\,\mathrm V$ 下正上负：$V_2=-8\,\mathrm V$；
     - ②–① 的 $2\,\mathrm V$ 下正上负：$V_1=V_2+2=-6\,\mathrm V$。
+
+    ![以节点 ⑤ 为参考的各节点电位](../images/ex/sol/b-kvl-pot.svg){ .circuit }
 
     再按各未知电压标注的极性取"$+$ 端电位减 $-$ 端电位"：
 
@@ -164,6 +172,8 @@ tags:
     $$
     V_b=-5\,\mathrm V,\qquad V_L=V_b+3=-2\,\mathrm V,\qquad V_R=14\,\mathrm V .
     $$
+
+    ![各节点电位（以下边线为参考）](../images/ex/sol/b-potential-sol.svg){ .circuit }
 
     1. 左下 $2\,\Omega$：$I_1=\dfrac{V_L}{2}=-1\,\mathrm A$。
     2. 上方 $2\,\Omega$、$6\,\Omega$ 串联，从 $L$ 流向 $R$ 的电流 $I_t=\dfrac{V_L-V_R}{2+6}=-2\,\mathrm A$。

@@ -57,6 +57,8 @@ tags:
 
     **校验**：$\dot U_{AB}=\sqrt3\,\dot U_A\angle30^\circ=380\angle120^\circ$ ✓
 
+    ![相电压与线电压相量图](../images/ex/sol/s-2-phasor.svg){ .circuit }
+
     !!! warning "易错"
         不要习惯性地写 $\dot U_A=220\angle0^\circ$——题目给定的参考相量是 $\dot U_{BC}$，所有相位都要从它推出。
 
@@ -89,6 +91,8 @@ tags:
 
         $\dot I_{BC}$、$\dot I_{CA}$ 依次滞后 $120^\circ$。线电流由节点 KCL：$\dot I_A=\dot I_{AB}-\dot I_{CA}=\sqrt3\,\dot I_{AB}\angle(-30^\circ)=13.16\angle(-53.13^\circ)\,\mathrm A$，其余依次滞后 $120^\circ$。
 
+        ![Δ 负载相电流与线电流相量图](../images/ex/sol/s-delta-phasor.svg){ .circuit }
+
     2. $P=3I_p^2R=3\times7.6^2\times30=5198.4\,\mathrm W$，$Q=3I_p^2X=3\times7.6^2\times40=6931.2\,\mathrm{var}$。
        （也可用 $\sqrt3U_lI_l\cos\varphi=\sqrt3\times380\times13.16\times0.6$，结果相同。）
 
@@ -117,6 +121,8 @@ tags:
         Z_l+Z_Y=9+j12=15\angle53.13^\circ\,\Omega,\qquad
         \dot I_A=\frac{220\angle0^\circ}{15\angle53.13^\circ}=14.67\angle(-53.13^\circ)\,\mathrm A .
         $$
+
+        ![A 相单相等效电路](../images/ex/sol/s-delta-line-1ph.svg){ .circuit }
 
     2. **换回 Δ 内部**：$\dot I_{A'B'}=\dfrac{\dot I_A}{\sqrt3}\angle30^\circ=8.47\angle(-23.13^\circ)\,\mathrm A$。
     3. **负载电压**：$U_{A'B'}=I_{A'B'}\lvert Z_\Delta\rvert=8.47\times\sqrt{24^2+33^2}=8.47\times40.80\approx345.5\,\mathrm V$，比电源线电压 $220\sqrt3\approx381\,\mathrm V$ 低，差值降在线路上。
@@ -153,6 +159,9 @@ tags:
     2. **电阻组**：$\dot U_{AB}=100\sqrt3\angle30^\circ\,\mathrm V$，$\dot I_{AB}=\dfrac{100\sqrt3\angle30^\circ}{300}=\dfrac{1}{\sqrt3}\angle30^\circ\approx0.577\angle30^\circ\,\mathrm A$；
        它对应的线电流 $\sqrt3\,\dot I_{AB}\angle(-30^\circ)=1\angle0^\circ\,\mathrm A$。
     3. **电源线电流**：$\dot I_A=1+j3.14\approx3.30\angle72.34^\circ\,\mathrm A$。
+
+        ![A 相单相等效电路（Δ 电阻化成 Y）](../images/ex/sol/s-551-1ph.svg){ .circuit }
+
     4. **复功率**：$\bar S=3\dot U_A\dot I_A^*=3\times100\times(1-j3.14)=300-j942\,\mathrm{VA}$。
        分开算：电阻 $P=3\times\dfrac{(100\sqrt3)^2}{300}=300\,\mathrm W$；电容 $Q=-3\times100\times3.14=-942\,\mathrm{var}$ ✓
 
@@ -209,6 +218,8 @@ tags:
         $P=W_1+W_2=8664\,\mathrm W$，$Q=\sqrt3(W_2-W_1)=11552\,\mathrm{var}$。
         **校验**：$3I_l^2(6+j8)=3\times481.33\times(6+j8)=8664+j11552$ ✓
 
+        ![两瓦特表的相量图](../images/ex/sol/s-two-watt-phasor.svg){ .circuit }
+
     2. $\varphi=90^\circ$，$I_l$ 不变：$W_1=8336.9\cos120^\circ\approx-4168.5\,\mathrm W$，$W_2=8336.9\cos60^\circ\approx4168.5\,\mathrm W$。纯电感不消耗有功，两表之和为零，但**单表读数都不为零**。
 
     !!! warning "易错"
@@ -247,6 +258,8 @@ tags:
 
     B 相灯电压约为 C 相的 $3.7$ 倍，B 相灯亮。结论：**电容接 A 相时，亮灯是滞后 A 相 $120^\circ$ 的 B 相**——据此可以判定实际电源的相序。
 
+    ![中性点位移相量图](../images/ex/sol/s-phase-seq-phasor.svg){ .circuit }
+
     有理想中线时 $\dot U_{N'N}=0$，每只灯都承受相电压 $220\,\mathrm V$。
 
     !!! warning "启示"
@@ -271,6 +284,8 @@ tags:
         $$
 
         从而 $V_O=V_a-\dot U_A=\tfrac U2-j\tfrac{U}{2\sqrt3}$，$V_b=V_O+\dot U_B=\tfrac U2-j\tfrac{\sqrt3}{2}U=U\angle(-60^\circ)$。
+
+        ![位形图：a、b、c 构成等边三角形，O 为中心](../images/ex/sol/s-558-potential.svg){ .circuit }
 
     2. **节点 $b$ 的 KCL**（流出为正）：
 

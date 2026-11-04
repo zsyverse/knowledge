@@ -21,13 +21,15 @@ from common import elm, new_drawing, dot, text, cur, vsrc_h, plt, ROOT  # noqa: 
 
 OUT = ROOT / "docs" / "basics" / "circuits" / "images" / "ex"
 OUT.mkdir(parents=True, exist_ok=True)
+SOL = OUT / "sol"          # 解析中的分步插图（sol_*.py 生成）
+SOL.mkdir(parents=True, exist_ok=True)
 
 OHM = "\\,\\Omega"
 ARW = dict(headwidth=0.3, headlength=0.38)
 
 
-def save(d, name: str) -> None:
-    path = OUT / f"{name}.svg"
+def save(d, name: str, out: Path = OUT) -> None:
+    path = out / f"{name}.svg"
     d.save(str(path), transparent=True)
     plt.close("all")
     prev = os.environ.get("CIRCUIT_PREVIEW")
@@ -38,8 +40,8 @@ def save(d, name: str) -> None:
     print("wrote", path.relative_to(ROOT))
 
 
-def save_fig(fig, name: str) -> None:
-    path = OUT / f"{name}.svg"
+def save_fig(fig, name: str, out: Path = OUT) -> None:
+    path = out / f"{name}.svg"
     fig.savefig(path, transparent=True, bbox_inches="tight")
     plt.close(fig)
     print("wrote", path.relative_to(ROOT))

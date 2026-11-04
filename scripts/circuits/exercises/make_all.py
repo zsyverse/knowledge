@@ -1,4 +1,4 @@
-"""一次性生成 docs/basics/circuits/images/ex/ 下的全部习题插图（运行本目录所有 fig_*.py）。
+"""一次性生成 docs/basics/circuits/images/ex/ 下的全部习题插图（运行本目录所有 fig_*.py 与解析插图 sol_*.py → images/ex/sol/）。
 
     .venv/bin/python scripts/circuits/exercises/make_all.py
 """
@@ -9,5 +9,5 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-for f in sorted(HERE.glob("fig_*.py")):
+for f in sorted(HERE.glob("fig_*.py")) + sorted(HERE.glob("sol_*.py")):
     runpy.run_path(str(f), run_name="__main__")

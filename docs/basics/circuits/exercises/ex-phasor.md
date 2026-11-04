@@ -54,6 +54,8 @@ $$
     I=\sqrt{6^2+8^2}=10\,\mathrm A,\qquad \psi=30^\circ+\arctan\frac86=30^\circ+53.13^\circ=83.13^\circ .
     $$
 
+    ![相量图：平行四边形法则](../images/ex/sol/p-sum.svg){ .circuit }
+
     （也可化成直角坐标：$\dot I_1=5.196+j3$，$\dot I_2=-4+j6.928$，和为 $1.196+j9.928=10\angle83.13^\circ$。）
 
     !!! warning "易错"
@@ -118,6 +120,8 @@ $$
         $$
 
         电压超前电流，感性。
+
+    ![两电路的相量图](../images/ex/sol/p-meters-phasor.svg){ .circuit }
 
     !!! warning "易错"
         $3+8+4=15\,\mathrm A$、$30+80+40=150\,\mathrm V$ 都是把有效值当代数量相加。电感、电容的量相位相反，先相减，再与电阻分量"勾股"合成。
@@ -199,6 +203,8 @@ $$
 
     3. $\cos\varphi=\dfrac{P}{UI}=\dfrac{40}{220\times0.36}\approx0.505$（$=R/|Z|$）。
 
+    ![电压三角形](../images/ex/sol/p-lamp-tri.svg){ .circuit }
+
     !!! warning "易错"
         不能写 $U=IR+IX_L$：灯管电压与镇流器电压相差 $90^\circ$，有效值满足的是勾股关系 $U^2=U_R^2+U_L^2$。
 
@@ -226,6 +232,8 @@ $$
 
     **校验**：$\dot U_{R_2}+\dot U_L=100=\dot U_C$ ✓；$\dot U=100+100=200\angle0^\circ\,\mathrm V$ ✓
 
+    ![以 U_C 为参考的相量图](../images/ex/sol/p-512-phasor.svg){ .circuit }
+
     !!! tip "思路"
         "$U_C=200-100$"之所以能用有效值相减，是因为先由相量图证明了 $\dot U_{R_1}$、$\dot U_C$ 同相——这一步不能省。
 
@@ -241,6 +249,9 @@ $u_{S1}=10\sqrt2\sin1000t\,\mathrm V$，$u_{S2}=10\sqrt2\cos1000t\,\mathrm V$（
 ??? note "解析"
     1. **相量化**：$\dot U_{S1}=10\angle0^\circ$；$u_{S2}=10\sqrt2\sin(1000t+90^\circ)$，所以 $\dot U_{S2}=10\angle90^\circ=j10\,\mathrm V$。
         $Z_C=\dfrac{1}{j\times1000\times200\times10^{-6}}=-j5\,\Omega$，$Z_L=j\times1000\times0.005=j5\,\Omega$。
+
+        ![相量模型](../images/ex/sol/p-node-model.svg){ .circuit }
+
     2. **节点 $a$**（流出为正）：
 
         $$

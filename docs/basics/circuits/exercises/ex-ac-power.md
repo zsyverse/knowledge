@@ -59,6 +59,9 @@ $$
         $$
 
     3. $P=433.0\,\mathrm W$，$Q=250\,\mathrm{var}>0$（吸收感性无功），$S=500\,\mathrm{VA}$，$\lambda=\cos30^\circ\approx0.866$；电流滞后电压 $30^\circ$，称**滞后**功率因数。
+
+        ![功率三角形](../images/ex/sol/w-s-tri.svg){ .circuit }
+
     4. $Z=\dfrac{\dot U}{\dot I}=20\angle30^\circ=10\sqrt3+j10\approx17.32+j10\,\Omega$。
 
     !!! warning "易错"
@@ -89,6 +92,9 @@ $$
         $$
 
         $I_2=I_3=6.25\sqrt2\approx8.84\,\mathrm A$，$I_2^2=I_3^2=78.125$。
+
+        ![各支路电流相量图](../images/ex/sol/w-branch-phasor.svg){ .circuit }
+
     3. **各支路**用 $\bar S_k=I_k^2Z_k$：
 
         | 支路 | $I_k^2$ | $\bar S_k$ / VA | $S_k$ / VA |
@@ -156,6 +162,8 @@ $$
         C=\frac{8490}{100\pi\times220^2}\approx558.4\,\mu\mathrm F .
         $$
 
+        ![补偿前后的功率三角形](../images/ex/sol/w-pfc-tri.svg){ .circuit }
+
     4. 电流：补偿前 $I=\dfrac{10000}{220\times0.6}\approx75.76\,\mathrm A$，补偿后 $I'=\dfrac{10000}{220\times0.9}\approx50.51\,\mathrm A$。负载本身仍是 $75.76\,\mathrm A$，电容只是就近提供无功。
 
     !!! tip "补偿越到后面越不划算"
@@ -181,6 +189,9 @@ $$
         $$
 
     2. **共轭匹配**：$Z_L=Z_{eq}^*=2-j2\,\Omega$，$P_{\max}=\dfrac{U_{oc}^2}{4R_{eq}}=\dfrac{200}{8}=25\,\mathrm W$。
+
+        ![戴维南等效电路接共轭匹配负载](../images/ex/sol/w-maxp-eq.svg){ .circuit }
+
     3. **只能接电阻**：$R_L=|Z_{eq}|=2\sqrt2\,\Omega$，
 
         $$
@@ -213,6 +224,8 @@ $\dot U_A=100\angle0^\circ\,\mathrm V$，$\dot U_B=100\angle(-90^\circ)\,\mathrm
         $$
 
     3. 读数为负说明按表的接法，"从 $\dot U_B$ 流向线路"的有功为负，即 $\dot U_B$ **吸收** $1000\,\mathrm W$。$\dot U_A$：$\mathrm{Re}[\dot U_A\dot I^*]=\mathrm{Re}[100(10+j10)]=1000\,\mathrm W$，发出。线路纯电抗不耗能，$1000=1000$ ✓
+
+        ![电压、电流相量图](../images/ex/sol/w-watt-phasor.svg){ .circuit }
 
     !!! warning "易错"
         读数不能取绝对值，正负号正是判断能量流向的依据；也不能把 $\dot I$ 与 $\dot I_W$ 混为一谈——表只认电流从哪一端流进 $*$。
@@ -267,6 +280,9 @@ $\dot U_A=100\angle0^\circ\,\mathrm V$，$\dot U_B=100\angle(-90^\circ)\,\mathrm
         $$
 
         全部 $\dot I_1$ 流过右支路。
+
+        ![右支路谐振相当于短路](../images/ex/sol/w-multi-eq.svg){ .circuit }
+
     3. $\dot U_L=j200\times2\angle30^\circ=400\angle120^\circ\,\mathrm V$，$U_L=400\,\mathrm V$，是电源电压的 2 倍；两只电容各 $200\,\mathrm V$，与 $\dot U_L$ 反相，三者相加为零。
     4. $P=I_1^2R_1=4\times100=400\,\mathrm W$（$=UI_1\cos0^\circ$）✓
 

@@ -28,6 +28,17 @@ $$
 
 这本质上是**能量不能突变**（$w_C=\tfrac12Cu_C^2$，$w_L=\tfrac12Li_L^2$）。
 
+<figure markdown>
+  ![电容像水箱](../images/concept/capacitor-tank.jpg){ width="400" loading=lazy }
+  <figcaption>直觉：电容像水箱，水位相当于电压 $u_C$，进水流量相当于电流 $i_C$（$i_C=C\,\mathrm du_C/\mathrm dt$）。只要流量有限，水位就只能逐渐变化、不能瞬间跳变；流量本身却可以突然改变——对应电容电流可以跳变。</figcaption>
+</figure>
+
+<figure markdown>
+  ![电感像飞轮](../images/concept/inductor-flywheel.jpg){ width="400" loading=lazy }
+  <figcaption>直觉：电感像沉重的飞轮，转速相当于电流 $i_L$，推力（力矩）相当于电压 $u_L$（$u_L=L\,\mathrm di_L/\mathrm dt$ 对应 力矩 = 转动惯量 × 角加速度）。推力有限时转速不能瞬间改变；推力本身却可以突变——对应电感电压可以跳变。</figcaption>
+</figure>
+
+
 !!! warning "能跳变的量"
     电阻的电压电流、电容**电流**、电感**电压**都可以在换路瞬间跳变。$i_C(0_+)$、$u_L(0_+)$ 必须用 $0_+$ 等效电路重新求，不能拿 $0_-$ 的值。
 

@@ -83,6 +83,8 @@ tags:
         28=4I_1+2I_2+6I_2 .
         $$
 
+        ![超网孔：沿外圈绕开电流源](../images/ex/sol/a-supermesh-super.svg){ .circuit }
+
     3. 代入 $I_2=I_1+2$：$28=12I_1+16\Rightarrow I_1=1\,\mathrm A$，$I_2=3\,\mathrm A$。
     4. 求 $U$：网孔 1 的 KVL，$28=4I_1+U\Rightarrow U=24\,\mathrm V$（网孔 2 校验：$U=(2+6)\times3=24$ ✓）。
 
@@ -147,6 +149,8 @@ $8\,\mathrm V$ 电压源跨接在 $a$、$b$ 之间（$b$ 正），两端都不�
 
     电压源电流回到单个节点 $a$ 求：$6=\tfrac{12}{4}+i_{ab}\Rightarrow i_{ab}=3\,\mathrm A$（由 $a$ 经电源流向 $b$）。它从 $-$ 端流入、$+$ 端流出，发出 $8\times3=24\,\mathrm W$。
 
+    ![超节点与求得的各节点电位](../images/ex/sol/a-supernode-sn.svg){ .circuit }
+
     **校验**：节点 $b$：$3=\tfrac{20}{4}+\tfrac{20-24}{2}=5-2$ ✓；电源发出 $6\times12+24+24\times2=144\,\mathrm W$，电阻吸收 $\tfrac{12^2}{4}+\tfrac{20^2}{4}+\tfrac{4^2}{2}=36+100+8=144\,\mathrm W$ ✓
 
 ### 6. 含受控源的节点法 :material-star::material-star::material-star-outline:
@@ -198,6 +202,8 @@ $D_1$、$D_2$ 为理想二极管。（1）$U_2=2\,\mathrm V$ 时求 $U_o$、$I_{
 
     验证 $D_2$：其支路无电流，阳极电位为 $U_2=2\,\mathrm V$，阴极为 $U_o=4\,\mathrm V$，$u_{D2}=2-4=-2\,\mathrm V\le0$，截止 ✓
 
+    ![U₂=2 V：D₁ 导通（短路）、D₂ 截止（开路）](../images/ex/sol/a-diode-1.svg){ .circuit }
+
     **（2）** 若仍假设 $D_2$ 截止，则 $u_{D2}=5-4=1\,\mathrm V>0$，矛盾。改设两管都导通，节点 $o$：
 
     $$
@@ -205,6 +211,8 @@ $D_1$、$D_2$ 为理想二极管。（1）$U_2=2\,\mathrm V$ 时求 $U_o$、$I_{
     $$
 
     $I_{D1}=6-4.4=1.6\,\mathrm{mA}>0$，$I_{D2}=5-4.4=0.6\,\mathrm{mA}>0$，假设成立 ✓
+
+    ![U₂=5 V：两管都导通](../images/ex/sol/a-diode-2.svg){ .circuit }
 
     **（3）** $D_1$ 导通、$D_2$ 截止时 $U_o=4\,\mathrm V$，$D_2$ 截止要求 $U_2-U_o\le0$，即 $U_2\le4\,\mathrm V$（等号为临界）。
 
@@ -224,6 +232,8 @@ $D_1$、$D_2$ 为理想二极管。（1）$U_2=2\,\mathrm V$ 时求 $U_o$、$I_{
 
 ??? note "解析"
     记左侧竖线为节点 $L$、右侧中间节点为 $Q$。树 $R_1\sim R_5$ 连通全部 6 个节点；连支为 $R_6$、$R_7$、$I_{S4}$、$I_{S5}$，每条连支与树支构成一个基本回路，回路电流就是该连支电流：
+
+    ![树支（蓝实线）与连支（灰虚线）](../images/ex/sol/a-tree-tree.svg){ .circuit }
 
     | 连支 | 基本回路（沿连支电流方向） | 回路电流 |
     | --- | --- | --- |

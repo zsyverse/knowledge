@@ -2,21 +2,29 @@
 hide:
   - navigation
   - toc
+  - footer
 ---
+
+<div class="home-hero" markdown>
 
 # 知识库
 
-记录我学过的东西，以及一路上的思考。
+学过的知识、读过的前沿、想过的事情 —— 一个持续生长的个人知识库。
 
-<div class="grid cards" markdown>
+[开始阅读 :octicons-arrow-right-24:](ai/llm/index.md){ .md-button .md-button--primary }
+[写作指南](guide.md){ .md-button }
 
--   :material-brain:{ .lg .middle } **AI**
+</div>
+
+<div class="grid cards home-cards" markdown>
+
+-   :material-brain:{ .lg .middle } **AI** · <!-- count:ai --> 篇
 
     ---
 
     [LLM/VLM](ai/llm/index.md) · [强化学习](ai/rl/index.md) · [Robot](ai/robot/index.md)
 
--   :material-robot-industrial-outline:{ .lg .middle } **AI4AI**
+-   :material-robot-industrial-outline:{ .lg .middle } **AI4AI** · <!-- count:ai4ai --> 篇
 
     ---
 
@@ -24,13 +32,13 @@ hide:
 
     [:octicons-arrow-right-24: 进入](ai4ai/index.md)
 
--   :material-sigma:{ .lg .middle } **基础**
+-   :material-sigma:{ .lg .middle } **基础** · <!-- count:basics --> 篇
 
     ---
 
     [数学基础](basics/math/index.md) · [控制理论](basics/control/index.md) · [电路](basics/circuits/index.md)
 
--   :material-hammer-wrench:{ .lg .middle } **工程实践**
+-   :material-hammer-wrench:{ .lg .middle } **工程实践** · <!-- count:engineering --> 篇
 
     ---
 
@@ -38,28 +46,28 @@ hide:
 
     [:octicons-arrow-right-24: 进入](engineering/index.md)
 
--   :material-telescope:{ .lg .middle } **前沿视野**
+-   :material-telescope:{ .lg .middle } **前沿视野** · <!-- count:frontier --> 篇
 
     ---
 
-    各领域的前沿技术：论文、开源项目、产品、博客
+    各领域的前沿技术：论文、开源项目、产品、演讲
 
     [:octicons-arrow-right-24: 进入](frontier/index.md)
 
--   :material-feather:{ .lg .middle } **随笔**
+-   :material-feather:{ .lg .middle } **随笔** · <!-- count:essays --> 篇
 
     ---
 
     [科研体悟](essays/research/index.md) · [人生感悟](essays/life/index.md)
 
--   :material-tag-multiple-outline:{ .lg .middle } **标签**
+</div>
 
-    ---
+## 最近更新
 
-    按主题横向浏览所有文章
+<div class="home-recent" markdown>
 
-    [:octicons-arrow-right-24: 进入](tags.md)
+<!-- recent -->
 
 </div>
 
-顶部 :material-magnify: 搜索支持中英文全文检索 · 如何新增文章见 [写作指南](guide.md)
+<small>按主题横向浏览：[标签](tags.md) · 顶部 :material-magnify: 支持中英文全文搜索</small>

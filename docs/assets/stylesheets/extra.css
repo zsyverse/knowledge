@@ -1,6 +1,52 @@
-.md-typeset { line-height: 1.8; }
-.md-typeset h1 { font-weight: 700; }
-.md-typeset .grid.cards > ul > li { border-radius: .6rem; }
-.katex-display { overflow-x: auto; overflow-y: hidden; }
-.md-typeset img.circuit { display: block; margin: 1em auto; max-width: 520px; width: 100%; }
+/* ---------- 字体：系统字体栈（不依赖 Google Fonts，国内加载快） ---------- */
+:root {
+  --md-text-font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", "Segoe UI", Roboto, sans-serif;
+  --md-code-font-family: "JetBrains Mono", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+body { -webkit-font-smoothing: antialiased; }
+
+/* ---------- 版面 ---------- */
+.md-grid { max-width: 1440px; }
+.md-typeset { font-size: .8rem; line-height: 1.85; }
+.md-typeset h1 { color: var(--md-default-fg-color); font-weight: 700; letter-spacing: -.01em; margin-bottom: 1em; }
+.md-typeset h2 { font-weight: 650; margin-top: 2em; padding-bottom: .3em; border-bottom: 1px solid var(--md-default-fg-color--lightest); }
+.md-typeset h3 { font-weight: 600; }
+.md-typeset p, .md-typeset li { text-align: justify; }
+
+/* 表格 */
+.md-typeset table:not([class]) { font-size: .75rem; border-radius: .4rem; overflow: hidden; }
+.md-typeset table:not([class]) th { background: var(--md-default-fg-color--lightest); }
+
+/* 提示框、卡片 */
+.md-typeset .admonition, .md-typeset details { border-radius: .5rem; }
+.md-typeset .grid.cards > ul > li { border-radius: .7rem; transition: border-color .2s, box-shadow .2s, transform .2s; }
+.md-typeset .grid.cards > ul > li:hover { transform: translateY(-2px); }
+
+/* 公式 */
+.md-typeset div.arithmatex { margin: .8em 0; }
+.katex-display { overflow-x: auto; overflow-y: hidden; margin: 0; padding: .3em 0; }
+
+/* ---------- 图片 ---------- */
+.md-typeset img { border-radius: .3rem; }
+.md-typeset img.circuit { display: block; margin: 1em auto; max-width: 520px; width: 100%; border-radius: 0; }
 [data-md-color-scheme="slate"] img.circuit { filter: invert(0.88) hue-rotate(180deg); }
+.md-typeset figure img { box-shadow: 0 2px 12px rgba(0,0,0,.08); }
+/* 放大查看时也反色电路图，避免暗色模式下突然一片白 */
+[data-md-color-scheme="slate"] .gslide-image img[src*="/circuits/images/"][src$=".svg"] { filter: invert(0.88) hue-rotate(180deg); background: #fff; }
+
+/* ---------- 首页 ---------- */
+.home-hero { text-align: center; padding: 2.5rem 0 1.5rem; }
+.home-hero h1 { font-size: 2.4rem; margin: 0 0 .4rem; }
+.home-hero p { text-align: center; color: var(--md-default-fg-color--light); font-size: .95rem; }
+.home-hero .md-button { margin: .3rem .25rem; }
+.home-cards { margin-top: 1rem; }
+.md-typeset .home-recent .md-typeset__table { display: block; width: 100%; }
+.md-typeset .home-recent table:not([class]) { display: table; width: 100%; }
+.home-recent td:first-child { white-space: nowrap; color: var(--md-default-fg-color--light); }
+
+/* 移动端 */
+@media screen and (max-width: 44.9375em) {
+  .md-typeset p, .md-typeset li { text-align: left; }
+  .home-hero h1 { font-size: 1.8rem; }
+}

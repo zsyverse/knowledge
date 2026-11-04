@@ -50,3 +50,15 @@ body { -webkit-font-smoothing: antialiased; }
   .md-typeset p, .md-typeset li { text-align: left; }
   .home-hero h1 { font-size: 1.8rem; }
 }
+
+/* 灯箱：SVG 电路图原始尺寸小，放大时按视口放大 */
+.gslide-image img[src$=".svg"] { width: min(92vw, 1000px) !important; max-height: 85vh; height: auto; background: #fff; border-radius: .4rem; }
+
+/* 表格里的公式不拆行；手机上表格宁可横向滚动也不挤压 */
+.md-typeset td .katex { white-space: nowrap; }
+@media screen and (max-width: 44.9375em) {
+  .md-typeset table:not([class]) th, .md-typeset table:not([class]) td { min-width: 6em; }
+}
+
+/* KaTeX 的隐藏 MathML 是绝对定位的：给容器设 relative，防止它跳出滚动容器把整页撑宽 */
+.md-typeset div.arithmatex, .md-typeset .katex-display, .md-typeset .katex { position: relative; }

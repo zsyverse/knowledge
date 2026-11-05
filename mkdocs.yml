@@ -17,13 +17,13 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
-      accent: indigo
+      primary: custom
+      accent: custom
       toggle: { icon: material/weather-night, name: 切换到暗色 }
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
-      accent: indigo
+      primary: custom
+      accent: custom
       toggle: { icon: material/weather-sunny, name: 切换到亮色 }
   font: false            # 不从 Google Fonts 加载（国内慢），用系统字体，见 extra.css
   favicon: assets/images/favicon.svg

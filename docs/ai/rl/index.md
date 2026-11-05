@@ -6,6 +6,7 @@
 2. [策略梯度与 PPO](ppo.md)
 3. [RLHF / DPO / GRPO](rlhf.md)：强化学习用于大模型训练
 4. 长文：[从 PPO 到 GRPO](ppo-to-grpo.md)
+5. 长文推导：[从 SFT 到 Agentic RL](sft-to-agentic-rl.md)：SFT → 在线策略蒸馏 → RL → Agentic RL，一条梯度公式的四次变形
 
 ## 全部文章
 

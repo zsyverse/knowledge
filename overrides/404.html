@@ -1,8 +1,9 @@
 {% extends "main.html" %}
 {% block content %}
-<div style="text-align:center;padding:4rem 0">
-  <h1 style="font-size:3rem;margin-bottom:.5rem">404</h1>
+<div class="md-typeset home-hero page-404">
+  <h1>404</h1>
   <p>这个页面不存在，可能是文章被移动了位置。</p>
-  <p>试试顶部的 <strong>搜索</strong>，或者 <a href="{{ config.site_url }}">回到首页</a>。</p>
+  <p>试试顶部的 <strong>搜索</strong>，或者回到首页看看最近更新。</p>
+  <a class="md-button md-button--primary" href="{{ config.site_url }}">回到首页</a>
 </div>
 {% endblock %}

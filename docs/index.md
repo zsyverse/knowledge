@@ -14,17 +14,24 @@ hide:
 [开始阅读 :octicons-arrow-right-24:](ai/llm/index.md){ .md-button .md-button--primary }
 [写作指南](guide.md){ .md-button }
 
+<div class="home-stats">
+<span><b><!-- count:all --></b>篇文章</span>
+<span><b>6</b>个分类</span>
+<span><b><!-- count:tags --></b>个标签</span>
+<span><b><!-- updated --></b>最近更新</span>
+</div>
+
 </div>
 
 <div class="grid cards home-cards" markdown>
 
--   :material-brain:{ .lg .middle } **AI** · <!-- count:ai --> 篇
+-   :material-brain:{ .lg .middle } **AI** <span class="count"><!-- count:ai --> 篇</span>
 
     ---
 
     [LLM/VLM](ai/llm/index.md) · [强化学习](ai/rl/index.md) · [Robot](ai/robot/index.md)
 
--   :material-robot-industrial-outline:{ .lg .middle } **AI4AI** · <!-- count:ai4ai --> 篇
+-   :material-robot-industrial-outline:{ .lg .middle } **AI4AI** <span class="count"><!-- count:ai4ai --> 篇</span>
 
     ---
 
@@ -32,13 +39,13 @@ hide:
 
     [:octicons-arrow-right-24: 进入](ai4ai/index.md)
 
--   :material-sigma:{ .lg .middle } **基础** · <!-- count:basics --> 篇
+-   :material-sigma:{ .lg .middle } **基础** <span class="count"><!-- count:basics --> 篇</span>
 
     ---
 
     [数学基础](basics/math/index.md) · [控制理论](basics/control/index.md) · [电路](basics/circuits/index.md)
 
--   :material-hammer-wrench:{ .lg .middle } **工程实践** · <!-- count:engineering --> 篇
+-   :material-hammer-wrench:{ .lg .middle } **工程实践** <span class="count"><!-- count:engineering --> 篇</span>
 
     ---
 
@@ -46,7 +53,7 @@ hide:
 
     [:octicons-arrow-right-24: 进入](engineering/index.md)
 
--   :material-telescope:{ .lg .middle } **前沿视野** · <!-- count:frontier --> 篇
+-   :material-telescope:{ .lg .middle } **前沿视野** <span class="count"><!-- count:frontier --> 篇</span>
 
     ---
 
@@ -54,7 +61,7 @@ hide:
 
     [:octicons-arrow-right-24: 进入](frontier/index.md)
 
--   :material-feather:{ .lg .middle } **随笔** · <!-- count:essays --> 篇
+-   :material-feather:{ .lg .middle } **随笔** <span class="count"><!-- count:essays --> 篇</span>
 
     ---
 
@@ -62,7 +69,7 @@ hide:
 
 </div>
 
-## 最近更新
+## 最近更新 { .home-section-title }
 
 <div class="home-recent" markdown>
 
@@ -70,4 +77,4 @@ hide:
 
 </div>
 
-<small>按主题横向浏览：[标签](tags.md) · 顶部 :material-magnify: 支持中英文全文搜索</small>
+<p class="home-foot" markdown>按主题横向浏览 :material-tag-multiple-outline: [标签](tags.md) · 按 <kbd>/</kbd> 或 <kbd>S</kbd> 全文搜索（中英文）</p>

@@ -133,13 +133,19 @@ def _home_markdown(markdown, page, config):
 
     def count(m):
         d = m.group(1).strip("/")
+        if d == "all":
+            return str(len(arts))
+        if d == "tags":
+            return str(len({t for a in arts for t in a["tags"]}))
         return str(sum(1 for a in arts if a["rel"].startswith(d + "/")))
 
     markdown = re.sub(r"<!--\s*count:([\w/-]+)\s*-->", count, markdown)
+    latest = max((a["date"] for a in arts if a["date"]), default="")
+    markdown = markdown.replace("<!-- updated -->", latest[5:].replace("-", "/") if latest else "—")
     if "<!-- recent -->" in markdown:
         titles = _dir_titles(docs_dir)
         arts.sort(key=lambda a: a["date"], reverse=True)
-        rows = ["| 日期 | 文章 | 分类 |", "| --- | --- | --- |"]
+        rows = []
         per_dir, shown = {}, []
         for a in arts:  # 每个目录最多 3 篇，避免同一批文章刷屏
             d = a["rel"].rsplit("/", 1)[0]
@@ -149,7 +155,8 @@ def _home_markdown(markdown, page, config):
             if len(shown) == 10:
                 break
         for a in shown:
-            rows.append(f"| {a['date']} | [{a['title']}]({a['rel']}) | {_category(a['rel'], titles)} |")
+            cat = _category(a["rel"], titles)
+            rows.append(f'- <time>{a["date"]}</time> [{a["title"]}]({a["rel"]}) <span class="cat">{cat}</span>')
         markdown = markdown.replace("<!-- recent -->", "\n".join(rows))
     return markdown
 
@@ -162,5 +169,43 @@ def on_page_markdown(markdown, page, config, files):  # noqa: F811
     return _orig_on_page_markdown(markdown, page, config, files)
 
 
+_ICON_CAL = '<svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2m0 16H5V9h14zM5 7V6h14v1z"/></svg>'
+_ICON_TXT = '<svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zm4 18H6V4h7v5h5zM8 12h8v2H8zm0 4h8v2H8z"/></svg>'
+_ICON_CLK = '<svg viewBox="0 0 24 24"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16m0-18a10 10 0 1 1 0 20 10 10 0 0 1 0-20m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>'
+
+
+def _reading_stats(md):
+    """中文按字、英文按词统计；忽略代码块、公式、HTML 注释与链接地址"""
+    md = re.sub(r"^---\n.*?\n---\n", "", md, flags=re.S)
+    md = re.sub(r"(```|~~~).*?\1", "", md, flags=re.S)
+    md = re.sub(r"\$\$.*?\$\$|\\\[.*?\\\]", "", md, flags=re.S)
+    md = re.sub(r"<!--.*?-->|<[^>]+>|\]\([^)]*\)", "", md, flags=re.S)
+    cjk = len(re.findall(r"[\u4e00-\u9fff]", md))
+    words = len(re.findall(r"[A-Za-z][A-Za-z0-9'-]*", md))
+    return cjk + words, max(1, round(cjk / 400 + words / 220))
+
+
+def _page_meta(page):
+    if page.file.src_uri.endswith("index.md") or page.file.src_uri in SKIP_TOP:
+        return ""
+    date = page.meta.get("date")
+    if isinstance(date, (datetime.date, datetime.datetime)):
+        date = date.strftime("%Y-%m-%d")
+    n, mins = _reading_stats(page.markdown or "")
+    if n < 80:
+        return ""
+    parts = []
+    if date:
+        parts.append(f"<span>{_ICON_CAL}{date}</span>")
+    parts.append(f"<span>{_ICON_TXT}约 {n:,} 字</span>")
+    parts.append(f"<span>{_ICON_CLK}{mins} 分钟读完</span>")
+    return '<div class="page-meta">' + "".join(parts) + "</div>"
+
+
 def on_page_content(html, page, config, files):
+    meta = _page_meta(page)
+    if meta:
+        html, k = re.subn(r"</h1>", lambda m: m.group(0) + meta, html, count=1)
+        if not k:
+            html = meta + html
     return re.sub(r"<img(?![^>]*\sloading=)", '<img loading="lazy" decoding="async"', html)

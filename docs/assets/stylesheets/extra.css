@@ -337,3 +337,9 @@ body { -webkit-font-smoothing: antialiased; }
 /* 404 页沿用首页 hero 样式 */
 .md-typeset .page-404 { margin-top: 2rem; }
 .md-typeset .page-404 h1 { font-size: 4.5rem; letter-spacing: .02em; }
+
+/* 示意图（矢量线稿）：居中、限宽，暗色模式反色 */
+.md-typeset img.diagram { display: block; margin: 1em auto; max-width: 640px; width: 100%; border-radius: 0; }
+[data-md-color-scheme="slate"] img.diagram { filter: invert(0.88) hue-rotate(180deg); }
+[data-md-color-scheme="slate"] .gslide-image img[src*="/modern/images/"][src$=".svg"],
+[data-md-color-scheme="slate"] .gslide-image img[src*="/linalg/images/"][src$=".svg"] { filter: invert(0.88) hue-rotate(180deg); background: #fff; }

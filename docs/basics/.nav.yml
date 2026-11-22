@@ -1,4 +1,6 @@
 nav:
   - 数学基础: math
+  - Python 编程: python
+  - 算法刷题: algo
   - 控制理论: control
   - 电路: circuits

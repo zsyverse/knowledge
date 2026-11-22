@@ -1,0 +1,17 @@
+nav:
+  - index.md
+  - vectors.md
+  - matrices.md
+  - linear-systems.md
+  - subspaces.md
+  - determinant.md
+  - orthogonality.md
+  - eigen.md
+  - quadratic-forms.md
+  - svd.md
+  - pca-lowrank.md
+  - matrix-calculus.md
+  - transformer-linalg.md
+  - exercises.md
+  - glob: "*"
+    ignore_no_matches: true

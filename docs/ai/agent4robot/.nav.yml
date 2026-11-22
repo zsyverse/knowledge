@@ -1,0 +1,8 @@
+nav:
+  - index.md
+  - landscape.md
+  - interfaces.md
+  - case-study.md
+  - verification.md
+  - glob: "*"
+    ignore_no_matches: true

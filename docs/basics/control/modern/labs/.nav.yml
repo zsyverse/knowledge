@@ -1,0 +1,6 @@
+nav:
+  - index.md
+  - lab14.md
+  - lab15.md
+  - glob: "*"
+    ignore_no_matches: true

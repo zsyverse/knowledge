@@ -2,3 +2,4 @@ nav:
   - LLM/VLM: llm
   - 强化学习: rl
   - Robot: robot
+  - Agent4Robot: agent4robot

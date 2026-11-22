@@ -1,0 +1,15 @@
+nav:
+  - index.md
+  - setup.md
+  - types.md
+  - functions.md
+  - classes.md
+  - iterators.md
+  - modules.md
+  - files-text.md
+  - numpy.md
+  - concurrency.md
+  - pytorch.md
+  - exercises.md
+  - glob: "*"
+    ignore_no_matches: true

@@ -1,0 +1,15 @@
+nav:
+  - index.md
+  - state-space.md
+  - realization.md
+  - linear-transform.md
+  - lti-response.md
+  - tv-discrete-response.md
+  - stability.md
+  - lyapunov-nonlinear.md
+  - controllability.md
+  - observability.md
+  - canonical-decomposition.md
+  - state-feedback.md
+  - glob: "*"
+    ignore_no_matches: true

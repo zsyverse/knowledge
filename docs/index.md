@@ -29,7 +29,7 @@ hide:
 
     ---
 
-    [LLM/VLM](ai/llm/index.md) · [强化学习](ai/rl/index.md) · [Robot](ai/robot/index.md)
+    [LLM/VLM](ai/llm/index.md) · [强化学习](ai/rl/index.md) · [Robot](ai/robot/index.md) · [Agent4Robot](ai/agent4robot/index.md)
 
 -   :material-robot-industrial-outline:{ .lg .middle } **AI4AI** <span class="count"><!-- count:ai4ai --> 篇</span>
 
@@ -43,7 +43,7 @@ hide:
 
     ---
 
-    [数学基础](basics/math/index.md) · [控制理论](basics/control/index.md) · [电路](basics/circuits/index.md)
+    [数学基础](basics/math/index.md) · [Python 编程](basics/python/index.md) · [算法刷题](basics/algo/index.md) · [控制理论](basics/control/index.md) · [电路](basics/circuits/index.md)
 
 -   :material-hammer-wrench:{ .lg .middle } **工程实践** <span class="count"><!-- count:engineering --> 篇</span>
 

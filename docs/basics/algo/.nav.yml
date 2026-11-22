@@ -1,0 +1,15 @@
+nav:
+  - index.md
+  - acm-io.md
+  - toolkit.md
+  - array.md
+  - binary-search.md
+  - linked-list.md
+  - stack-queue.md
+  - tree.md
+  - graph.md
+  - backtracking.md
+  - dp.md
+  - greedy-string-math.md
+  - glob: "*"
+    ignore_no_matches: true

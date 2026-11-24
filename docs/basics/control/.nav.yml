@@ -1,5 +1,6 @@
 nav:
   - index.md
   - 现代控制理论: modern
+  - 智能控制技术: intelligent.md
   - glob: "*"
     ignore_no_matches: true

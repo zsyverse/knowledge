@@ -9,6 +9,8 @@ import numpy as np
 from acommon import (elm, new_drawing, save, save_fig as _save_fig, dot, text, wire, gnd, opamp, axes, plt,
                      note, C1, C2, C3, C4, INK, MUTED)
 
+GRIDC = "#bbbbbb"
+
 
 def save_fig(fig, name):
     prev = os.environ.get("CIRCUIT_PREVIEW")
@@ -155,6 +157,48 @@ def dissipation():
 
 
 # ---------------------------------------------------------------- 直流电源
+def chain():
+    """直流电源的四个环节：变压 → 整流 → 滤波 → 稳压，每段下方画出该点的电压波形。"""
+    from matplotlib.patches import FancyBboxPatch
+    fig, ax = plt.subplots(figsize=(7.6, 2.5))
+    ax.set_xlim(0, 15.2); ax.set_ylim(-1.25, 3.1); ax.axis("off")
+    names = ["电源\n变压器", "整流", "滤波", "稳压"]
+    xs = [2.0, 5.4, 8.8, 12.2]
+    for x, nm in zip(xs, names):
+        ax.add_patch(FancyBboxPatch((x - 0.95, 1.75), 1.9, 1.05, boxstyle="round,pad=0.05",
+                                    fc="white", ec=INK, lw=1.2))
+        ax.text(x, 2.27, nm, ha="center", va="center", fontsize=11, color=INK)
+    ax_pts = [0.35, 3.7, 7.1, 10.5, 13.9]
+    for i in range(4):
+        ax.annotate("", xy=(xs[i] - 1.0, 2.27), xytext=(ax_pts[i] - 0.25 if i == 0 else xs[i - 1] + 1.0, 2.27),
+                    arrowprops=dict(arrowstyle="->", color=INK, lw=1.1))
+    ax.annotate("", xy=(14.9, 2.27), xytext=(xs[3] + 1.0, 2.27),
+                arrowprops=dict(arrowstyle="->", color=INK, lw=1.1))
+    ax.text(0.1, 2.55, "220 V", fontsize=9, color=MUTED)
+    ax.text(14.0, 2.55, "$V_O$", fontsize=10, color=INK)
+    # 每个节点下方的小波形
+    t = np.linspace(0, 2, 200)
+    w = 1.3
+    def wave(xc, y, col):
+        xx = xc - w / 2 + t / 2 * w
+        ax.plot([xc - w / 2, xc + w / 2], [0.4, 0.4], color=GRIDC, lw=0.6)
+        ax.plot(xx, 0.4 + y, color=col, lw=1.6)
+    wave(0.75, 0.6 * np.sin(2 * np.pi * t), C1)
+    wave(3.7, 0.3 * np.sin(2 * np.pi * t), C1)
+    wave(7.1, 0.6 * np.abs(np.sin(2 * np.pi * t)), C2)
+    v = np.empty_like(t); cur_v = 0.0
+    for i, tt in enumerate(t):
+        r = 0.6 * abs(np.sin(2 * np.pi * tt))
+        cur_v = r if r >= cur_v else cur_v - 0.0025
+        v[i] = cur_v
+    wave(10.5, v, C2)
+    wave(13.9, 0.45 + 0 * t, C3)
+    labels = ["交流 $v_1$", "降压 $v_2$", "单向脉动", "带纹波直流", "稳定直流"]
+    for x, lb in zip([0.75, 3.7, 7.1, 10.5, 13.9], labels):
+        ax.text(x, -0.65, lb, va="top", ha="center", fontsize=9, color=MUTED)
+    save_fig(fig, "pw-chain")
+
+
 def bridge():
     """单相桥式整流 + 电容滤波。"""
     d = new_drawing()
@@ -313,6 +357,7 @@ if __name__ == "__main__":
     ocl("pw-otl", otl=True)
     crossover()
     dissipation()
+    chain()
     bridge()
     ripple()
     zener()

@@ -1,0 +1,15 @@
+nav:
+  - index.md
+  - signals-amplifiers.md
+  - diodes.md
+  - transistors.md
+  - basic-amplifiers.md
+  - frequency-response.md
+  - differential-opamp.md
+  - feedback.md
+  - signal-processing.md
+  - waveform-generators.md
+  - power.md
+  - special-ics.md
+  - glob: "*"
+    ignore_no_matches: true

@@ -327,10 +327,12 @@ $$
 
 ??? tip "$r_{be}$ 写法、本征增益与高频模型"
     - 不少教材用 H 参数的 $r_{be}$：
-      $$
-      r_{be}=r_{bb'}+(1+\beta)\frac{V_T}{I_E},
-      $$
-      $r_{bb'}$ 是基区体电阻（常取 $200\,\Omega$ 左右）。$r_{bb'}$ 可忽略时 $r_{be}\approx r_\pi$。
+
+        $$
+        r_{be}=r_{bb'}+(1+\beta)\frac{V_T}{I_E},
+        $$
+
+        $r_{bb'}$ 是基区体电阻（常取 $200\,\Omega$ 左右）。$r_{bb'}$ 可忽略时 $r_{be}\approx r_\pi$。
     - 受控源写成 $\beta i_b$ 与写成 $g_mv_\pi$ 等价：$\beta i_b=\beta\dfrac{v_\pi}{r_\pi}=g_mv_\pi$。
     - 本征电压增益上限 $g_mr_o=V_A/V_T$，可达数千。
     - 高频时还要在 B–E、B–C 间加结电容 $C_\pi$、$C_\mu$，见 [频率响应](frequency-response.md)。
@@ -401,9 +403,11 @@ $$
 
 ??? tip "另一种写法"
     有的教材把饱和区电流写作
+
     $$
     i_D=I_{DO}\Big(\frac{v_{GS}}{V_{GS(th)}}-1\Big)^2,\qquad I_{DO}=KV_{GS(th)}^2 ,
     $$
+
     与 $K(v_{GS}-V_{GS(th)})^2$ 完全等价。
 
 ### 6.4 预夹断与沟道长度调制
@@ -605,9 +609,11 @@ $$
 
 ??? note "解析"
     1. 基极回路 KVL：$12=I_BR_B+0.7+(1+\beta)I_BR_E$，
+
         $$
         I_B=\frac{12-0.7}{430+101\times1}=\frac{11.3}{531}\approx0.0213\,\mathrm{mA}.
         $$
+
     2. $R_E$ 折算到基极回路要乘 $(1+\beta)$，因为流过它的是 $I_E$。
     3. $I_C=100I_B\approx2.128\,\mathrm{mA}$，$I_E\approx2.149\,\mathrm{mA}$。
     4. $V_{CE}=12-2.128\times2-2.149\times1\approx5.59\,\mathrm V>0.2\,\mathrm V$ → 放大区 ✓。

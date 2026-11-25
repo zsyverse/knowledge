@@ -378,9 +378,11 @@ $$
 3. 画交流通路：直流电源置零，二极管换成 $r_d$，求交流量。
 
 ??? tip "$r_d$ 的推导"
+
     $$
     \frac{\mathrm di_D}{\mathrm dv_D}\Big|_Q=\frac{I_S e^{V_D/V_T}}{V_T}\approx\frac{I_D}{V_T},
     $$
+
     取倒数即得 $r_d$。这和 [非线性电阻的小信号分析](../extras/nonlinear.md) 里的"$Q$ 点切线"是同一个方法。折线模型里的 $r_D$ 是大范围的平均斜率，和 $r_d$ 不是一回事。
 
 ??? example "例 4：小信号——电源纹波在二极管上的分量"
@@ -391,6 +393,7 @@ $$
     1. 直流：$I_D=\dfrac{5-0.7}{4.3}=1\,\mathrm{mA}$。
     2. 动态电阻：$r_d=\dfrac{26\,\mathrm{mV}}{1\,\mathrm{mA}}=26\,\Omega$。
     3. 交流：$R$ 与 $r_d$ 分压，
+
         $$
         v_d=0.1\times\frac{26}{4300+26}\approx0.60\,\mathrm{mV}.
         $$

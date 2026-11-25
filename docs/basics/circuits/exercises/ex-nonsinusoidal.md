@@ -214,7 +214,7 @@ $$
     2. **基波完全通过**：$u_{R1}=u_{S1}$ 要求串联部分对基波的总阻抗为零。基波下 $\omega L_1=\dfrac{1000}{90}\approx11.11\,\Omega$，$\dfrac{1}{\omega C_1}=100\,\Omega$，
 
         $$
-        Y_{槽}=\frac{1}{j11.11}+\frac{1}{-j100}=-j0.09+j0.01=-j0.08\,\mathrm S,\qquad Z_{槽}=j12.5\,\Omega\ (\text{感性}).
+        Y_{\text{槽}}=\frac{1}{j11.11}+\frac{1}{-j100}=-j0.09+j0.01=-j0.08\,\mathrm S,\qquad Z_{\text{槽}}=j12.5\,\Omega\ (\text{感性}).
         $$
 
         需要串联一个容抗 $12.5\,\Omega$ 的电容来抵消：$\dfrac{1}{1000\,C_2}=12.5\Rightarrow C_2=80\,\mu\mathrm F$。

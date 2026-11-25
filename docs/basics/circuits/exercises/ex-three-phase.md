@@ -112,7 +112,7 @@ tags:
 
 ??? success "答案"
     $\dot I_A=14.67\angle(-53.13^\circ)\,\mathrm A$，$\dot I_{A'B'}=8.47\angle(-23.13^\circ)\,\mathrm A$，$U_{A'B'}\approx345.5\,\mathrm V$；
-    $P_{负载}\approx5162.7\,\mathrm W$，$P_{线路}\approx645.3\,\mathrm W$，$P_{电源}=5808\,\mathrm W$。
+    $P_{\text{负载}}\approx5162.7\,\mathrm W$，$P_{\text{线路}}\approx645.3\,\mathrm W$，$P_{\text{电源}}=5808\,\mathrm W$。
 
 ??? note "解析"
     1. **Δ 化 Y**：$Z_Y=Z_\Delta/3=8+j11\,\Omega$。A 相单相电路的总阻抗
@@ -129,11 +129,11 @@ tags:
     4. **功率**：
 
         $$
-        P_{负载}=3I_{A'B'}^2\times24\approx5162.7\,\mathrm W,\qquad P_{线路}=3I_A^2\times1\approx645.3\,\mathrm W,
+        P_{\text{负载}}=3I_{A'B'}^2\times24\approx5162.7\,\mathrm W,\qquad P_{\text{线路}}=3I_A^2\times1\approx645.3\,\mathrm W,
         $$
 
         $$
-        P_{电源}=3U_AI_A\cos53.13^\circ=3\times220\times14.67\times0.6=5808\,\mathrm W=5162.7+645.3\ \checkmark
+        P_{\text{电源}}=3U_AI_A\cos53.13^\circ=3\times220\times14.67\times0.6=5808\,\mathrm W=5162.7+645.3\ \checkmark
         $$
 
     !!! warning "易错"

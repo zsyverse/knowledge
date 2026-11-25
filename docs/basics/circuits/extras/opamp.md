@@ -228,7 +228,7 @@ $$
         u_o=-60\Big(\frac{u_1}{20}+\frac{u_2}{30}+\frac{u_3}{60}\Big)=-(3u_1+2u_2+u_3)=-(0.6-1+1)=-0.6\,\mathrm V .
         $$
 
-    2. 系数 $R_f/R_k$ 要保持 $3、2、1$，所以 $R_k=R_f/3,\ R_f/2,\ R_f/1=40、60、120\,\mathrm{k\Omega}$。
+    2. 系数 $R_f/R_k$ 要保持 $3:2:1$，所以 $R_k=R_f/3,\ R_f/2,\ R_f/1$，即 $40$、$60$、$120\,\mathrm{k\Omega}$。
 
 ### 3. T 形反馈网络 :material-star::material-star::material-star-outline:
 

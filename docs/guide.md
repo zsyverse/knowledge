@@ -56,7 +56,7 @@ tags:
 
 # 标题
 
-!!! abstract "TL;DR"
+!!! abstract "要点"
     一段话总结。
 
 ## 核心公式 / 方法

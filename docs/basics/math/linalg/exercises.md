@@ -8,7 +8,7 @@ tags:
 
 # 综合练习
 
-20 道题按章节顺序排列，一半是纯计算，一半放在 AI 的情境里。先自己算，再展开参考答案对照。所有答案都用 SymPy / NumPy 验算过，验算脚本是 `scripts/linalg/verify_exercises.py`。
+20 道题按章节顺序排列，一半是纯计算，一半放在 AI 的情境里。答案的验算脚本是 `scripts/linalg/verify_exercises.py`（SymPy / NumPy）。
 
 ## 1. 点积排序与余弦排序
 

@@ -60,7 +60,7 @@ tags:
     ![0₊ 等效电路：电感→4 A 电流源，电容→20 V 电压源](../images/ex/sol/d-73-0p.svg){ .circuit }
 
     !!! warning "易错"
-        不能拿换路后的稳态电路算 $0_+$ 值——那只能得到 $t\to\infty$ 时的终值（这里 $i(\infty)=0$、$u_C(\infty)=0$）。$u_L$ 从 $0_-$ 的 $0$ 跳到了 $-20\,\mathrm V$，正是"电感电压可以跳变"。
+        不能拿换路后的稳态电路算 $0_+$ 值，那只能得到 $t\to\infty$ 时的终值（这里 $i(\infty)=0$、$u_C(\infty)=0$）。$u_L$ 从 $0_-$ 的 $0$ 跳到了 $-20\,\mathrm V$，正是"电感电压可以跳变"。
 
 ## 一阶电路的三要素法
 
@@ -125,7 +125,7 @@ tags:
     ![0₊ 等效电路：电感→4.5 A 电流源](../images/ex/sol/d-rl-0p.svg){ .circuit }
 
     !!! warning "易错"
-        $u_a(0_-)=3\times(6-4.5)=4.5\,\mathrm V$，而 $u_a(0_+)=3\,\mathrm V$——非储能量会跳变，必须在 $0_+$ 电路里重新求。
+        $u_a(0_-)=3\times(6-4.5)=4.5\,\mathrm V$，而 $u_a(0_+)=3\,\mathrm V$。非储能量会跳变，必须在 $0_+$ 电路里重新求。
 
         ![u_a 的波形：t=0 处跳变](../images/ex/sol/d-rl-ua.svg){ .circuit }
 
@@ -142,7 +142,7 @@ tags:
 
 ??? note "解析"
     1. **初始值**：换路后两电感与 $R$ 并联、并联电压有限，电感电流连续：$i_2(0_+)=2\,\mathrm A$。
-    2. **终值需要两个条件**。稳态时并联电压为零，$R$ 中无电流，$i_1(\infty)+i_2(\infty)=6$——一个方程两个未知量，还缺一个。
+    2. **终值需要两个条件**。稳态时并联电压为零，$R$ 中无电流，$i_1(\infty)+i_2(\infty)=6$，一个方程两个未知量，还缺一个。
     3. **磁链关系**：两电感始终承受同一电压，$L_1\dfrac{\mathrm di_1}{\mathrm dt}=L_2\dfrac{\mathrm di_2}{\mathrm dt}$，积分得
 
         $$
@@ -159,7 +159,7 @@ tags:
         ![i_1、i_2 的波形](../images/ex/sol/d-74-wave.svg){ .circuit }
 
     !!! warning "易错"
-        有初始储能时，不能按"电感反比分流"直接写 $i_2(\infty)=6\times\dfrac{L_1}{L_1+L_2}=2\,\mathrm A$——那只对零初始状态成立。
+        有初始储能时，不能按"电感反比分流"直接写 $i_2(\infty)=6\times\dfrac{L_1}{L_1+L_2}=2\,\mathrm A$，那只对零初始状态成立。
 
 ### 6. 两电容中点突然相连 :material-star::material-star::material-star:
 
@@ -189,7 +189,7 @@ tags:
         \ \Rightarrow\ 3\frac{\mathrm du_{C2}}{\mathrm dt}+1.5u_{C2}=9 .
         $$
 
-        稳态 $u_{C2}(\infty)=6\,\mathrm V$，恰好等于初值，所以 $u_{C2}(t)\equiv6\,\mathrm V$，$u_{C1}(t)\equiv3\,\mathrm V$——跳变之后直接就是新的稳态（这是本题参数的巧合，一般情况下跳变后仍有指数过渡过程，时间常数 $\tau=\dfrac{C_1+C_2}{1/R_1+1/R_2}=2\,\mathrm s$）。
+        稳态 $u_{C2}(\infty)=6\,\mathrm V$，恰好等于初值，所以 $u_{C2}(t)\equiv6\,\mathrm V$，$u_{C1}(t)\equiv3\,\mathrm V$，跳变之后直接就是新的稳态（这是本题参数的巧合，一般情况下跳变后仍有指数过渡过程，时间常数 $\tau=\dfrac{C_1+C_2}{1/R_1+1/R_2}=2\,\mathrm s$）。
 
 ## 含受控源与级联的电路
 
@@ -259,7 +259,7 @@ tags:
 
         激励是指数函数，**三要素法不适用**。设特解 $Ae^{-t/2}$：$-\tfrac A2+A=6\Rightarrow A=12$；通解 $u_C=12e^{-t/2}+Be^{-t}$，由 $u_C(0_+)=6$ 得 $B=-6$。
 
-    **校验**：$u_0(0_+)=0$——打开瞬间左端 $u_{C1}(0_+)=6\,\mathrm V$，右端 $ri_1(0_+)=20\times\dfrac{12-6}{20}=6\,\mathrm V$，两端仍等电位；$u_C(\infty)=0$，因为受控源电压随 $i_1$ 衰减到零。
+    **校验**：$u_0(0_+)=0$。打开瞬间左端 $u_{C1}(0_+)=6\,\mathrm V$，右端 $ri_1(0_+)=20\times\dfrac{12-6}{20}=6\,\mathrm V$，两端仍等电位；$u_C(\infty)=0$，因为受控源电压随 $i_1$ 衰减到零。
 
     ![各电压波形](../images/ex/sol/d-712-wave.svg){ .circuit }
 

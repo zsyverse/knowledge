@@ -338,7 +338,7 @@ print(np.linalg.matrix_rank(dW), np.linalg.matrix_rank(W_merged))   # 2 4
 
 ### 与截断 SVD 的区别
 
-第 5 节的压缩假设 **$W$ 本身**近似低秩，用低秩矩阵**替换** $W$。LoRA 假设的是**微调带来的改变量 $\Delta W$** 近似低秩，$W$ 原样保留，合并后的 $W'=W+\Delta W$ 一般仍是满秩的。这是两个不同的假设：
+第 5 节的压缩假设 $W$ 本身近似低秩，用低秩矩阵替换 $W$。LoRA 假设的是**微调带来的改变量 $\Delta W$** 近似低秩，$W$ 原样保留，合并后的 $W'=W+\Delta W$ 一般仍是满秩的。这是两个不同的假设：
 
 ```python
 rng = np.random.default_rng(0)

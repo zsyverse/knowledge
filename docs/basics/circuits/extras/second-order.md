@@ -8,7 +8,7 @@ tags:
 
 # 二阶电路与卷积积分
 
-!!! abstract "TL;DR"
+!!! abstract "要点"
     - **二阶电路**：列出二阶微分方程，由特征根 $s_{1,2}=-\alpha\pm\sqrt{\alpha^2-\omega_0^2}$ 判断阻尼类型、写出通解，再用**两个**初始条件 $f(0_+)$、$f'(0_+)$ 定常数。RLC 串联 $\alpha=\dfrac{R}{2L}$，GCL 并联 $\alpha=\dfrac{1}{2RC}$，两者 $\omega_0=\dfrac{1}{\sqrt{LC}}$。
     - **卷积积分**：已知冲激响应 $h(t)$，任意激励 $e(t)$ 的零状态响应
 
@@ -73,7 +73,7 @@ LC\frac{\mathrm d^2i_L}{\mathrm dt^2}+\frac LR\frac{\mathrm di_L}{\mathrm dt}+i_
 \alpha=\frac{1}{2RC},\quad \omega_0=\frac{1}{\sqrt{LC}} .
 $$
 
-它和 RLC 串联方程形式完全相同（$u_C\leftrightarrow i_L$，$R\leftrightarrow G$，$L\leftrightarrow C$，$U_s\leftrightarrow I_s$）——这就是 [对偶原理](tellegen-duality.md#3-对偶原理)。
+它和 RLC 串联方程形式完全相同（$u_C\leftrightarrow i_L$，$R\leftrightarrow G$，$L\leftrightarrow C$，$U_s\leftrightarrow I_s$），这是 [对偶原理](tellegen-duality.md#3-对偶原理) 的一个例子。
 
 | | RLC 串联 | GCL 并联 |
 | --- | --- | --- |
@@ -82,7 +82,7 @@ $$
 | 振荡（欠阻尼）条件 | $R$ **小于**临界值 | $R$ **大于**临界值 |
 
 !!! warning "方向别记反"
-    串联电路电阻越**小**越容易振荡；并联电路电阻越**大**（电导越小）越容易振荡——电阻都是"损耗"，但在并联电路中大电阻意味着小损耗。
+    串联电路电阻越**小**越容易振荡；并联电路电阻越**大**（电导越小）越容易振荡。电阻都代表损耗，但在并联电路中大电阻意味着小损耗。
 
 ??? example "例：GCL 并联的阶跃响应（欠阻尼）"
     $I_s=1\,\mathrm A$，$R=0.5\,\Omega$，$L=0.2\,\mathrm H$，$C=1\,\mathrm F$，零初始状态。求 $i_L(t)$ 与 $u(t)$。
@@ -95,7 +95,7 @@ $$
     i_L(t)=1-e^{-t}\Big(\cos2t+\frac12\sin2t\Big)\ \mathrm A,\qquad u(t)=L\frac{\mathrm di_L}{\mathrm dt}=\frac12e^{-t}\sin2t\ \mathrm V .
     $$
 
-    与 [运算法](laplace.md) 中 RLC 串联的阶跃响应 $1-e^{-t}(\cos2t+\tfrac12\sin2t)$ 一模一样——两电路的方程互为对偶，且参数恰好对应（$R=2\leftrightarrow G=2$，$L=1\leftrightarrow C=1$，$C=0.2\leftrightarrow L=0.2$）。
+    与 [运算法](laplace.md) 中 RLC 串联的阶跃响应 $1-e^{-t}(\cos2t+\tfrac12\sin2t)$ 完全相同：两电路的方程互为对偶，且参数恰好对应（$R=2\leftrightarrow G=2$，$L=1\leftrightarrow C=1$，$C=0.2\leftrightarrow L=0.2$）。
 
 ## 3. 卷积积分
 

@@ -60,7 +60,7 @@ tags:
     ![相电压与线电压相量图](../images/ex/sol/s-2-phasor.svg){ .circuit }
 
     !!! warning "易错"
-        不要习惯性地写 $\dot U_A=220\angle0^\circ$——题目给定的参考相量是 $\dot U_{BC}$，所有相位都要从它推出。
+        不要习惯性地写 $\dot U_A=220\angle0^\circ$，题目给定的参考相量是 $\dot U_{BC}$，所有相位都要从它推出。
 
 ## 对称三相电路
 
@@ -256,7 +256,7 @@ tags:
     \dot U_{CN'}=\dot U_C-\dot U_{N'N}=220\big[(-0.5+j0.866)-(-0.2+j0.6)\big]=220(-0.3+j0.266),\quad U_{CN'}\approx0.401\times220\approx88.2\,\mathrm V .
     $$
 
-    B 相灯电压约为 C 相的 $3.7$ 倍，B 相灯亮。结论：**电容接 A 相时，亮灯是滞后 A 相 $120^\circ$ 的 B 相**——据此可以判定实际电源的相序。
+    B 相灯电压约为 C 相的 $3.7$ 倍，B 相灯亮。结论：**电容接 A 相时，亮灯是滞后 A 相 $120^\circ$ 的 B 相**，据此可以判定实际电源的相序。
 
     ![中性点位移相量图](../images/ex/sol/s-phase-seq-phasor.svg){ .circuit }
 

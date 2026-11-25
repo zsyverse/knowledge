@@ -194,7 +194,7 @@ def repeated_substring(s):
 print(repeated_substring("abcabcabc"), repeated_substring("aba"))   # True False
 ```
 
-不用 KMP 的巧妙写法：`s in (s + s)[1:-1]`。
+不用 KMP 的写法：`s in (s + s)[1:-1]`。
 
 ### 字符串哈希
 
@@ -565,7 +565,7 @@ print(sorted(round(cnt[i] / 20000, 2) for i in range(10)))   # 每个元素被�
 | GRPO 组内优势、token 级 log 概率 | [综合练习](../python/exercises.md)、[PyTorch 基础](../python/pytorch.md) |
 | 训练循环、梯度累积 | [PyTorch 基础](../python/pytorch.md) |
 
-此外，**LRU 缓存**、**编辑距离**、**Trie**、**Top K（堆）**、**蓄水池抽样**、**带权随机采样（前缀和加二分）** 在大模型岗位的面试中出现得比较多，因为它们和 KV cache 管理、文本评测、词表、数据采样等实际问题直接相关。
+此外，LRU 缓存、编辑距离、Trie、Top K（堆）、蓄水池抽样、带权随机采样（前缀和加二分）在大模型岗位的面试中出现得比较多，因为它们和 KV cache 管理、文本评测、词表、数据采样等实际问题直接相关。
 
 带权随机采样（力扣 528）：
 

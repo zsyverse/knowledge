@@ -95,7 +95,7 @@ $\dot U=50\angle0^\circ\,\mathrm V$，$\omega L_1=4\,\Omega$（$a$–$n$），$\
     $Z_{in}=6+j8\,\Omega$，$\dot I=5\angle(-53.13^\circ)=3-j4\,\mathrm A$。
 
 ??? note "解析"
-    1. **判断接法**：公共节点 $n$ 上，$L_1$ 接的是非同名端，$L_2$ 接的是同名端——**异名端相连**。
+    1. **判断接法**：公共节点 $n$ 上，$L_1$ 接的是非同名端，$L_2$ 接的是同名端，即**异名端相连**。
     2. **去耦**：$L_1$ 一侧臂 $j(\omega L_1+\omega M)=j6$，$L_2$ 一侧臂 $j(\omega L_2+\omega M)=j10$，通向 $n$ 的臂 $-j\omega M=-j2$。
 
         ![T 形去耦后的等效电路](../images/ex/sol/m-tdec-eq.svg){ .circuit }
@@ -118,7 +118,7 @@ $\dot U=50\angle0^\circ\,\mathrm V$，$\omega L_1=4\,\Omega$（$a$–$n$），$\
 
     解得 $\dot I_2=-1.8-j2.6\,\mathrm A$，$\dot U_n=28.8-j8.4\,\mathrm V$，$\dot I=\dot I_2+\dot U_n/6=3-j4\,\mathrm A$ ✓
 
-    !!! warning "同名端一错，全题皆错"
+    !!! warning "易错"
         若误当成同名端相连（臂为 $j2$、$j6$、$+j2$），会得到 $Z_{in}=2.16+j5.12\,\Omega$，与正确结果相差很大。
 
 ### 5. 含互感的电路列方程 :material-star::material-star::material-star-outline:
@@ -198,7 +198,7 @@ $\dot U_S=100\angle0^\circ\,\mathrm V$，$R_1=10\,\Omega$，$\omega L_1=20\,\Ome
 
         ![二次侧等效电路：受控电压 jωMİ₁](../images/ex/sol/m-reflect-sec.svg){ .circuit }
 
-    4. $P_L=I_2^2R_L=\tfrac{100}{9}\times10\approx111.1\,\mathrm W$；它恰好等于反映电阻吸收的功率 $5\times I_1^2=5\times\tfrac{200}{9}\approx111.1\,\mathrm W$ ✓——反映阻抗的实部就代表二次侧取走的有功。
+    4. $P_L=I_2^2R_L=\tfrac{100}{9}\times10\approx111.1\,\mathrm W$；它恰好等于反映电阻吸收的功率 $5\times I_1^2=5\times\tfrac{200}{9}\approx111.1\,\mathrm W$。反映阻抗的实部就代表二次侧取走的有功。
 
 ### 7. 理想变压器的阻抗匹配 :material-star::material-star::material-star-outline:
 

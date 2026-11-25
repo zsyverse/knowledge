@@ -501,7 +501,7 @@ print(run(np.diag(1 / np.diag(H))))      # kappa=3.0, steps=19      对角预条
 print(run(np.linalg.inv(H)))             # kappa=1.0, steps=1       牛顿法
 ```
 
-**Adam** 的更新是 $\theta\leftarrow\theta-\eta\,\hat m/(\sqrt{\hat v}+\epsilon)$，其中 $\hat m$、$\hat v$ 分别是梯度和梯度平方的指数滑动平均，除法逐坐标进行。形式上这是一个对角预条件，$P=\diag(\sqrt{\hat v}+\epsilon)$：梯度一贯较大的坐标步长被缩小，梯度一贯较小的坐标步长被放大。需要注意这只是一个近似的类比，$\sqrt{\hat v}$ 衡量的是梯度的大小，不是曲率，它不等于 Hessian 的对角元。
+**Adam** 的更新是 $\theta\leftarrow\theta-\eta\,\hat m/(\sqrt{\hat v}+\epsilon)$，其中 $\hat m$、$\hat v$ 分别是梯度和梯度平方的指数滑动平均，除法逐坐标进行。形式上这是一个对角预条件，$P=\diag(\sqrt{\hat v}+\epsilon)$：梯度一贯较大的坐标步长被缩小，梯度一贯较小的坐标步长被放大。这只是一个近似的类比，$\sqrt{\hat v}$ 衡量的是梯度的大小，不是曲率，它不等于 Hessian 的对角元。
 
 ### sharpness
 

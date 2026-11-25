@@ -8,7 +8,7 @@ tags:
 
 # 电路方程的矩阵形式与状态方程
 
-!!! abstract "TL;DR"
+!!! abstract "要点"
     - 把电路抽象成**有向图**（$n$ 个节点、$b$ 条支路），用三个矩阵描述拓扑：
 
         | 矩阵 | 尺寸 | KCL | KVL |
@@ -83,7 +83,7 @@ tags:
     - 每条支路电压可由树支电压表示：$\mathbf U=\mathbf Q^{\mathsf T}\mathbf U_t$。
 
 !!! tip "三个矩阵之间的关系"
-    - $\mathbf A\mathbf B^{\mathsf T}=\mathbf 0$，$\mathbf Q\mathbf B^{\mathsf T}=\mathbf 0$——KCL 与 KVL "正交"，这正是 [特勒根定理](tellegen-duality.md) 的来源。
+    - $\mathbf A\mathbf B^{\mathsf T}=\mathbf 0$，$\mathbf Q\mathbf B^{\mathsf T}=\mathbf 0$，即 KCL 与 KVL "正交"，这是 [特勒根定理](tellegen-duality.md) 的来源。
     - 按"先树支、后连支"排列各列时，$\mathbf B=[\mathbf B_t\ \ \mathbf 1_l]$，$\mathbf Q=[\mathbf 1_t\ \ \mathbf Q_l]$，并且 $\mathbf B_t=-\mathbf Q_l^{\mathsf T}$：知道一个就能写出另一个。本例取列序 $(3,4,5\,|\,1,2,6)$ 可以验证。
 
 ## 3. 矩阵形式的电路方程
@@ -116,7 +116,7 @@ $$
 \text{割集方程：}\ \mathbf Q\mathbf Y\mathbf Q^{\mathsf T}\mathbf U_t=\mathbf Q\mathbf I_s-\mathbf Q\mathbf Y\mathbf U_s .
 $$
 
-$\mathbf Y_n$ 的对角元是自导、非对角元是负的互导，和手工列节点方程的规律完全一致——矩阵只是把它"自动化"了。
+$\mathbf Y_n$ 的对角元是自导、非对角元是负的互导，和手工列节点方程的规律一致，矩阵形式只是把手工过程写成了统一的公式。
 
 ??? example "例：用 A 矩阵列节点方程"
     上图的电路各支路参数如下（直流）：
@@ -171,7 +171,7 @@ $\mathbf x$ 为状态变量（通常取各电容电压 $u_C$、各电感电流 $
     特征方程 $\det(s\mathbf 1-\mathbf A)=(s+1)^2+1=s^2+2s+2=0$，固有频率 $s=-1\pm j$。用运算法求网络函数 $\dfrac{U_C(s)}{U_s(s)}=\dfrac{s+1}{s^2+2s+2}$，极点相同 ✓。
 
 !!! warning "状态变量的个数"
-    状态变量个数 = 独立储能元件数。若电路中有**只由电容（和电压源）构成的回路**或**只由电感（和电流源）构成的割集**，其中的 $u_C$ 或 $i_L$ 不再独立，要少取一个——这和 [换路定则失效](../notes/dynamic-circuits.md#4-换路定则失效电荷守恒与磁链守恒) 是同一件事。
+    状态变量个数 = 独立储能元件数。若电路中有**只由电容（和电压源）构成的回路**或**只由电感（和电流源）构成的割集**，其中的 $u_C$ 或 $i_L$ 不再独立，要少取一个。这和 [换路定则失效](../notes/dynamic-circuits.md#4-换路定则失效电荷守恒与磁链守恒) 是同一件事。
 
 ## 练习
 
@@ -183,7 +183,7 @@ $\mathbf x$ 为状态变量（通常取各电容电压 $u_C$、各电感电流 $
     （1）树支 $4$、连支 $4$；（2）$\mathbf A$、$\mathbf Q$：$4\times8$，$\mathbf B$：$4\times8$；（3）KCL $4$ 个，KVL $4$ 个。
 
 ??? note "解析"
-    树支 $n-1=4$，连支 $b-n+1=4$。$\mathbf A$ 每个独立节点一行、$\mathbf Q$ 每条树支一行，都是 $(n-1)$ 行；$\mathbf B$ 每条连支一行，$(b-n+1)$ 行；列数都是支路数 $8$。独立 KCL 个数 = $n-1$，独立 KVL 个数 = $b-n+1$，加起来恰好等于支路数 $b$——与支路电流法的方程数一致。
+    树支 $n-1=4$，连支 $b-n+1=4$。$\mathbf A$ 每个独立节点一行、$\mathbf Q$ 每条树支一行，都是 $(n-1)$ 行；$\mathbf B$ 每条连支一行，$(b-n+1)$ 行；列数都是支路数 $8$。独立 KCL 个数 = $n-1$，独立 KVL 个数 = $b-n+1$，加起来恰好等于支路数 $b$，与支路电流法的方程数一致。
 
 ### 2. 换一棵树 :material-star::material-star::material-star-outline:
 

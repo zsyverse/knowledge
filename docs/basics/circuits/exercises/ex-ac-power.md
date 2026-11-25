@@ -65,7 +65,7 @@ $$
     4. $Z=\dfrac{\dot U}{\dot I}=20\angle30^\circ=10\sqrt3+j10\approx17.32+j10\,\Omega$。
 
     !!! warning "易错"
-        直接拿 $50^\circ-(-70^\circ)=120^\circ$ 当相位差，会得到 $P<0$ 的荒谬结果——无源网络的 $P$ 不可能为负。比相位前必须先把 cos 换成 sin。
+        直接拿 $50^\circ-(-70^\circ)=120^\circ$ 当相位差，会得到 $P<0$ 的荒谬结果，而无源网络的 $P$ 不可能为负。比相位前必须先把 cos 换成 sin。
 
 ### 3. 逐支路复功率 :material-star::material-star::material-star-outline:
 
@@ -106,7 +106,7 @@ $$
 
     4. 电源：$\bar S=\dot U_S\dot I_1^*=100\times12.5=1250\,\mathrm{VA}$ ✓，$\lambda=1$。
 
-    电感吸收的无功 $625\,\mathrm{var}$ 恰好被两只电容发出的 $156.25+468.75=625\,\mathrm{var}$ 抵消，电源只提供有功；但各支路的视在功率加起来 $1783.5\,\mathrm{VA}$，比电源的 $1250\,\mathrm{VA}$ 大得多——视在功率不守恒。
+    电感吸收的无功 $625\,\mathrm{var}$ 恰好被两只电容发出的 $156.25+468.75=625\,\mathrm{var}$ 抵消，电源只提供有功；但各支路的视在功率加起来 $1783.5\,\mathrm{VA}$，比电源的 $1250\,\mathrm{VA}$ 大得多，可见视在功率不守恒。
 
 ### 4. 输电线路的损耗与效率 :material-star::material-star::material-star-outline:
 
@@ -228,7 +228,7 @@ $\dot U_A=100\angle0^\circ\,\mathrm V$，$\dot U_B=100\angle(-90^\circ)\,\mathrm
         ![电压、电流相量图](../images/ex/sol/w-watt-phasor.svg){ .circuit }
 
     !!! warning "易错"
-        读数不能取绝对值，正负号正是判断能量流向的依据；也不能把 $\dot I$ 与 $\dot I_W$ 混为一谈——表只认电流从哪一端流进 $*$。
+        读数不能取绝对值，正负号正是判断能量流向的依据；也不能把 $\dot I$ 与 $\dot I_W$ 混为一谈，表只认电流从哪一端流进 $*$。
 
 ## 谐振
 

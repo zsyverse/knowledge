@@ -10,7 +10,7 @@ tags:
 
 # 从 SFT 到 Agentic RL：一条梯度公式的四次变形
 
-!!! abstract "TL;DR"
+!!! abstract "要点"
     大模型后训练里的四种方法，梯度都可以写成同一个形式：
 
     $$
@@ -20,9 +20,9 @@ tags:
     区别只有两个：**样本 $y$ 从哪个分布 $q$ 来**，以及**每个 token 的权重 $w_t$ 是什么**。
 
     - **SFT**：$q$ = 专家数据，$w_t = 1$。等价于最小化前向 KL，会有暴露偏差（误差 $O(\varepsilon T^2)$）。
-    - **OPD**：$q = \pi_\theta$（自己采样），$w_t$ = 教师与学生的对数概率差。等价于最小化反向 KL，是**奖励为 $\log \pi_T$ 的熵正则 RL**，每个 token 都有信号。
+    - **OPD**：$q = \pi_\theta$（自己采样），$w_t$ = 教师与学生的对数概率差。等价于最小化反向 KL，是奖励为 $\log \pi_T$ 的熵正则 RL，每个 token 都有信号。
     - **RL**：$q = \pi_\theta$，$w_t$ = 序列奖励的优势 $A$。信号稀疏，每条回答约 1 bit。
-    - **Agentic RL**：$q = \pi_\theta \times$ 环境，轨迹里混着环境返回的 token。环境转移不含 $\theta$，所以**梯度里只剩模型自己生成的 token**，这就是 loss mask 的数学来源。
+    - **Agentic RL**：$q = \pi_\theta \times$ 环境，轨迹里混着环境返回的 token。环境转移不含 $\theta$，所以梯度里只剩模型自己生成的 token，loss mask 就由此而来。
 
 ```mermaid
 flowchart LR
@@ -68,7 +68,7 @@ $$
 \nabla_\theta \mathcal{L}_{\text{SFT}} = -\,\mathbb{E}_{\mathcal{D}}\Big[\sum_t \nabla_\theta \log \pi_\theta(y_t \mid s_t)\Big]
 $$
 
-对照 TL;DR 里的统一公式：$q = \pi^*$（数据分布），$w_t \equiv 1$。
+对照开头的统一公式：$q = \pi^*$（数据分布），$w_t \equiv 1$。
 
 ### 1.2 落到 logits 上
 
@@ -102,7 +102,7 @@ $$
 2. 偏离之后最坏情况每步代价为 1；没偏离时第 $t$ 步的额外代价 $\le \varepsilon$。
 3. 求和：$\displaystyle\sum_{t=1}^{T}\big(t\varepsilon + \varepsilon\big) = \varepsilon\Big(\frac{T(T+1)}{2} + T\Big) = O(\varepsilon T^2)$。
 
-如果改成**在模型自己的状态分布上**训练（DAgger：让学生走，让专家在学生走到的状态上打标签），每步的错误率直接在 $d^{\pi_\theta}$ 上被控制住，界变成 $O(\varepsilon T)$。**这就是第 2 节在线策略蒸馏的出发点。**
+如果改成**在模型自己的状态分布上**训练（DAgger：让学生走，让专家在学生走到的状态上打标签），每步的错误率直接在 $d^{\pi_\theta}$ 上被控制住，界变成 $O(\varepsilon T)$。第 2 节的在线策略蒸馏就从这里出发。
 
 ### 1.5 从 RL 的角度看 SFT
 
@@ -118,13 +118,13 @@ $$
 \nabla_\theta \mathcal{J}_{\text{SFT}} = \frac{1}{\pi_\theta(y^* \mid x)} \cdot \nabla_\theta \mathcal{J}_{\text{RL}}
 $$
 
-**SFT 相当于带了 $1/\pi_\theta$ 重要性权重的 RL**：模型越觉得某个答案不可能，SFT 越用力地推它，梯度大、方差也大。这解释了为什么 SFT 容易"背答案"、泛化不如 RL。DFT（Wu et al., 2025）据此把每个 token 的 loss 乘上 $\mathrm{sg}\big(\pi_\theta(y_t \mid s_t)\big)$（$\mathrm{sg}$ 表示停止梯度）来抵消这个权重。
+**SFT 相当于带了 $1/\pi_\theta$ 重要性权重的 RL**：模型越觉得某个答案不可能，SFT 越用力地推它，梯度大、方差也大。由此可以理解 SFT 为什么容易"背答案"、泛化不如 RL。DFT（Wu et al., 2025）据此把每个 token 的 loss 乘上 $\mathrm{sg}\big(\pi_\theta(y_t \mid s_t)\big)$（$\mathrm{sg}$ 表示停止梯度）来抵消这个权重。
 
 ## 2. OPD：在线策略蒸馏 = 反向 KL
 
 ### 2.1 目标函数
 
-让**学生自己采样**，**教师**（更强的模型 $\pi_T$）给学生生成的每个 token 打分。目标是最小化**反向 KL**：
+让学生自己采样，教师（更强的模型 $\pi_T$）给学生生成的每个 token 打分。目标是最小化**反向 KL**：
 
 $$
 \min_\theta \; \mathrm{KL}(\pi_\theta \,\|\, \pi_T)
@@ -200,7 +200,7 @@ $$
 
 ### 2.5 反向 KL 的性质：只抓一个模式
 
-$\mathrm{KL}(\pi_\theta \| \pi_T) = \sum_y \pi_\theta(y)\log\frac{\pi_\theta(y)}{\pi_T(y)}$。只要 $\pi_\theta(y) = 0$，那一项就是 0。学生可以**完全放弃**教师的某些模式，只要不把概率放到教师认为不可能的地方（mode-seeking / zero-forcing）。小模型学大模型时，这比前向 KL "平均所有模式"更合理。
+$\mathrm{KL}(\pi_\theta \| \pi_T) = \sum_y \pi_\theta(y)\log\frac{\pi_\theta(y)}{\pi_T(y)}$。只要 $\pi_\theta(y) = 0$，那一项就是 0。学生可以完全放弃教师的某些模式，只要不把概率放到教师认为不可能的地方（mode-seeking / zero-forcing）。小模型学大模型时，这比前向 KL "平均所有模式"更合理。
 
 ### 2.6 小结：SFT、蒸馏、OPD 的关系
 
@@ -226,7 +226,7 @@ $$
 = \mathbb{E}\Big[\sum_t R(x,y)\,\nabla_\theta \log \pi_\theta(y_t \mid s_t)\Big]
 $$
 
-这就是 REINFORCE（Williams, 1992）。和 (2.1) 比，**形式完全一样**，只是每个 token 的权重从"教师的逐 token 打分"变成了"整条回答的同一个奖励"。
+这就是 REINFORCE（Williams, 1992）。和 (2.1) 比，形式完全一样，只是每个 token 的权重从"教师的逐 token 打分"变成了"整条回答的同一个奖励"。
 
 **信号密度对比**：二值奖励每条回答最多提供 1 bit 信息，而且要平均分摊给几千个 token。OPD 则每个 token 都有一个实数信号。这是 OPD 往往比 RL 省几个数量级算力的根本原因。
 
@@ -320,7 +320,7 @@ $$
 \mathbb{E}_{\pi_\theta}\big[(1-r)\nabla\log\pi_\theta\big] = \underbrace{\mathbb{E}_{\pi_\theta}[\nabla\log\pi_\theta]}_{0} - \sum_y \pi_{\text{ref}}(y)\,\nabla\log\pi_\theta(y) = \nabla_\theta\,\mathrm{KL}(\pi_{\text{ref}} \,\|\, \pi_\theta)
 $$
 
-也就是说，**$k_3$ 的值估计的是反向 KL，它的梯度却是前向 KL 的梯度**。这个区别在 $\pi_\theta$ 离 $\pi_{\text{ref}}$ 很近时影响不大，走远了就要注意。
+**$k_3$ 的值估计的是反向 KL，它的梯度却是前向 KL 的梯度**。这个区别在 $\pi_\theta$ 离 $\pi_{\text{ref}}$ 很近时影响不大，走远了就要注意。
 
 ## 4. Agentic RL：轨迹里混进了环境
 
@@ -398,7 +398,7 @@ $$
 ## 6. 我的疑问
 
 - OPD 里 $\gamma = 0$ 的近似忽略了"这个 token 会把后面带到哪里"。教师和学生差距很大时，这个偏差有多严重？用轮级或句级的折扣会不会更好？
-- $k_3$ 的梯度其实是前向 KL 的梯度。在长时程 agentic RL 里策略漂移很大，这个错配是否值得改用 $k_1$，或者用词表级精确 KL？
+- $k_3$ 的梯度是前向 KL 的梯度。在长时程 agentic RL 里策略漂移很大，这个错配是否值得改用 $k_1$，或者用词表级精确 KL？
 - 环境观测 $o_k$ 不参与梯度，但它决定了状态分布。如果环境本身是另一个 LLM（模拟用户），这种"多智能体非平稳性"该如何建模？
 
 ## 参考

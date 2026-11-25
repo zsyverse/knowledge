@@ -53,7 +53,7 @@ tags:
     4. 加上 $4\,\Omega$：$R_{ab}=4+2.4=6.4\,\Omega$。
 
     !!! warning "易错"
-        把 $5\,\Omega$ 当成与 $3\,\Omega$ 或 $6\,\Omega$ 串联——它两端是同一节点，任何电阻接在同一节点上都不起作用。
+        把 $5\,\Omega$ 当成与 $3\,\Omega$ 或 $6\,\Omega$ 串联。它两端是同一节点，任何电阻接在同一节点上都不起作用。
 
 ### 3. 电桥的平衡 :material-star::material-star-outline::material-star-outline:
 

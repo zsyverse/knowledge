@@ -9,7 +9,7 @@ hide:
 
 # 知识库
 
-学过的知识、读过的前沿、想过的事情 —— 一个持续生长的个人知识库。
+学过的知识、读过的前沿、想过的事情，持续更新的个人知识库。
 
 [开始阅读 :octicons-arrow-right-24:](ai/llm/index.md){ .md-button .md-button--primary }
 [写作指南](guide.md){ .md-button }

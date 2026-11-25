@@ -182,7 +182,7 @@ $$
         \dot U=6\dot I+\dot U_C+\dot U_L=(6-j6+36+j12)\dot I=(42+j6)\dot I,\qquad Z=42+j6\,\Omega .
         $$
 
-    受控源使实部从 $6\,\Omega$ 增大到 $42\,\Omega$——含受控源的端口只能用"外加 $\dot I$ 求 $\dot U$"，不能串并联化简。
+    受控源使实部从 $6\,\Omega$ 增大到 $42\,\Omega$。含受控源的端口只能用"外加 $\dot I$ 求 $\dot U$"，不能串并联化简。
 
 ### 7. 日光灯电路的参数 :material-star::material-star::material-star-outline:
 
@@ -235,7 +235,7 @@ $$
     ![以 U_C 为参考的相量图](../images/ex/sol/p-512-phasor.svg){ .circuit }
 
     !!! tip "思路"
-        "$U_C=200-100$"之所以能用有效值相减，是因为先由相量图证明了 $\dot U_{R_1}$、$\dot U_C$ 同相——这一步不能省。
+        "$U_C=200-100$"之所以能用有效值相减，是因为先由相量图证明了 $\dot U_{R_1}$、$\dot U_C$ 同相，这一步不能省。
 
 ### 9. 正弦稳态节点法 :material-star::material-star::material-star:
 

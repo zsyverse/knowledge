@@ -19,8 +19,8 @@ tags:
 
     **下载**：[train-the-agent-slides.pptx](assets/train-the-agent/train-the-agent-slides.pptx)（本站存档，版权归原作者）
 
-!!! abstract "TL;DR"
-    **Agent = 模型 + harness**（负责循环调用、管理工具、拼上下文、解析回复的外壳）。同一个模型换 harness，表现可以差一倍，所以要训练的是 Agent 整体，而不只是模型。后训练有五种手段：**模仿（SFT）、压缩（蒸馏）、奖励（GRPO）、在环境里行动（RL + 环境）、通过 harness 训练（跨 harness RL）**，可以组合使用；Hugging Face 用 TRL（训练）+ OpenEnv（环境）把它们统一起来。
+!!! abstract "要点"
+    Agent = 模型 + harness（负责循环调用、管理工具、拼上下文、解析回复的外壳）。同一个模型换 harness，表现可以差一倍，所以要训练的是 Agent 整体，而不只是模型。后训练有五种手段：模仿（SFT）、压缩（蒸馏）、奖励（GRPO）、在环境里行动（RL + 环境）、通过 harness 训练（跨 harness RL），可以组合使用；Hugging Face 用 TRL（训练）+ OpenEnv（环境）把它们统一起来。
 
 ## 核心观点
 
@@ -40,7 +40,7 @@ harness（如 Claude Code、Codex、OpenCode、Mini-SWE-Agent）做四件事：*
 | 行动 | 环境中的 RL | 带工具的沙箱，循环由 trainer 驱动 | `GRPOTrainer` + OpenEnv |
 | harness | 通过 harness 的 RL | 真实 Agent 跑自己的循环 | `AsyncGRPOTrainer` + OpenEnv |
 
-前三种改变**训练信号**，后两种把训练搬进模型**真正行动的循环**里。
+前三种改变训练信号，后两种把训练搬进模型真正行动的循环里。
 
 === "SFT"
 
@@ -50,9 +50,9 @@ harness（如 Claude Code、Codex、OpenCode、Mini-SWE-Agent）做四件事：*
 
 === "蒸馏"
 
-    SFT 只告诉模型「正确的那一个 token」，教师则给出**每个候选 token 的概率**。默认 **on-policy**：学生自己生成，教师给每个 token 打分，学生在自己犯错的位置被纠正。
+    SFT 只告诉模型「正确的那一个 token」，教师则给出每个候选 token 的概率。默认 on-policy：学生自己生成，教师给每个 token 打分，学生在自己犯错的位置被纠正。
 
-    教师可以是更大的模型、合并多个 RL 专家（MOPD），或带提示的模型自身（自蒸馏）。限制：师生要**同一个 tokenizer**，学生上限受教师约束。
+    教师可以是更大的模型、合并多个 RL 专家（MOPD），或带提示的模型自身（自蒸馏）。限制：师生要用同一个 tokenizer，学生上限受教师约束。
 
 === "GRPO"
 
@@ -62,7 +62,7 @@ harness（如 Claude Code、Codex、OpenCode、Mini-SWE-Agent）做四件事：*
 
 === "环境中 RL"
 
-    OpenEnv 给每个环境统一的 `reset` / `step` 接口，以 Hub Space 的形式提供服务。模型在沙箱里多轮调用工具（如运行 Python、看报错、修改、再运行），最后由 `get_reward()` 跑隐藏测试给分——奖励在多轮工具使用之后才出现。
+    OpenEnv 给每个环境统一的 `reset` / `step` 接口，以 Hub Space 的形式提供服务。模型在沙箱里多轮调用工具（如运行 Python、看报错、修改、再运行），最后由 `get_reward()` 跑隐藏测试给分，奖励在多轮工具使用之后才出现。
 
 === "跨 harness RL"
 
@@ -80,7 +80,7 @@ harness（如 Claude Code、Codex、OpenCode、Mini-SWE-Agent）做四件事：*
 | 奖励 | 答对得 1，工具调用越少额外加分（最多 0.1） |
 | 训练 | `AsyncGRPOTrainer`，1000 步，2 张 H100，每次 rollout 一个 E2B 沙箱 |
 
-结果（250 道留出任务，4 个 harness 平均）：**42% → 54%**；在都能解出的任务上**工具调用减少 31%**；**4 个 harness 全部提升**。只在 OpenCode 里训练的对照组，在 OpenCode 中达到 58%，但在其他 harness 上提升小得多。
+结果（250 道留出任务，4 个 harness 平均）：**42% → 54%**；在都能解出的任务上工具调用减少 31%；4 个 harness 全部提升。只在 OpenCode 里训练的对照组，在 OpenCode 中达到 58%，但在其他 harness 上提升小得多。
 
 ### 4. 怎么选
 

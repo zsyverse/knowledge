@@ -175,7 +175,7 @@ $\theta\ne0,\pi$ 时没有实特征值。这和几何一致：旋转之后没有
 
     **解** $\tr A=2$，$\det A=2$，$\lambda^2-2\lambda+2=0$，$\lambda=1\pm\mathrm i=\sqrt2\,\e^{\pm\mathrm i\pi/4}$。
 
-    事实上 $A=\sqrt2\,R(45^\circ)$：逆时针转 $45^\circ$，再放大 $\sqrt2$ 倍。于是 $A^8=(\sqrt2)^8R(360^\circ)=16I$。直接验算：$A^2=\smat{0&-2\\2&0}$，$A^4=-4I$，$A^8=16I$。
+    $A=\sqrt2\,R(45^\circ)$：逆时针转 $45^\circ$，再放大 $\sqrt2$ 倍。于是 $A^8=(\sqrt2)^8R(360^\circ)=16I$。直接验算：$A^2=\smat{0&-2\\2&0}$，$A^4=-4I$，$A^8=16I$。
 
 !!! info "AI 联系"
     旋转位置编码（RoPE）把向量的分量两两分组，每组乘一个 $2\times2$ 旋转矩阵，转角正比于 token 的位置。旋转矩阵是正交矩阵，不改变向量的长度，它的特征值 $\e^{\pm\mathrm i\theta}$ 的模为 1，见[用线性代数读 Transformer](transformer-linalg.md)。
@@ -192,7 +192,7 @@ $$
 A=Q\Lambda Q\tp=\sum_{i=1}^n\lambda_i\,q_iq_i\tp
 $$
 
-**意义**：对称矩阵的作用是沿 $n$ 个互相垂直的方向分别伸缩 $\lambda_i$ 倍，没有旋转和剪切的成分。计算上，$Q^{-1}=Q\tp$，不需要求逆。
+对称矩阵的作用是沿 $n$ 个互相垂直的方向分别伸缩 $\lambda_i$ 倍，没有旋转和剪切的成分。计算上，$Q^{-1}=Q\tp$，不需要求逆。
 
 **证明思路** 结论 1 对二阶矩阵 $\smat{a&b\\b&d}$ 可以直接看判别式：$(a+d)^2-4(ad-b^2)=(a-d)^2+4b^2\ge0$。结论 2：设 $Av_1=\lambda_1v_1$，$Av_2=\lambda_2v_2$，$\lambda_1\ne\lambda_2$，利用 $A\tp=A$，
 

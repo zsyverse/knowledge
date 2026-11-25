@@ -95,7 +95,7 @@ tags:
     **检验**（直接列方程）：$i=\dfrac{10-U}{2}$，$U=4(i+3)+2i$ ⇒ $10-2i=6i+12$，$i=-0.25\,\mathrm A$，$U=10.5\,\mathrm V$ ✓
 
     !!! warning "易错"
-        第二个分电路里控制量 $i''$ 不是零——受控源的电压 $2i''=-3\,\mathrm V$ 照样存在。把受控源置零会得到 $U''=12\times\frac{2}{6}$ 之类的错误结果。
+        第二个分电路里控制量 $i''$ 不是零，受控源的电压 $2i''=-3\,\mathrm V$ 照样存在。把受控源置零会得到 $U''=12\times\frac{2}{6}$ 之类的错误结果。
 
 ### 4. 由测量数据确定线性关系 :material-star::material-star::material-star-outline:
 
@@ -212,7 +212,7 @@ tags:
     **最大功率**：$R_L=1\,\Omega$，$P_{\max}=\dfrac{9^2}{4\times1}=20.25\,\mathrm W$。
 
     !!! warning "易错"
-        把受控源当导线、只看电阻会得到 $4\parallel4=2\,\Omega$——受控源"抵消"了一部分电阻，必须用外加电源法或 $U_{oc}/I_{sc}$。
+        把受控源当导线、只看电阻会得到 $4\parallel4=2\,\Omega$。受控源"抵消"了一部分电阻，必须用外加电源法或 $U_{oc}/I_{sc}$。
 
 ### 8. 由开关两种状态求有源网络的戴维南等效 :material-star::material-star::material-star:
 

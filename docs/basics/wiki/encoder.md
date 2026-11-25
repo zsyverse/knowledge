@@ -11,7 +11,7 @@ tags:
 
 # 编码器全景：传感器、逻辑电路、编解码与表示学习
 
-!!! abstract "TL;DR"
+!!! abstract "要点"
     编码器（Encoder）就是把一种形式的信息转换成标准化的编码、脉冲或特征表示的装置或算法。同一个词在四个领域里解决的问题完全不同：
 
     | 领域 | 输入 → 输出 | 解决的问题 | 代表 |
@@ -23,13 +23,13 @@ tags:
 
     共同点是“编码”这一步本身不改变信息的含义，只换一种更适合下游处理的表示；对应的反向过程叫解码 / 译码（Decoder）。
 
-文中的数字和例子（四倍频分辨率、格雷码性质、74LS148 真值表、视频原始码率、汉明码纠错、One-Hot 距离）都由 [`scripts/encoder/verify_encoder.py`](https://github.com/zsyverse/knowledge/blob/main/scripts/encoder/verify_encoder.py) 核对过，插图由 [`fig_encoder.py`](https://github.com/zsyverse/knowledge/blob/main/scripts/encoder/fig_encoder.py) 生成。
+数值核对脚本：[`scripts/encoder/verify_encoder.py`](https://github.com/zsyverse/knowledge/blob/main/scripts/encoder/verify_encoder.py)；插图脚本：[`fig_encoder.py`](https://github.com/zsyverse/knowledge/blob/main/scripts/encoder/fig_encoder.py)。
 
 ---
 
 ## 一、工业与机电控制：位置与速度编码器
 
-日常工程里说“编码器”，多半指这一类硬件。它把机械运动（角度、位移、转速）转换成电脉冲或数字信号，让控制器（PLC、单片机、伺服驱动器）知道电机转了多少圈、现在停在哪个角度。
+工程里说“编码器”，多半指这一类硬件。它把机械运动（角度、位移、转速）转换成电脉冲或数字信号，让控制器（PLC、单片机、伺服驱动器）知道电机转了多少圈、现在停在哪个角度。
 
 以最常见的光电编码器为例：LED 发出的光穿过随轴转动的码盘和一片固定光栅，两者的缝对齐时透光、错开时遮光，后面的光电元件把明暗变化转成电信号。
 
@@ -56,8 +56,8 @@ tags:
 
 ### 2. 按传感介质分类
 
-- **光电式（Optical）**：用光栅透光检测。**精度和分辨率极高**，但怕粉尘、油污、结露和剧烈振动。
-- **磁电式（Magnetic）**：检测磁铁旋转引起的磁场变化（霍尔效应或磁阻效应）。**耐油污、抗振动、寿命长、体积小**，适合恶劣工业环境，极限精度略逊于顶级光电式。
+- **光电式（Optical）**：用光栅透光检测。精度和分辨率很高，但怕粉尘、油污、结露和剧烈振动。
+- **磁电式（Magnetic）**：检测磁铁旋转引起的磁场变化（霍尔效应或磁阻效应）。耐油污、抗振动、寿命长、体积小，适合恶劣工业环境，极限精度略逊于顶级光电式。
 - **电容式 / 电感式（Capacitive / Inductive）**：兼顾抗污能力和精度，用于高端数控机床（如海德汉的电感式编码器）和精密无刷电机。
 
 !!! note "按运动形态"

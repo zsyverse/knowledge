@@ -81,7 +81,7 @@ $$
 
 1. **特征值**全为正；
 2. 不换行的消元得到的 $n$ 个**主元**全为正；
-3. $n$ 个**顺序主子式** $\Delta_1,\dots,\Delta_n$ 全为正（$\Delta_k$ 是左上角 $k\times k$ 子矩阵的行列式）。它与第 2 条的关系是：第 $k$ 个主元等于 $\Delta_k/\Delta_{k-1}$；
+3. $n$ 个**顺序主子式** $\Delta_1,\dots,\Delta_n$ 全为正（$\Delta_k$ 是左上角 $k\times k$ 子矩阵的行列式）。它与第 2 条的关系是：第 $k$ 个主元等于 $\Delta_k/\Delta_{k-1}$（约定 $\Delta_0=1$）；
 4. 存在列线性无关的矩阵 $B$，使 $A=B\tp B$。这时 $x\tp Ax=\lVert Bx\rVert^2$，只有 $x=0$ 时才为 0；
 5. 存在 Cholesky 分解 $A=LL\tp$（第 3 节）。
 

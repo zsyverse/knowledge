@@ -172,7 +172,7 @@ print(list(it.combinations("abc", 2)))                 # [('a', 'b'), ('a', 'c')
 print(list(it.pairwise([1, 2, 4])))                    # [(1, 2), (2, 4)]，3.10+
 ```
 
-`islice` 很实用：`for x in islice(dataset, 100)` 只取前 100 条做调试。Python 3.12 起还有 `itertools.batched(iterable, n)`，功能和上面手写的 `batched` 相同。
+`islice` 很实用：`for x in islice(dataset, 100)` 只取前 100 条做调试。Python 3.12 起还有 `itertools.batched(iterable, n)`，功能和上面手写的 `batched` 相同，区别是每个 batch 是 tuple 而不是 list。
 
 `groupby` 把**相邻的**相同 key 的元素分到一组，使用前通常要先按同一个 key 排序：
 

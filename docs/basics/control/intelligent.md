@@ -129,7 +129,11 @@ graph LR
     同为 Z 的两条取 max，得 Z 的激活度 $2/3$。
 
     **③ 解模糊。** 加权平均法：
-    $$u=\frac{(-1.5)\cdot\frac16+0\cdot\frac23+1.5\cdot\frac13}{\frac16+\frac23+\frac13}=\frac{3}{14}\approx0.214$$
+
+    $$
+    u=\frac{(-1.5)\cdot\frac16+0\cdot\frac23+1.5\cdot\frac13}{\frac16+\frac23+\frac13}=\frac{0.25}{7/6}=\frac{3}{14}\approx0.214
+    $$
+
     重心法要对削顶后的合成面积积分，数值结果 $u\approx0.225$，两者很接近。
 
     误差偏正（输出还低于设定值），但误差在减小（输出正在上升），所以只需轻微加大控制量，不用猛加。
@@ -144,7 +148,9 @@ graph LR
 
 工程里最常见的用法是**用模糊规则在线调整 PID 参数**，而不是用模糊控制器直接替代 PID：
 
-$$K_p=K_{p0}+\Delta K_p,\quad K_i=K_{i0}+\Delta K_i,\quad K_d=K_{d0}+\Delta K_d$$
+$$
+K_p=K_{p0}+\Delta K_p,\quad K_i=K_{i0}+\Delta K_i,\quad K_d=K_{d0}+\Delta K_d
+$$
 
 其中 $\Delta K_p,\Delta K_i,\Delta K_d$ 由 $(e,ec)$ 经三张模糊规则表推出。经验规则大致是：
 
@@ -168,8 +174,8 @@ $$K_p=K_{p0}+\Delta K_p,\quad K_i=K_{i0}+\Delta K_i,\quad K_d=K_{d0}+\Delta K_d$
 
 - **神经元模型**：$y=f\left(\sum_i w_ix_i-\theta\right)$，$f$ 是激活函数（Sigmoid、tanh、ReLU）。
 - **BP 网络**：多层前馈网络，用误差反向传播（梯度下降）训练权值：$w\leftarrow w-\eta\,\dfrac{\partial E}{\partial w}$。
-- **RBF 网络**：隐层用径向基函数（如高斯函数），只有输出层权值线性，学习快、不易陷入局部极小，控制中常用。
-- **万能逼近定理**：只要隐层神经元足够多，单隐层前馈网络能以任意精度逼近闭集上的连续函数。这是神经网络能用于控制的理论依据：它可以逼近未知的非线性对象或控制律。
+- **RBF 网络**：隐层用径向基函数（如高斯函数）；中心和宽度确定后，网络输出对输出层权值是线性的，学习快、不易陷入局部极小，控制中常用。
+- **万能逼近定理**：只要隐层神经元足够多，单隐层前馈网络能以任意精度逼近有界闭集上的连续函数。这是神经网络能用于控制的理论依据：它可以逼近未知的非线性对象或控制律。
 
 ### 3.2 神经网络在控制中的角色
 
@@ -215,11 +221,15 @@ $$K_p=K_{p0}+\Delta K_p,\quad K_i=K_{i0}+\Delta K_i,\quad K_d=K_{d0}+\Delta K_d$
 
 P 型学习律（$k$ 为迭代次数，$t$ 为时刻）：
 
-$$u_{k+1}(t)=u_k(t)+\Gamma\,e_k(t+1),\qquad e_k=y_d-y_k$$
+$$
+u_{k+1}(t)=u_k(t)+\Gamma\,e_k(t+1),\qquad e_k=y_d-y_k
+$$
 
 对离散系统 $x(t+1)=Ax(t)+Bu(t),\ y=Cx$，若每次初始状态相同，**收敛的充要条件是**
 
-$$\lvert 1-\Gamma CB\rvert<1$$
+$$
+\lvert 1-\Gamma CB\rvert<1
+$$
 
 即只取决于学习增益和系统的首项马尔可夫参数 $CB$，与 $A$ 无关。
 
@@ -242,8 +252,12 @@ $$\lvert 1-\Gamma CB\rvert<1$$
 
 - **遗传算法（GA）**：模拟自然选择。把参数编码成染色体 → 计算适应度 → **选择**（好的多保留）、**交叉**（交换片段）、**变异**（随机扰动）→ 迭代。全局搜索能力强，不需要梯度。
 - **粒子群算法（PSO）**：每个粒子记住自己的历史最好位置 $p_i$，群体共享全局最好位置 $g$：
-  $$v_i\leftarrow wv_i+c_1r_1(p_i-x_i)+c_2r_2(g-x_i),\qquad x_i\leftarrow x_i+v_i$$
-  $w$ 是惯性权重，$c_1,c_2$ 是学习因子，$r_1,r_2\sim U(0,1)$。参数少、实现简单。
+
+    $$
+    v_i\leftarrow wv_i+c_1r_1(p_i-x_i)+c_2r_2(g-x_i),\qquad x_i\leftarrow x_i+v_i
+    $$
+
+    $w$ 是惯性权重，$c_1,c_2$ 是学习因子，$r_1,r_2\sim U(0,1)$。参数少、实现简单。
 - 其他：蚁群算法（路径规划）、模拟退火（以一定概率接受变差的解，跳出局部最优）。
 
 ---

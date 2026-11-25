@@ -30,7 +30,7 @@ print(torch.randn(2, 3).shape)           # 标准正态
 print(torch.randint(0, 100, (2, 4)).dtype)   # torch.int64
 ```
 
-Python 的浮点数默认变成 `float32`（NumPy 是 `float64`），整数变成 `int64`。token id、类别标签必须是 `int64`（`torch.long`），很多函数（`F.cross_entropy`、`nn.Embedding`）对此有要求。
+Python 的浮点数默认变成 `float32`（NumPy 是 `float64`），整数变成 `int64`。token id、类别标签一般用 `int64`（`torch.long`）：`F.cross_entropy` 的类别标签必须是 `int64`，`nn.Embedding` 的输入必须是整数类型。
 
 ### 与 NumPy 互转
 
@@ -246,7 +246,7 @@ print(batch["input_ids"].shape, batch["attention_mask"].sum(1).tolist())
 
 ## 6. 训练循环
 
-用一个小的语言模型把上面的内容串起来。语言模型训练的标签就是输入本身向左错一位：用位置 $t$ 之前的 token 预测位置 $t+1$ 的 token。
+用一个小的语言模型把上面的内容串起来。语言模型训练的标签就是输入本身向左错一位：用位置 $t$ 及之前的 token 预测位置 $t+1$ 的 token。
 
 ```python
 class TinyLM(nn.Module):

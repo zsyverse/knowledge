@@ -40,7 +40,7 @@ $$
 \pi^*(y\mid x) \propto \pi_\text{ref}(y\mid x)\exp\!\big(r(x,y)/\beta\big)
 $$
 
-反解出奖励 $r = \beta \log \frac{\pi^*}{\pi_\text{ref}} + \text{const}$，代入 Bradley–Terry 偏好模型，常数项相消，得到只依赖策略本身的损失：
+反解出奖励 $r(x,y) = \beta \log \frac{\pi^*(y\mid x)}{\pi_\text{ref}(y\mid x)} + \beta\log Z(x)$，其中 $Z(x)=\sum_y \pi_\text{ref}(y\mid x)\exp(r(x,y)/\beta)$ 是归一化常数，只与 $x$ 有关。代入 Bradley–Terry 偏好模型 $P(y_w \succ y_l)=\sigma\big(r(x,y_w)-r(x,y_l)\big)$，两个回答共享同一个 $x$，$\beta\log Z(x)$ 相消，再把 $\pi^*$ 换成待训练的 $\pi_\theta$，得到只依赖策略本身的损失：
 
 $$
 \mathcal{L}_\text{DPO} = -\log\sigma\!\left(\beta\log\frac{\pi_\theta(y_w\mid x)}{\pi_\text{ref}(y_w\mid x)} - \beta\log\frac{\pi_\theta(y_l\mid x)}{\pi_\text{ref}(y_l\mid x)}\right)

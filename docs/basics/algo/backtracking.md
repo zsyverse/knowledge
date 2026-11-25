@@ -466,7 +466,7 @@ print(shortest_hamilton(dist))    # 16，路径 0 -> 1 -> 2 -> 3
 | 把第 i 位置 0 | `mask & ~(1 << i)` |
 | 集合中元素个数 | `mask.bit_count()`（3.10+）或 `bin(mask).count("1")` |
 | 最低位的 1 | `mask & -mask` |
-| 枚举 mask 的所有子集 | `sub = mask; while sub: ...; sub = (sub - 1) & mask` |
+| 枚举 mask 的所有非空子集 | `sub = mask; while sub: ...; sub = (sub - 1) & mask` |
 
 ## 练习
 

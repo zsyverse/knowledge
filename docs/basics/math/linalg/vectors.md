@@ -103,7 +103,7 @@ $$
 \lvert x\tp y\rvert\le\lVert x\rVert\,\lVert y\rVert
 $$
 
-等号成立当且仅当 $x$ 与 $y$ 共线。（严格地说应当先证这个不等式，再用它保证 $\cos\theta$ 的定义合法。证明：$\lVert x-ty\rVert^2=\lVert x\rVert^2-2t\,x\tp y+t^2\lVert y\rVert^2\ge0$ 对所有 $t$ 成立，这个关于 $t$ 的二次式判别式非正，即 $(x\tp y)^2\le\lVert x\rVert^2\lVert y\rVert^2$。）
+等号成立当且仅当 $x$ 与 $y$ 共线。（严格地说应当先证这个不等式，再用它保证 $\cos\theta$ 的定义合法。证明：$y=0$ 时两边都是 0；$y\ne0$ 时，$\lVert x-ty\rVert^2=\lVert x\rVert^2-2t\,x\tp y+t^2\lVert y\rVert^2\ge0$ 对所有 $t$ 成立，这个关于 $t$ 的二次式判别式非正，即 $(x\tp y)^2\le\lVert x\rVert^2\lVert y\rVert^2$。）
 
 由它可以推出**三角不等式** $\lVert x+y\rVert\le\lVert x\rVert+\lVert y\rVert$：
 

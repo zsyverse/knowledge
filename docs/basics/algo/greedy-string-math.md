@@ -561,7 +561,7 @@ print(sorted(round(cnt[i] / 20000, 2) for i in range(10)))   # 每个元素被�
 | 多头注意力、因果掩码 | [NumPy](../python/numpy.md) |
 | top-k / top-p 采样 | [综合练习](../python/exercises.md) |
 | BPE 训练与编码 | [综合练习](../python/exercises.md) |
-| RMSNorm、LayerNorm | [综合练习](../python/exercises.md) |
+| RMSNorm | [综合练习](../python/exercises.md) |
 | GRPO 组内优势、token 级 log 概率 | [综合练习](../python/exercises.md)、[PyTorch 基础](../python/pytorch.md) |
 | 训练循环、梯度累积 | [PyTorch 基础](../python/pytorch.md) |
 

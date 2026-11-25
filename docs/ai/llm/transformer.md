@@ -16,7 +16,7 @@ $$
 \mathrm{Attention}(Q,K,V) = \mathrm{softmax}\!\left(\frac{QK^\top}{\sqrt{d_k}} + M\right)V
 $$
 
-- 除以 $\sqrt{d_k}$：防止点积随维度增大导致 softmax 饱和、梯度消失
+- 除以 $\sqrt{d_k}$：若 $q$、$k$ 各分量独立、均值 0、方差 1，点积 $q\cdot k$ 的方差是 $d_k$；不缩放时 $d_k$ 越大 logits 越大，softmax 趋于 one-hot、梯度消失
 - $M$ 是因果掩码（decoder-only 模型中未来位置为 $-\infty$）
 - 复杂度：时间与显存都是 $O(n^2)$，这是长上下文的核心瓶颈
 
@@ -26,7 +26,7 @@ $$
 | --- | --- | --- |
 | MHA | = Q 头数 | 原始设计 |
 | MQA | 1 | 极大减少 KV Cache |
-| GQA | 分组共享 | Llama 2/3 等采用，效果与速度折中 |
+| GQA | 分组共享 | Llama 2（34B/70B）、Llama 3 等采用，效果与速度折中 |
 
 ## 现代 LLM 的常见改动
 

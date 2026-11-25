@@ -20,7 +20,7 @@ $$
 
 - $V\in\R^{n\times n}$ 是正交矩阵，它的列 $v_1,\dots,v_n$ 称为**右奇异向量**，是输入空间 $\R^n$ 的一组标准正交基；
 - $U\in\R^{m\times m}$ 是正交矩阵，它的列 $u_1,\dots,u_m$ 称为**左奇异向量**，是输出空间 $\R^m$ 的一组标准正交基；
-- $\Sigma\in\R^{m\times n}$ 只在对角线上有非零元 $\sigma_1\ge\sigma_2\ge\cdots\ge\sigma_r>0$，称为**奇异值**，$r=\rank A$。
+- $\Sigma\in\R^{m\times n}$ 只在对角线上有非零元 $\sigma_1\ge\sigma_2\ge\cdots\ge\sigma_r>0$，称为**奇异值**，$r=\rank A$。其余对角元为 0，需要时也记作 $\sigma_{r+1}=\cdots=\sigma_{\min(m,n)}=0$（例如后面的 $\sigma_n$、$\sigma_{\min}$）。
 
 把分解式右乘 $V$ 得到 $AV=U\Sigma$，逐列看就是
 

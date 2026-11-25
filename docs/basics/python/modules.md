@@ -87,7 +87,7 @@ if __name__ == "__main__":
     main()
 ```
 
-这样文件既能作为脚本运行，又能被 import 而不触发主逻辑。使用 `multiprocessing` 或 `DataLoader(num_workers>0)` 时，在 macOS 和 Windows 上子进程会重新导入主模块，没有这个判断会无限创建子进程。
+这样文件既能作为脚本运行，又能被 import 而不触发主逻辑。使用 `multiprocessing` 或 `DataLoader(num_workers>0)` 时，在 macOS 和 Windows 上子进程会重新导入主模块，没有这个判断，子进程在导入时又会去创建子进程，程序直接报 RuntimeError 退出。
 
 ## 2. 异常
 
@@ -111,7 +111,7 @@ print(parse_score("0.5"), parse_score("abc"))
 ### 捕获的范围要窄
 
 ```py
-# 不好：任何错误都被吞掉，包括拼写错误、KeyboardInterrupt 以外的所有问题
+# 不好：任何错误都被吞掉，包括拼写错误，连 KeyboardInterrupt 也不例外
 try:
     result = process(sample)
 except:

@@ -20,7 +20,7 @@ $$
 q_i\tp q_j=\begin{cases}1,&i=j\\0,&i\ne j\end{cases}
 $$
 
-一组非零的正交向量一定线性无关。
+一组非零的正交向量一定线性无关：把 $c_1q_1+\cdots+c_kq_k=0$ 两边与 $q_j$ 做内积，其余各项都为零，剩下 $c_j\lVert q_j\rVert^2=0$，所以 $c_j=0$。
 
 ### 意义：坐标就是内积
 
@@ -59,7 +59,7 @@ $$
 (Qx)\tp(Qy)=x\tp Q\tp Qy=x\tp y
 $$
 
-内积不变，所以长度 $\lVert Qx\rVert=\lVert x\rVert$ 和夹角都不变。正交矩阵对应的变换不拉伸、不压缩，只有两类：$\det Q=1$ 是**旋转**，$\det Q=-1$ 是带**反射**的变换。常见的例子：
+内积不变，所以长度 $\lVert Qx\rVert=\lVert x\rVert$ 和夹角都不变。正交矩阵对应的变换不拉伸、不压缩。由 $\det Q\tp\det Q=\det I=1$ 得 $\det Q=\pm1$，按符号分成两类：$\det Q=1$ 是**旋转**，$\det Q=-1$ 是带**反射**的变换。常见的例子：
 
 - 平面旋转 $\smat{\cos\theta&-\sin\theta\\\sin\theta&\cos\theta}$；
 - 置换矩阵（把各分量重新排序）；

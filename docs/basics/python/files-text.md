@@ -61,7 +61,7 @@ print(p.read_text(encoding="utf-8").splitlines())   # ['第一行', 'second line
 | `"x"` | 新建，文件已存在报错，防止误覆盖 |
 | 加 `"b"` | 二进制模式，读写 `bytes` |
 
-**始终显式写 `encoding="utf-8"`**。不写时使用系统默认编码，在 Windows 上通常是 GBK，同一段代码换台机器读中文就乱码或报 `UnicodeDecodeError`。
+**始终显式写 `encoding="utf-8"`**。不写时使用系统默认编码，在中文版 Windows 上通常是 GBK，同一段代码换台机器读中文就乱码或报 `UnicodeDecodeError`。
 
 ## 3. 数据格式
 

@@ -20,7 +20,7 @@ graph LR
   A --> E
 ```
 
-奖励模型（Bradley–Terry）：
+奖励模型（Bradley–Terry）。$x$ 是提示，$y_w$、$y_l$ 是同一提示下人类偏好的回答和不偏好的回答，$\sigma$ 是 sigmoid：
 
 $$
 \mathcal{L}_{\text{RM}} = -\log \sigma\big(r_\phi(x, y_w) - r_\phi(x, y_l)\big)

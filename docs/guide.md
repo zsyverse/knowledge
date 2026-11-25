@@ -17,8 +17,11 @@
 | LLM/VLM | `docs/ai/llm/` |
 | 强化学习 | `docs/ai/rl/` |
 | Robot | `docs/ai/robot/` |
+| Agent4Robot | `docs/ai/agent4robot/` |
 | AI4AI | `docs/ai4ai/` |
 | 数学基础 | `docs/basics/math/` |
+| Python 编程 | `docs/basics/python/` |
+| 算法刷题 | `docs/basics/algo/` |
 | 控制理论 | `docs/basics/control/` |
 | 电路 | `docs/basics/circuits/` |
 | 工程实践 | `docs/engineering/` |

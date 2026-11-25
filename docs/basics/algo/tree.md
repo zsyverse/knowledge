@@ -127,6 +127,7 @@ print(max_depth(build_tree(vals)))
 
 ```python
 import sys
+# TreeNode 和 max_depth 的定义同上一段程序
 
 def main():
     it = iter(sys.stdin.read().split())

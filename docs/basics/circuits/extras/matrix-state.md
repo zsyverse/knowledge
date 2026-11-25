@@ -147,7 +147,7 @@ $$
 \dot{\mathbf x}=\mathbf A\mathbf x+\mathbf B\mathbf v,\qquad \mathbf y=\mathbf C\mathbf x+\mathbf D\mathbf v,
 $$
 
-$\mathbf x$ 为状态变量（通常取各电容电压 $u_C$、各电感电流 $i_L$），$\mathbf v$ 为激励，$\mathbf y$ 为所求输出。好处：初始条件就是 $u_C(0)$、$i_L(0)$，便于数值计算；也是"现代控制理论"的出发点。
+$\mathbf x$ 为状态变量（通常取各电容电压 $u_C$、各电感电流 $i_L$），$\mathbf v$ 为激励，$\mathbf y$ 为所求输出。这里的 $\mathbf A$、$\mathbf B$、$\mathbf C$、$\mathbf D$ 是状态方程的系数矩阵，与第 2 节的关联矩阵 $\mathbf A$、回路矩阵 $\mathbf B$ 无关，只是沿用了习惯记号。好处：初始条件就是 $u_C(0)$、$i_L(0)$，便于数值计算；也是"现代控制理论"的出发点。
 
 **直观列写法**：
 

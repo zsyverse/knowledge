@@ -18,7 +18,7 @@ $$
 
 - 数据质量 > 数量（LIMA：约 1000 条高质量数据即可显著对齐格式）
 - 使用 chat template，注意特殊 token 与 loss mask
-- 参数高效微调：**LoRA** 将 $\Delta W = BA$，$B\in\mathbb{R}^{d\times r}, A\in\mathbb{R}^{r\times k}$，$r \ll d$
+- 参数高效微调：**LoRA** 把权重增量写成 $\Delta W = BA$，$B\in\mathbb{R}^{d\times r}, A\in\mathbb{R}^{r\times k}$，$r \ll \min(d,k)$；原权重 $W$ 冻结，只训练 $A$、$B$，前向为 $Wx + \frac{\alpha}{r}BAx$。$B$ 初始化为 0，训练开始时 $\Delta W=0$
 
 ??? tip "LoRA 常用超参"
     rank 8–64，alpha 通常取 rank 的 1–2 倍，作用于 attention 和 MLP 的线性层。

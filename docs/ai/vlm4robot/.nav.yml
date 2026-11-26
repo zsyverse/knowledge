@@ -1,0 +1,13 @@
+nav:
+  - index.md
+  - taxonomy.md
+  - direct-pose.md
+  - spatial-keypoints.md
+  - primitives-and-code.md
+  - native-stack.md
+  - dual-system.md
+  - vla-and-out-of-loop.md
+  - post-training-recipes.md
+  - gaps-and-frontiers.md
+  - glob: "*"
+    ignore_no_matches: true

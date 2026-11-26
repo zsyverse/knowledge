@@ -29,7 +29,7 @@ hide:
 
     ---
 
-    [LLM/VLM](ai/llm/index.md) · [强化学习](ai/rl/index.md) · [Robot](ai/robot/index.md) · [Agent4Robot](ai/agent4robot/index.md)
+    [LLM/VLM](ai/llm/index.md) · [强化学习](ai/rl/index.md) · [Robot](ai/robot/index.md) · [Agent4Robot](ai/agent4robot/index.md) · [VLM4Robot](ai/vlm4robot/index.md)
 
 -   :material-robot-industrial-outline:{ .lg .middle } **AI4AI** <span class="count"><!-- count:ai4ai --> 篇</span>
 

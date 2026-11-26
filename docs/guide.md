@@ -18,6 +18,7 @@
 | 强化学习 | `docs/ai/rl/` |
 | Robot | `docs/ai/robot/` |
 | Agent4Robot | `docs/ai/agent4robot/` |
+| VLM4Robot | `docs/ai/vlm4robot/` |
 | AI4AI | `docs/ai4ai/` |
 | 数学基础 | `docs/basics/math/` |
 | Python 编程 | `docs/basics/python/` |
